@@ -2,95 +2,9 @@ import Link from 'next/link';
 import { CategoryNav } from '@/components/CategoryNav';
 import { ProductCard, Product } from '@/components/ProductCard';
 import { Zap, ShieldCheck, BatteryCharging, CreditCard, HelpCircle, ChevronDown } from 'lucide-react';
+import initialProductsData from '@/data/produtos-loja.json';
 
-// Dados de amostra para demonstração imediata enquanto conectamos o banco e o catálogo
-const initialProducts: Product[] = [
-  {
-    id: '1',
-    titulo: '🛵 Scooter Elétrica X11 1000W',
-    slug: 'scooter-eletrica-x11-1000w',
-    descricao: 'A mais vendida! Bateria de lítio removível, motor 1000W, alarme com cartão NFC e freios hidráulicos.',
-    preco: 9890.0,
-    preco_promocional: 8990.0,
-    exibir_preco: false,
-    destaque: true,
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V 20Ah',
-    autonomia: 'Até 50 km',
-    velocidade_maxima: '32 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '2',
-    titulo: '🛵 Scooter Elétrica JET 1500W',
-    slug: 'scooter-eletrica-jet-1500w',
-    descricao: 'Potência e estilo retro com acabamento premium e grande autonomia.',
-    preco: 10500.0,
-    exibir_preco: false,
-    destaque: true,
-    potencia_motor: '1500W',
-    tipo_bateria: 'Lítio 60V',
-    autonomia: 'Até 55 km',
-    velocidade_maxima: '32 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '3',
-    titulo: '🛵 Scooter X12 Super Sport',
-    slug: 'scooter-x12-super-sport',
-    descricao: 'Design moderno esportivo com painel digital TFT e amortecedores reforçados.',
-    preco: 11900.0,
-    exibir_preco: false,
-    destaque: true,
-    potencia_motor: '1200W',
-    tipo_bateria: 'Lítio Removível',
-    autonomia: 'Até 45 km',
-    velocidade_maxima: '32 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '4',
-    titulo: '🚲 Bicicleta Elétrica Urbana EcoBike',
-    slug: 'bicicleta-eletrica-urbana-ecobike',
-    descricao: 'Mobilidade leve, dobrável, com pedal assistido e bateria de lítio recarregável na tomada.',
-    preco: 4990.0,
-    exibir_preco: false,
-    destaque: false,
-    potencia_motor: '350W',
-    tipo_bateria: 'Lítio 36V',
-    autonomia: 'Até 40 km',
-    velocidade_maxima: '25 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '5',
-    titulo: '🛺 Triciclo Elétrico Comfort Cargo',
-    slug: 'triciclo-eletrico-comfort-cargo',
-    descricao: 'Estabilidade máxima com 3 rodas, marcha à ré, cesto de carga e banco duplo acolchoado.',
-    preco: 12800.0,
-    exibir_preco: false,
-    destaque: true,
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V 20Ah',
-    autonomia: 'Até 45 km',
-    velocidade_maxima: '30 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '6',
-    titulo: '🛴 Patinete Elétrico P10 Urban',
-    slug: 'patinete-eletrico-p10-urban',
-    descricao: 'Leve, prático e ágil para o dia a dia. Dobrável em 3 segundos.',
-    preco: 3200.0,
-    exibir_preco: false,
-    destaque: false,
-    potencia_motor: '500W',
-    tipo_bateria: 'Lítio 36V',
-    autonomia: 'Até 30 km',
-    velocidade_maxima: '25 km/h',
-    dispensa_cnh: true,
-  },
-];
+const initialProducts: Product[] = initialProductsData as Product[];
 
 export default function Home() {
   return (

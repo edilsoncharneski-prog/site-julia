@@ -17,77 +17,7 @@ import {
 } from 'lucide-react';
 import { formatCurrency, buildWhatsAppLink } from '@/lib/utils';
 import { useState } from 'react';
-
-// Detalhes dos modelos de referência
-const PRODUCTS_DATA: Record<string, any> = {
-  'scooter-capuccino-1000w-bege': {
-    titulo: 'SCOOTER CAPUCCINO 1000W BEGE',
-    categoria: 'Autopropelidos',
-    descricao:
-      'A Scooter Capuccino 1000W une o requinte do design retrô europeu com a modernidade da tração 1000W e bateria de lítio. Ideal para o dia a dia, trabalho e lazer com zero emissão de poluentes e máximo conforto.',
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V 20Ah',
-    autonomia: 'Até 50 km',
-    velocidade_maxima: '32 km/h',
-    capacidade_carga: '150 kg',
-    tempo_recarga: '6 a 8 horas',
-    dispensa_cnh: true,
-    preco: 9890.0,
-    exibir_preco: false,
-    itens_serie: [
-      'Original com garantia de fábrica',
-      'Bateria de lítio de alta densidade',
-      'Freios a disco hidráulicos dianteiro e traseiro',
-      'Iluminação 100% LED de alta visibilidade',
-      'Painel digital completo',
-      'Alarme sonoro, trava no motor e chave presencial',
-      'Oficina local e peças de reposição em Cotriguaçu/MT',
-    ],
-  },
-  'scooter-shark-1000w-amarelo': {
-    titulo: 'SCOOTER SHARK 1000W AMARELO',
-    categoria: 'Autopropelidos',
-    descricao:
-      'Visual esportivo arrojado com farol duplo agressivo e suspensão dianteira invertida. Potência e estabilidade superior para qualquer terreno urbano.',
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V 20Ah',
-    autonomia: 'Até 45 km',
-    velocidade_maxima: '32 km/h',
-    capacidade_carga: '150 kg',
-    tempo_recarga: '6 a 8 horas',
-    dispensa_cnh: true,
-    preco: 10490.0,
-    exibir_preco: false,
-    itens_serie: [
-      'Chassi esportivo reforçado',
-      'Freio hidráulico a disco duplo',
-      'Painel digital esportivo',
-      'Alarme e controle remoto',
-      'Peças de reposição garantidas',
-    ],
-  },
-  'scooter-harley-1000w-preto': {
-    titulo: 'SCOOTER HARLEY 1000W PRETO',
-    categoria: 'Autopropelidos',
-    descricao:
-      'Imponência e postura inconfundível. Rodas largas tipo chopper, guidão elevado e assento anatômico para uma pilotagem relaxada e estilosa.',
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V 20Ah',
-    autonomia: 'Até 50 km',
-    velocidade_maxima: '32 km/h',
-    capacidade_carga: '160 kg',
-    tempo_recarga: '6 a 8 horas',
-    dispensa_cnh: true,
-    preco: 11900.0,
-    exibir_preco: false,
-    itens_serie: [
-      'Pneu largo fat-tire para estabilidade',
-      'Guidão alto estilo custom',
-      'Banco duplo estofado premium',
-      'Freios hidráulicos super dimensionados',
-    ],
-  },
-};
+import allProductsData from '@/data/produtos-loja.json';
 
 export default function ProductDetailPage({
   params,
@@ -98,30 +28,47 @@ export default function ProductDetailPage({
   const slug = resolvedParams.slug;
   const [copied, setCopied] = useState(false);
 
-  const product = PRODUCTS_DATA[slug] || {
-    titulo: slug
-      .replace(/-/g, ' ')
-      .toUpperCase(),
-    categoria: 'Autopropelidos',
-    descricao:
-      'Veículo elétrico de alta eficiência, ecológico e econômico. Custo de recarga inferior a R$ 1,50.',
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V',
-    autonomia: 'Até 50 km',
-    velocidade_maxima: '32 km/h',
-    capacidade_carga: '150 kg',
-    tempo_recarga: '6 a 8 horas',
-    dispensa_cnh: true,
-    preco: null,
-    exibir_preco: false,
-    itens_serie: [
-      'Bateria de lítio de alta durabilidade',
-      'Motor 1000W de alta tração',
-      'Freios a disco hidráulicos',
-      'Iluminação LED',
-      'Garantia e assistência técnica local',
-    ],
-  };
+  const foundProduct = allProductsData.find((p) => p.slug === slug);
+
+  const product = foundProduct
+    ? {
+        ...foundProduct,
+        categoria: 'Autopropelidos',
+        capacidade_carga: '150 kg',
+        tempo_recarga: '6 a 8 horas',
+        itens_serie: [
+          'Original com garantia de fábrica',
+          'Bateria de lítio de alta durabilidade',
+          'Freios a disco hidráulicos dianteiro e traseiro',
+          'Iluminação 100% LED de alta visibilidade',
+          'Painel digital completo',
+          'Alarme sonoro e trava de motor',
+          'Oficina local e peças de reposição em Cotriguaçu/MT',
+        ],
+      }
+    : {
+        titulo: slug.replace(/-/g, ' ').toUpperCase(),
+        categoria: 'Autopropelidos',
+        descricao:
+          'Veículo elétrico de alta eficiência, ecológico e econômico. Custo de recarga inferior a R$ 1,50.',
+        potencia_motor: '1000W',
+        tipo_bateria: 'Lítio 60V',
+        autonomia: 'Até 50 km',
+        velocidade_maxima: '32 km/h',
+        capacidade_carga: '150 kg',
+        tempo_recarga: '6 a 8 horas',
+        dispensa_cnh: true,
+        preco: null,
+        exibir_preco: false,
+        imagem_capa: undefined,
+        itens_serie: [
+          'Bateria de lítio de alta durabilidade',
+          'Motor 1000W de alta tração',
+          'Freios a disco hidráulicos',
+          'Iluminação LED',
+          'Garantia e assistência técnica local',
+        ],
+      };
 
   const whatsappUrl = buildWhatsAppLink(
     product.titulo,
@@ -163,13 +110,23 @@ export default function ProductDetailPage({
           {/* Galeria de Fotos */}
           <div className="flex flex-col gap-4">
             <div className="relative aspect-square w-full rounded-2xl bg-gray-50 border border-gray-200 overflow-hidden flex items-center justify-center p-8 shadow-xs">
-              <div className="flex flex-col items-center justify-center text-gray-300">
-                <Zap className="w-20 h-20 mb-3 stroke-1 text-gray-300" />
-                <span className="text-sm font-medium text-gray-400">
-                  {product.titulo}
-                </span>
-                <span className="text-xs text-gray-400 mt-1">Foto ilustrativa de fábrica</span>
-              </div>
+              {product.imagem_capa ? (
+                <Image
+                  src={product.imagem_capa}
+                  alt={product.titulo}
+                  fill
+                  className="object-contain p-4"
+                  priority
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center text-gray-300">
+                  <Zap className="w-20 h-20 mb-3 stroke-1 text-gray-300" />
+                  <span className="text-sm font-medium text-gray-400">
+                    {product.titulo}
+                  </span>
+                  <span className="text-xs text-gray-400 mt-1">Foto ilustrativa de fábrica</span>
+                </div>
+              )}
 
               {/* Badge CNH */}
               {product.dispensa_cnh && (

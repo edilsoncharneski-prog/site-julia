@@ -19,79 +19,9 @@ import {
 import Image from 'next/image';
 import { formatCurrency } from '@/lib/utils';
 import { Product } from '@/components/ProductCard';
+import initialProductsData from '@/data/produtos-loja.json';
 
-const INITIAL_MOCK_PRODUCTS: Product[] = [
-  {
-    id: '1',
-    titulo: 'SCOOTER CAPUCCINO 1000W BEGE',
-    slug: 'scooter-capuccino-1000w-bege',
-    descricao: 'Modelo clássico retrô com motor 1000W, bateria de lítio, freio a disco e alarme.',
-    preco: 9890.0,
-    exibir_preco: false,
-    destaque: true,
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V 20Ah',
-    autonomia: 'Até 50 km',
-    velocidade_maxima: '32 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '2',
-    titulo: 'SCOOTER CAPUCCINO 1000W ROSA /BEGE',
-    slug: 'scooter-capuccino-1000w-rosa-bege',
-    descricao: 'Elegância e autonomia com visual bicolor exclusivo.',
-    preco: 9890.0,
-    exibir_preco: false,
-    destaque: true,
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V 20Ah',
-    autonomia: 'Até 50 km',
-    velocidade_maxima: '32 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '3',
-    titulo: 'SCOOTER SHARK 1000W AMARELO',
-    slug: 'scooter-shark-1000w-amarelo',
-    descricao: 'Design esportivo com iluminação LED integral e suspensão reforçada.',
-    preco: 10490.0,
-    exibir_preco: false,
-    destaque: true,
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V',
-    autonomia: 'Até 45 km',
-    velocidade_maxima: '32 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '4',
-    titulo: 'SCOOTER HARLEY 1000W PRETO',
-    slug: 'scooter-harley-1000w-preto',
-    descricao: 'Estilo Chopper/Harley com guidão alto, roda larga e presença imponente.',
-    preco: 11900.0,
-    exibir_preco: false,
-    destaque: true,
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 60V 20Ah',
-    autonomia: 'Até 50 km',
-    velocidade_maxima: '32 km/h',
-    dispensa_cnh: true,
-  },
-  {
-    id: '5',
-    titulo: 'EBIKE JSL 1000W PRETO/MARROM',
-    slug: 'ebike-jsl-1000w-preto-marrom',
-    descricao: 'Bicicleta elétrica robusta, quadro reforçado e excelente tração.',
-    preco: 5990.0,
-    exibir_preco: false,
-    destaque: false,
-    potencia_motor: '1000W',
-    tipo_bateria: 'Lítio 48V',
-    autonomia: 'Até 40 km',
-    velocidade_maxima: '32 km/h',
-    dispensa_cnh: true,
-  },
-];
+const INITIAL_MOCK_PRODUCTS: Product[] = initialProductsData as Product[];
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<'produtos' | 'banners' | 'configuracoes'>('produtos');
