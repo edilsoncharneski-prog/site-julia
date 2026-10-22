@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Tailwind v4: equivalente ao array `content` do tailwind.config (v3) */
+@source "../../src";
+
 :root {
   --background: #ffffff;
   --foreground: #212529;
