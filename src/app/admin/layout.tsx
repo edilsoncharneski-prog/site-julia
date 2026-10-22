@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowLeft, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ShieldCheck, Zap } from 'lucide-react';
 
 export const metadata = {
-  title: 'Painel Administrativo | Julia Eletrosom',
+  title: 'Painel Administrativo | Eletrosom Ebikes',
   description: 'Gerenciamento de produtos, banners e configurações da loja.',
 };
 
@@ -26,14 +25,8 @@ export default function AdminLayout({
               <ArrowLeft className="w-5 h-5" />
             </Link>
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-gray-100 border border-gray-200 p-1 flex items-center justify-center">
-                <Image
-                  src="/logo.png"
-                  alt="Julia Eletrosom Logo"
-                  width={30}
-                  height={30}
-                  className="object-contain"
-                />
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-950">
+                <Zap className="h-4 w-4 fill-amber-400 text-amber-400" />
               </div>
               <div>
                 <h1 className="font-bold text-sm sm:text-base leading-tight">
@@ -41,7 +34,7 @@ export default function AdminLayout({
                 </h1>
                 <p className="text-[11px] text-gray-500 flex items-center gap-1">
                   <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                  Julia Eletrosom CMS
+                  Eletrosom Ebikes CMS
                 </p>
               </div>
             </div>

@@ -15,7 +15,7 @@ export function formatCurrency(value?: number | null) {
 
 export function buildWhatsAppLink(productTitle?: string, productUrl?: string) {
   const number = process.env.NEXT_PUBLIC_WHATSAPP || '5566984202988';
-  let message = 'Olá! Gostaria de mais informações sobre os veículos elétricos da Julia Eletrosom.';
+  let message = 'Olá! Gostaria de mais informações sobre os veículos elétricos da Eletrosom Ebikes.';
   
   if (productTitle) {
     message = `Olá! Gostaria de mais informações sobre o produto: *${productTitle}*`;

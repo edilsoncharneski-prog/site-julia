@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS public.banners (
 -- 6. Configurações Gerais da Loja
 CREATE TABLE IF NOT EXISTS public.configuracoes_loja (
     id INT PRIMARY KEY DEFAULT 1,
-    nome_loja VARCHAR(100) DEFAULT 'Julia Eletrosom',
+    nome_loja VARCHAR(100) DEFAULT 'Eletrosom Ebikes',
     whatsapp_principal VARCHAR(25) DEFAULT '5566984202988',
     mensagem_padrao_whatsapp TEXT DEFAULT 'Olá! Vim pelo site e gostaria de saber mais sobre as motos e veículos elétricos.',
     telefone_fixo VARCHAR(25),
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS public.configuracoes_loja (
 
 -- Inserir registro inicial de configurações se não existir
 INSERT INTO public.configuracoes_loja (id, nome_loja, whatsapp_principal, endereco_completo)
-VALUES (1, 'Julia Eletrosom', '5566984202988', 'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT')
+VALUES (1, 'Eletrosom Ebikes', '5566984202988', 'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT')
 ON CONFLICT (id) DO NOTHING;
 
 -- Inserir Categorias Padrão

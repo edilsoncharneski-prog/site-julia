@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageCircle, X, MapPin, Phone, ArrowUpRight } from 'lucide-react';
-import Image from 'next/image';
+import { MessageCircle, X, MapPin, Phone, ArrowUpRight, Zap } from 'lucide-react';
 
 export function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,17 +14,11 @@ export function WhatsAppButton() {
           {/* Header Verde WhatsApp */}
           <div className="bg-[#25D366] text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 p-1 flex items-center justify-center">
-                <Image
-                  src="/logo.png"
-                  alt="Julia Eletrosom Logo"
-                  width={36}
-                  height={36}
-                  className="object-contain"
-                />
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
+                <Zap className="h-5 w-5 fill-gray-950 text-gray-950" />
               </div>
               <div>
-                <h4 className="font-bold text-sm leading-tight">Julia Eletrosom</h4>
+                <h4 className="text-sm font-bold leading-tight">Eletrosom Ebikes</h4>
                 <p className="text-[11px] text-white/90">Atendimento Oficial no WhatsApp</p>
               </div>
             </div>
@@ -41,7 +34,7 @@ export function WhatsAppButton() {
           {/* Mensagem e Opções */}
           <div className="p-4 bg-gray-50 text-gray-700 text-xs">
             <p className="mb-3 bg-white p-3 rounded-lg border border-gray-100 shadow-2xs leading-relaxed">
-              👋 Olá! Seja bem-vindo à <strong>Julia Eletrosom</strong>. Como podemos te ajudar hoje?
+              👋 Olá! Seja bem-vindo à <strong>Eletrosom Ebikes</strong>. Como podemos te ajudar hoje?
             </p>
 
             <div className="flex flex-col gap-2">

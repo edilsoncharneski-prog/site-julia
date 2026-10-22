@@ -1,133 +1,113 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { Search, Heart, MessageCircle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { MessageCircle, Search, X, Zap } from 'lucide-react';
 import { useState } from 'react';
+import { CategoryNav } from '@/components/CategoryNav';
 
 export function Header() {
+  const router = useRouter();
+  const [searchOpen, setSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchTerm.trim()) {
-      window.location.href = `/produtos?busca=${encodeURIComponent(searchTerm.trim())}`;
-    }
+  const handleSearch = (event: React.FormEvent) => {
+    event.preventDefault();
+    const term = searchTerm.trim();
+    router.push(term ? `/produtos?busca=${encodeURIComponent(term)}` : '/produtos');
+    setSearchOpen(false);
   };
 
   return (
-    <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-40 shadow-xs">
-      {/* Top Banner Informativo / Proposta de Valor */}
-      <div className="bg-[#212529] text-white text-xs py-2 px-4">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-          <div className="flex items-center gap-3 overflow-x-auto whitespace-nowrap">
-            <span>💳 Até 21x no Cartão</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="hidden sm:inline">📍 Cotriguaçu - MT</span>
-            <span className="hidden md:inline">•</span>
-            <span className="hidden md:inline">🛵 Pronta entrega + encomenda</span>
-            <span className="hidden lg:inline">•</span>
-            <span className="hidden lg:inline">🔧 Peças de reposição & Oficina</span>
+    <header className="w-full bg-white">
+      {/* Barra superior discreta com os diferenciais da loja */}
+      <div className="border-b border-gray-100 bg-[#fafaf8]">
+        <div className="relative mx-auto flex max-w-[1440px] items-center justify-center px-4 py-2">
+          <div className="flex items-center justify-center gap-2 text-center text-[9px] font-medium uppercase tracking-[0.14em] text-gray-500 sm:gap-4 sm:text-[10px]">
+            <span>Até 21x no Cartão</span>
+            <span className="text-gray-300">|</span>
+            <span>Pronta Entrega + Encomenda</span>
+            <span className="hidden text-gray-300 sm:inline">|</span>
+            <span className="hidden sm:inline">Peças e Oficina</span>
           </div>
           <a
             href="https://wa.me/5566984202988"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 font-semibold text-[#25D366] hover:underline shrink-0"
+            className="absolute right-4 hidden text-[10px] font-semibold tracking-[0.12em] text-gray-600 transition-colors hover:text-gray-900 lg:block"
           >
-            <MessageCircle className="w-3.5 h-3.5" />
             (66) 98420-2988
           </a>
         </div>
       </div>
 
-      {/* Main Header Container */}
-      <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4">
-        <div className="flex items-center justify-between gap-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gray-50 border border-gray-200 overflow-hidden flex items-center justify-center p-1 shadow-xs group-hover:scale-105 transition-transform">
-              <Image
-                src="/logo.png"
-                alt="Julia Eletrosom Logo"
-                width={80}
-                height={80}
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 leading-tight">
-                Julia Eletrosom
-              </h1>
-              <p className="text-xs text-gray-500 font-medium">
-                Motos, Scooters & Veículos Elétricos
-              </p>
-            </div>
+      {/* Cabeçalho principal com logotipo centralizado */}
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6">
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 py-5 sm:py-7">
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => setSearchOpen((open) => !open)}
+              className="rounded-full p-2.5 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-950"
+              aria-label={searchOpen ? 'Fechar busca' : 'Buscar produtos'}
+              aria-expanded={searchOpen}
+            >
+              {searchOpen ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}
+            </button>
+            <Link
+              href="/produtos"
+              className="hidden text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-500 transition-colors hover:text-gray-950 sm:block"
+            >
+              Catálogo
+            </Link>
+          </div>
+
+          <Link href="/" className="group flex flex-col items-center text-center">
+            <span className="text-[8px] font-medium uppercase tracking-[0.4em] text-gray-400 sm:text-[9px]">
+              Mobilidade Elétrica
+            </span>
+            <span className="mt-1 flex items-center gap-1.5 text-[22px] font-black leading-none tracking-[-0.045em] text-gray-950 sm:text-3xl lg:text-[38px]">
+              <Zap className="h-4 w-4 fill-amber-400 text-amber-400 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
+              ELETROSOM
+              <span className="font-light text-amber-500">EBIKES</span>
+            </span>
           </Link>
 
-          {/* Search Bar */}
-          <form
-            onSubmit={handleSearch}
-            className="flex-1 max-w-lg hidden md:flex items-center relative"
-          >
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Buscar por moto, scooter ou acessório..."
-              className="w-full pl-4 pr-11 py-2.5 rounded-full border border-gray-200 bg-gray-50 focus:bg-white focus:outline-hidden focus:border-gray-400 text-sm transition-all shadow-inner"
-            />
-            <button
-              type="submit"
-              className="absolute right-1.5 p-2 rounded-full bg-gray-900 text-white hover:bg-gray-800 transition-colors"
-              aria-label="Buscar"
-            >
-              <Search className="w-4 h-4" />
-            </button>
-          </form>
-
-          {/* Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link
-              href="/favoritos"
-              className="p-2.5 rounded-full hover:bg-gray-100 text-gray-700 transition-colors relative"
-              title="Lista de Desejos"
-            >
-              <Heart className="w-5 h-5" />
-            </Link>
-
+          <div className="flex items-center justify-end">
             <a
               href="https://wa.me/5566984202988?text=Ol%C3%A1!+Vim+pelo+site+e+gostaria+de+atendimento."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-xs hover:shadow-md transition-all"
+              className="inline-flex items-center gap-2 rounded-full bg-gray-950 px-3 py-2.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-gray-800 sm:px-5"
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
-              <span className="hidden sm:inline">Falar no WhatsApp</span>
+              <MessageCircle className="h-4 w-4 fill-white" />
+              <span className="hidden sm:inline">WhatsApp</span>
             </a>
           </div>
         </div>
 
-        {/* Mobile Search Bar */}
-        <div className="mt-3 md:hidden">
-          <form onSubmit={handleSearch} className="relative flex items-center">
+        {searchOpen && (
+          <form onSubmit={handleSearch} className="mx-auto flex max-w-2xl items-center gap-2 pb-5">
             <input
-              type="text"
+              type="search"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Buscar por moto, scooter..."
-              className="w-full pl-4 pr-10 py-2 rounded-full border border-gray-200 bg-gray-50 text-sm focus:outline-hidden focus:border-gray-400"
+              onChange={(event) => setSearchTerm(event.target.value)}
+              placeholder="Buscar por modelo, scooter ou bike..."
+              autoFocus
+              className="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-gray-900"
             />
             <button
               type="submit"
-              className="absolute right-1 p-1.5 rounded-full text-gray-500 hover:text-gray-900"
+              className="flex h-[46px] w-[46px] shrink-0 items-center justify-center bg-gray-950 text-white transition-colors hover:bg-gray-800"
+              aria-label="Buscar"
             >
-              <Search className="w-4 h-4" />
+              <Search className="h-4 w-4" />
             </button>
           </form>
-        </div>
+        )}
       </div>
+
+      <CategoryNav />
     </header>
   );
 }

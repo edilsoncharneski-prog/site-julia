@@ -10,15 +10,13 @@ import {
   Trash2,
   CheckCircle2,
   XCircle,
-  Eye,
-  EyeOff,
   Zap,
   Save,
   Search,
 } from 'lucide-react';
 import Image from 'next/image';
 import { formatCurrency } from '@/lib/utils';
-import { Product } from '@/components/ProductCard';
+import type { Product } from '@/lib/products';
 import initialProductsData from '@/data/produtos-loja.json';
 
 const INITIAL_MOCK_PRODUCTS: Product[] = initialProductsData as Product[];
@@ -51,18 +49,19 @@ export default function AdminPage() {
   // Carregar produtos salvos
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('julia_admin_products');
+      const saved = localStorage.getItem('eletrosom_admin_products');
       if (saved) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setProducts(JSON.parse(saved));
       } else {
         setProducts(INITIAL_MOCK_PRODUCTS);
-        localStorage.setItem('julia_admin_products', JSON.stringify(INITIAL_MOCK_PRODUCTS));
+        localStorage.setItem('eletrosom_admin_products', JSON.stringify(INITIAL_MOCK_PRODUCTS));
       }
 
-      const savedWp = localStorage.getItem('julia_admin_wp');
+      const savedWp = localStorage.getItem('eletrosom_admin_wp');
       if (savedWp) setWhatsapp(savedWp);
 
-      const savedEnd = localStorage.getItem('julia_admin_end');
+      const savedEnd = localStorage.getItem('eletrosom_admin_end');
       if (savedEnd) setEndereco(savedEnd);
     } catch {
       setProducts(INITIAL_MOCK_PRODUCTS);
@@ -72,7 +71,7 @@ export default function AdminPage() {
   const saveProductsToStorage = (updated: Product[]) => {
     setProducts(updated);
     try {
-      localStorage.setItem('julia_admin_products', JSON.stringify(updated));
+      localStorage.setItem('eletrosom_admin_products', JSON.stringify(updated));
     } catch {
       // Ignore
     }
@@ -135,10 +134,29 @@ export default function AdminPage() {
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)+/g, '');
 
+    const imagemCapa = formImagemUrl.trim();
+    const existingColors = editingProduct?.cores?.length
+      ? editingProduct.cores
+      : [
+          {
+            nome: 'Padrão',
+            hex: '#111111',
+            imagem: imagemCapa || '/logo.png',
+          },
+        ];
+
+    const cores = existingColors.map((color, index) =>
+      index === 0 && imagemCapa ? { ...color, imagem: imagemCapa } : color
+    );
+
     const newProd: Product = {
       id: editingProduct ? editingProduct.id : Date.now().toString(),
+      nome: editingProduct?.nome || formTitulo.trim(),
+      emoji: editingProduct?.emoji || '🛵',
       titulo: formTitulo.trim(),
-      slug,
+      slug: editingProduct?.slug || slug,
+      categoria: editingProduct?.categoria || 'Scooter',
+      categoria_slug: editingProduct?.categoria_slug || 'autopropelidos',
       descricao: formDescricao.trim(),
       preco: formPreco ? parseFloat(formPreco) : null,
       exibir_preco: formExibirPreco,
@@ -148,7 +166,10 @@ export default function AdminPage() {
       tipo_bateria: formBateria.trim(),
       autonomia: formAutonomia.trim(),
       velocidade_maxima: formVelocidade.trim(),
-      imagem_capa: formImagemUrl.trim() || undefined,
+      capacidade_carga: editingProduct?.capacidade_carga || '150 kg',
+      tempo_recarga: editingProduct?.tempo_recarga || '6 a 8 horas',
+      imagem_capa: imagemCapa || cores[0]?.imagem,
+      cores,
     };
 
     let updated: Product[];
@@ -165,8 +186,8 @@ export default function AdminPage() {
   const handleSaveConfig = (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      localStorage.setItem('julia_admin_wp', whatsapp);
-      localStorage.setItem('julia_admin_end', endereco);
+      localStorage.setItem('eletrosom_admin_wp', whatsapp);
+      localStorage.setItem('eletrosom_admin_end', endereco);
       setConfigSaved(true);
       setTimeout(() => setConfigSaved(false), 3000);
     } catch {
@@ -262,9 +283,9 @@ export default function AdminPage() {
                     <tr key={p.id} className="hover:bg-gray-50/80 transition-colors">
                       <td className="py-3.5 px-4 font-semibold text-gray-900 flex items-center gap-3">
                         <div className="w-12 h-12 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center shrink-0 overflow-hidden relative">
-                          {p.imagem_capa ? (
+                          {p.cores?.[0]?.imagem || p.imagem_capa ? (
                             <Image
-                              src={p.imagem_capa}
+                              src={p.cores?.[0]?.imagem || p.imagem_capa || ''}
                               alt={p.titulo}
                               fill
                               className="object-contain p-1"
@@ -275,15 +296,27 @@ export default function AdminPage() {
                         </div>
                         <div>
                           <div className="font-bold text-gray-900 text-sm leading-tight">
-                            {p.titulo}
+                            {p.nome || p.titulo}
                           </div>
-                          <span className="text-[11px] text-gray-400">slug: {p.slug}</span>
+                          <span className="text-[11px] text-gray-400">
+                            {p.cores?.length || 1} cor(es) • slug: {p.slug}
+                          </span>
                         </div>
                       </td>
 
                       <td className="py-3.5 px-4 text-xs">
                         <div className="text-gray-800 font-medium">{p.potencia_motor} • {p.tipo_bateria}</div>
                         <div className="text-gray-500 text-[11px]">Autonomia: {p.autonomia}</div>
+                        <div className="mt-1.5 flex items-center gap-1">
+                          {(p.cores || []).map((color) => (
+                            <span
+                              key={`${p.id}-${color.nome}`}
+                              title={color.nome}
+                              className="h-3 w-3 rounded-full border border-gray-300"
+                              style={{ backgroundColor: color.hex }}
+                            />
+                          ))}
+                        </div>
                       </td>
 
                       <td className="py-3.5 px-4 text-xs">

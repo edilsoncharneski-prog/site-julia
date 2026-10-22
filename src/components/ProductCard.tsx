@@ -2,183 +2,81 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, Zap, Battery, Gauge, MessageCircle } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { formatCurrency, buildWhatsAppLink } from '@/lib/utils';
+import { useState } from 'react';
+import { ColorSwatches } from '@/components/ColorSwatches';
+import { getProductColors, type Product } from '@/lib/products';
 
-export interface Product {
-  id: string;
-  titulo: string;
-  slug: string;
-  descricao?: string;
-  preco?: number | null;
-  preco_promocional?: number | null;
-  exibir_preco?: boolean;
-  destaque?: boolean;
-  potencia_motor?: string;
-  tipo_bateria?: string;
-  autonomia?: string;
-  velocidade_maxima?: string;
-  dispensa_cnh?: boolean;
-  imagem_capa?: string;
-}
-
-export function ProductCard({ product }: { product: Product }) {
-  const [isFavorited, setIsFavorited] = useState(false);
-
-  useEffect(() => {
-    try {
-      const favorites = JSON.parse(localStorage.getItem('julia_favorites') || '[]');
-      setIsFavorited(favorites.includes(product.id));
-    } catch {
-      // Ignore localStorage error
-    }
-  }, [product.id]);
-
-  const toggleFavorite = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    try {
-      const favorites = JSON.parse(localStorage.getItem('julia_favorites') || '[]');
-      let updated;
-      if (favorites.includes(product.id)) {
-        updated = favorites.filter((id: string) => id !== product.id);
-        setIsFavorited(false);
-      } else {
-        updated = [...favorites, product.id];
-        setIsFavorited(true);
-      }
-      localStorage.setItem('julia_favorites', JSON.stringify(updated));
-    } catch {
-      // Ignore
-    }
-  };
-
-  const whatsappUrl = buildWhatsAppLink(
-    product.titulo,
-    typeof window !== 'undefined' ? `${window.location.origin}/produto/${product.slug}` : undefined
-  );
+export function ProductCard({
+  product,
+  priority = false,
+}: {
+  product: Product;
+  priority?: boolean;
+}) {
+  const colors = getProductColors(product);
+  const [activeColor, setActiveColor] = useState(0);
+  const productHref = `/produto/${product.slug}${
+    colors.length > 1 ? `?cor=${activeColor}` : ''
+  }`;
 
   return (
-    <div className="group relative bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-      {/* Botão Favoritar Flutuante */}
-      <button
-        onClick={toggleFavorite}
-        className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white/90 backdrop-blur-xs text-gray-400 hover:text-red-500 hover:bg-white shadow-xs transition-colors"
-        aria-label="Favoritar"
+    <article className="group flex h-full flex-col">
+      <Link
+        href={productHref}
+        className="relative block aspect-square overflow-hidden bg-[#f7f7f5]"
+        aria-label={`Ver detalhes de ${product.titulo}`}
       >
-        <Heart
-          className={`w-4 h-4 transition-transform active:scale-125 ${
-            isFavorited ? 'fill-red-500 text-red-500' : ''
-          }`}
-        />
-      </button>
-
-      {/* Badges / Selos */}
-      <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
-        {product.dispensa_cnh !== false && (
-          <span className="bg-emerald-600 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full shadow-xs">
-            Dispensado CNH
-          </span>
-        )}
-        {product.destaque && (
-          <span className="bg-amber-500 text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full shadow-xs">
-            Destaque
-          </span>
-        )}
-      </div>
-
-      {/* Imagem do Produto (Square 1:1) */}
-      <Link href={`/produto/${product.slug}`} className="block relative aspect-square bg-gray-50 overflow-hidden">
-        {product.imagem_capa ? (
+        {colors.map((color, index) => (
           <Image
-            src={product.imagem_capa}
-            alt={product.titulo}
+            key={color.imagem}
+            src={color.imagem}
+            alt={
+              index === activeColor
+                ? `${product.titulo} na cor ${color.nome}`
+                : ''
+            }
+            aria-hidden={index !== activeColor}
             fill
-            className="object-contain p-4 group-hover:scale-106 transition-transform duration-300"
-            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            quality={85}
+            priority={priority && index === 0}
+            className={`object-contain p-5 transition-all duration-500 ease-out group-hover:scale-[1.04] sm:p-8 ${
+              index === activeColor ? 'opacity-100' : 'opacity-0'
+            }`}
           />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center text-gray-300 p-4">
-            <Zap className="w-12 h-12 mb-2 stroke-1" />
-            <span className="text-xs">Foto em breve</span>
-          </div>
-        )}
+        ))}
       </Link>
 
-      {/* Conteúdo do Card */}
-      <div className="p-4 flex flex-col flex-1">
-        <Link href={`/produto/${product.slug}`}>
-          <h3 className="font-semibold text-gray-900 text-base sm:text-lg line-clamp-1 group-hover:text-emerald-700 transition-colors">
-            {product.titulo}
+      <div className="flex flex-1 flex-col items-center px-1 pt-4 text-center">
+        <Link
+          href={productHref}
+          className="flex min-h-[2.6rem] items-start justify-center focus:outline-none sm:min-h-[2.5rem]"
+        >
+          <h3 className="text-[13px] font-medium leading-snug tracking-tight text-gray-900 sm:text-sm">
+            {product.emoji ? `${product.emoji} ` : ''}
+            {product.nome}
           </h3>
         </Link>
 
-        {/* Chips de Especificações */}
-        <div className="grid grid-cols-2 gap-1.5 my-3 text-[11px] text-gray-600">
-          {product.potencia_motor && (
-            <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md border border-gray-100">
-              <Zap className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-              <span className="truncate">{product.potencia_motor}</span>
-            </div>
-          )}
-          {product.tipo_bateria && (
-            <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md border border-gray-100">
-              <Battery className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-              <span className="truncate">{product.tipo_bateria}</span>
-            </div>
-          )}
-          {product.autonomia && (
-            <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md border border-gray-100 col-span-2">
-              <Gauge className="w-3.5 h-3.5 text-blue-500 shrink-0" />
-              <span className="truncate">Autonomia: {product.autonomia}</span>
-            </div>
-          )}
+        <div className="mt-3">
+          <ColorSwatches
+            colors={colors}
+            activeIndex={activeColor}
+            onChange={setActiveColor}
+            productName={product.nome}
+            size="sm"
+          />
         </div>
 
-        {/* Preço ou Consulta */}
-        <div className="mt-auto pt-2 border-t border-gray-100">
-          {product.exibir_preco && product.preco ? (
-            <div>
-              <div className="text-xs text-gray-500 font-medium">A partir de</div>
-              <div className="text-lg sm:text-xl font-bold text-gray-900">
-                {formatCurrency(product.preco_promocional || product.preco)}
-              </div>
-              <div className="text-[11px] text-emerald-700 font-medium">
-                Até 21x no cartão ou à vista c/ desconto
-              </div>
-            </div>
-          ) : (
-            <div>
-              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Condições Especiais
-              </div>
-              <div className="text-sm font-bold text-gray-900">
-                Consulte Preço & Parcelamento
-              </div>
-            </div>
-          )}
-
-          {/* Botões de Ação */}
-          <div className="grid grid-cols-1 gap-2 mt-3">
-            <Link
-              href={`/produto/${product.slug}`}
-              className="w-full text-center py-2 px-3 rounded-lg border border-gray-300 text-gray-800 font-medium text-xs sm:text-sm hover:bg-gray-50 transition-colors"
-            >
-              Ver Detalhes
-            </Link>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm transition-colors shadow-xs"
-            >
-              <MessageCircle className="w-4 h-4 fill-white" />
-              Pedir no WhatsApp
-            </a>
-          </div>
+        <div className="mt-auto w-full pt-5">
+          <Link
+            href={productHref}
+            className="flex w-full items-center justify-center border border-gray-300 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-800 transition-colors duration-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white sm:text-[11px]"
+          >
+            VER DETALHES
+          </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

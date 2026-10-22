@@ -3,40 +3,60 @@ import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://site-julia.vercel.app'),
-  title: 'Julia Eletrosom | Motos, Scooters e Veículos Elétricos',
-  description:
-    'Sua loja de motos elétricas, scooters, bikes e triciclos em Cotriguaçu-MT. Sem necessidade de CNH nem emplacamento. Parcelamento em até 21x no cartão.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | Motos, Scooters, Bikes e Triciclos Elétricos`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
   keywords: [
+    'eletrosom ebikes',
+    'eletrosom',
+    'eletroscoortes',
     'moto eletrica',
     'scooter eletrica',
     'autopropelido',
     'bike eletrica',
     'triciclo eletrico',
     'cotriguaçu mt',
-    'julia eletrosom',
     'sem cnh',
   ],
+  alternates: {
+    canonical: '/',
+  },
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: [
+      { url: '/favicon.png', type: 'image/png', sizes: '64x64' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Julia Eletrosom | Motos e Scooters Elétricas',
-    description: 'Veículos elétricos sem CNH em Cotriguaçu-MT. Em até 21x no cartão.',
-    url: 'https://site-julia.vercel.app',
-    siteName: 'Julia Eletrosom',
+    title: `${SITE_NAME} | Mobilidade Elétrica em Cotriguaçu-MT`,
+    description:
+      'Scooters, motos, bikes e triciclos elétricos sem CNH. Até 21x no cartão, pronta entrega, peças e oficina própria.',
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
-        url: '/logo.png',
-        width: 800,
-        height: 600,
+        url: '/og-eletrosom-ebikes.png',
+        width: 1200,
+        height: 630,
+        alt: 'Eletrosom Ebikes - Mobilidade Elétrica em Cotriguaçu-MT',
       },
     ],
     locale: 'pt_BR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_NAME} | Mobilidade Elétrica`,
+    description:
+      'Scooters, motos, bikes e triciclos elétricos sem CNH. Até 21x no cartão.',
+    images: ['/og-eletrosom-ebikes.png'],
   },
 };
 
@@ -47,7 +67,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen flex flex-col bg-white text-gray-900 antialiased selection:bg-yellow-200">
+      <body className="flex min-h-screen flex-col bg-white text-gray-900 antialiased selection:bg-amber-200">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

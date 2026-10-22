@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scripts legados de scraping em CommonJS (executados manualmente).
+    "scripts/*.js",
   ]),
 ]);
 
