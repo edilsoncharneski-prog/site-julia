@@ -1,5 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, MessageCircle, Phone, ShieldCheck, Zap } from 'lucide-react';
+
+const DEV_WHATSAPP_URL =
+  'https://api.whatsapp.com/send/?phone=5566984255108&text=Ol%C3%A1%2C+vi+o+site+que+voc%C3%AA+montou+para+a+Eletrosom+Ebikes%2C+gostaria+de+conversar+sobre+a+montagem+de+um+site+para+mim.&type=phone_number&app_absent=0';
 
 export function Footer() {
   return (
@@ -140,6 +144,24 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-3 pt-6 text-xs text-gray-500 sm:flex-row">
           <p>© 2026 Eletrosom Ebikes. Todos os direitos reservados.</p>
+
+          <a
+            href={DEV_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Desenvolvido por Edilson Charneski — Falar no WhatsApp"
+            className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#12161c] px-2.5 py-1.5 text-[11px] font-medium text-gray-300 transition-colors hover:border-white/25 hover:text-white"
+          >
+            <Image
+              src="/qr-dev.png"
+              alt="QR Code WhatsApp Edilson Charneski"
+              width={32}
+              height={32}
+              className="h-8 w-8 shrink-0 rounded bg-white p-0.5"
+            />
+            <span>Desenvolvido por Edilson Charneski</span>
+          </a>
+
           <p className="text-[11px]">Cotriguaçu - Mato Grosso</p>
         </div>
       </div>
