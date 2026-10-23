@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BatteryCharging, MapPin, ShieldCheck, Wrench, Zap } from 'lucide-react';
+import { ArrowLeft, BatteryCharging, MapPin, ShieldCheck, Wrench, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Quem Somos',
@@ -11,6 +11,15 @@ export const metadata: Metadata = {
 export default function SobrePage() {
   return (
     <div className="mx-auto w-full max-w-[1200px] px-4 py-12 sm:px-6 sm:py-16">
+      <div className="mb-6">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 transition-colors hover:text-gray-950 sm:text-sm"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Voltar para o Início
+        </Link>
+      </div>
       <div className="max-w-3xl">
         <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-500">
           Eletrosom Ebikes

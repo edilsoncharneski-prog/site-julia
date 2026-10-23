@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Clock, MapPin, MessageCircle, Phone } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowLeft, Clock, MapPin, MessageCircle, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Fale Conosco',
@@ -10,6 +11,15 @@ export const metadata: Metadata = {
 export default function ContatoPage() {
   return (
     <div className="mx-auto w-full max-w-[1100px] px-4 py-12 sm:px-6 sm:py-16">
+      <div className="mb-6">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 transition-colors hover:text-gray-950 sm:text-sm"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Voltar para o Início
+        </Link>
+      </div>
       <div className="max-w-2xl">
         <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-500">
           Atendimento

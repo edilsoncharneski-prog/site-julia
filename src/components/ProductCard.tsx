@@ -19,11 +19,11 @@ export function ProductCard({
   priority?: boolean;
 }) {
   const colors = getProductColors(product);
-  const [activeColor, setActiveColor] = useState(() => getInitialColorIndex(colors));
+  const initialIndex = getInitialColorIndex(colors);
+  const [activeColor, setActiveColor] = useState(initialIndex);
   const selectedColor = colors[activeColor] ?? colors[0];
-  const productHref = `/produto/${product.slug}${
-    colors.length > 1 ? `?cor=${activeColor}` : ''
-  }`;
+  const safeSlug = (product.slug || product.id || '').trim();
+  const productHref = `/produto/${safeSlug}`;
 
   return (
     <article className="group flex h-full flex-col">
@@ -32,25 +32,16 @@ export function ProductCard({
         className="relative block aspect-square overflow-hidden bg-[#f7f7f5]"
         aria-label={`Ver detalhes de ${product.titulo}`}
       >
-        {colors.map((color, index) => (
-          <Image
-            key={color.imagem}
-            src={color.imagem}
-            alt={
-              index === activeColor
-                ? `${product.titulo} na cor ${color.nome}`
-                : ''
-            }
-            aria-hidden={index !== activeColor}
-            fill
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            quality={85}
-            priority={priority && index === 0}
-            className={`object-contain p-5 transition-all duration-500 ease-out group-hover:scale-[1.04] sm:p-8 ${
-              index === activeColor ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ))}
+        <Image
+          key={selectedColor.imagem}
+          src={selectedColor.imagem || product.imagem_capa || '/logo.png'}
+          alt={`${product.titulo} na cor ${selectedColor.nome}`}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          quality={85}
+          priority={priority}
+          className="object-contain p-5 transition-transform duration-500 ease-out group-hover:scale-[1.04] sm:p-8"
+        />
 
         <span className="pointer-events-none absolute left-3 top-3 z-10">
           <StatusBadge status={selectedColor.disponibilidade} />
@@ -80,7 +71,7 @@ export function ProductCard({
 
         <div className="mt-auto w-full pt-5">
           <Link
-            href={productHref}
+            href={`/produto/${safeSlug}`}
             className="flex w-full items-center justify-center border border-gray-300 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-800 transition-colors duration-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white sm:text-[11px]"
           >
             VER DETALHES

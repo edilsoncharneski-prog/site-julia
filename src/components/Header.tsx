@@ -44,7 +44,7 @@ export function Header() {
       {/* Cabeçalho principal com logotipo centralizado */}
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6">
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 py-5 sm:py-7">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button
               type="button"
               onClick={() => setSearchOpen((open) => !open)}
@@ -54,6 +54,12 @@ export function Header() {
             >
               {searchOpen ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}
             </button>
+            <Link
+              href="/"
+              className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-600 transition-colors hover:text-gray-950"
+            >
+              Início
+            </Link>
             <Link
               href="/produtos"
               className="hidden text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-500 transition-colors hover:text-gray-950 sm:block"

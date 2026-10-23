@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Search } from 'lucide-react';
+import { ArrowLeft, Search } from 'lucide-react';
 import { ProductCard } from '@/components/ProductCard';
 import { categoryLabels } from '@/lib/products';
 import { getCatalog } from '@/lib/catalog';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Catálogo de Veículos Elétricos',
@@ -53,6 +56,15 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
 
   return (
     <div className="mx-auto w-full max-w-[1440px] px-4 py-8 sm:px-6 sm:py-12">
+      <div className="mb-4">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 transition-colors hover:text-gray-950"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          Início
+        </Link>
+      </div>
       {/* Cabeçalho simples e elegante */}
       <div className="mb-6 flex flex-col gap-4 border-b border-gray-200 pb-6 md:flex-row md:items-end md:justify-between">
         <div>

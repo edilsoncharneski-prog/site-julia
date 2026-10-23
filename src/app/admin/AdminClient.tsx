@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import {
   Package,
   Image as ImageIcon,
@@ -17,8 +19,9 @@ import {
   Clock,
   Truck,
   Video,
-  Database,
   Loader2,
+  LogOut,
+  Home,
 } from 'lucide-react';
 import Image from 'next/image';
 import { formatCurrency } from '@/lib/utils';
@@ -35,6 +38,7 @@ import {
   toggleProductDestaqueAction,
   deleteProductFromSupabaseAction,
   saveStoreConfigAction,
+  logoutAdminAction,
 } from './actions';
 
 function emptyColor(): ProductColor {
@@ -55,13 +59,14 @@ interface AdminClientProps {
 }
 
 export function AdminClient({ initialProducts, initialConfig }: AdminClientProps) {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<'produtos' | 'banners' | 'configuracoes'>('produtos');
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [searchTerm, setSearchTerm] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [isSaving, setIsSaving] = useState(false);
-  const [feedback, setFeedback] = useState<string | null>(null);
+  const [feedback, setFeedback] = useState<{ text: string; isError?: boolean } | null>(null);
 
   // Formulário do produto
   const [formTitulo, setFormTitulo] = useState('');
@@ -82,9 +87,15 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
   const [endereco, setEndereco] = useState(initialConfig.endereco);
   const [configSaved, setConfigSaved] = useState(false);
 
-  const showToast = (message: string) => {
-    setFeedback(message);
+  const showToast = (text: string, isError = false) => {
+    setFeedback({ text, isError });
     setTimeout(() => setFeedback(null), 3500);
+  };
+
+  const handleLogout = async () => {
+    await logoutAdminAction();
+    router.push('/admin/login');
+    router.refresh();
   };
 
   const handleOpenNew = () => {
@@ -147,23 +158,52 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
     });
   };
 
-  const toggleColorAvailability = (index: number) => {
+  const toggleColorAvailability = async (index: number) => {
+    const targetColor = formCores[index];
+    if (!targetColor) return;
+
+    const currentStatus = targetColor.disponibilidade;
+    const nextStatus: Disponibilidade =
+      currentStatus === 'pronta_entrega' ? 'sob_pedido' : 'pronta_entrega';
+
     setFormCores((colors) =>
       colors.map((color, i) =>
-        i === index
-          ? {
-              ...color,
-              disponibilidade:
-                color.disponibilidade === 'pronta_entrega'
-                  ? 'sob_pedido'
-                  : 'pronta_entrega',
-            }
-          : color
+        i === index ? { ...color, disponibilidade: nextStatus } : color
       )
     );
+
+    if (editingProduct) {
+      setProducts((prev) =>
+        prev.map((p) => {
+          if (p.id !== editingProduct.id) return p;
+          const newColors = getProductColors(p).map((c, i) =>
+            i === index ? { ...c, disponibilidade: nextStatus } : c
+          );
+          return { ...p, cores: newColors };
+        })
+      );
+
+      const res = await toggleVariationAvailabilityAction(
+        targetColor.id,
+        currentStatus,
+        {
+          productSlug: editingProduct.slug,
+          colorName: targetColor.nome,
+        }
+      );
+
+      if (res.success) {
+        showToast(
+          `Cor "${targetColor.nome}" atualizada para ${disponibilidadeLabels[nextStatus]}!`
+        );
+        router.refresh();
+      } else {
+        showToast(res.error || 'Erro ao atualizar disponibilidade.', true);
+      }
+    }
   };
 
-  // Alternância rápida na tabela com persistência DIRETA no Supabase
+  // Alternância rápida na tabela com atualização em tempo real
   const handleQuickToggle = async (productId: string, colorIndex: number) => {
     const product = products.find((p) => p.id === productId);
     if (!product) return;
@@ -187,35 +227,55 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
       })
     );
 
-    // Persistência direta no Supabase
-    if (targetColor.id) {
-      const res = await toggleVariationAvailabilityAction(targetColor.id, currentStatus);
-      if (res.success) {
-        showToast(`Cor "${targetColor.nome}" atualizada para ${disponibilidadeLabels[nextStatus]} no Supabase!`);
-      } else {
-        showToast(`Erro ao sincronizar com Supabase: ${res.error || 'Falha na conexão'}`);
+    const res = await toggleVariationAvailabilityAction(
+      targetColor.id,
+      currentStatus,
+      {
+        productSlug: product.slug,
+        colorName: targetColor.nome,
       }
+    );
+
+    if (res.success) {
+      if (res.variationId && !targetColor.id) {
+        setProducts((prev) =>
+          prev.map((p) => {
+            if (p.id !== productId) return p;
+            const newColors = getProductColors(p).map((c, i) =>
+              i === colorIndex ? { ...c, id: res.variationId } : c
+            );
+            return { ...p, cores: newColors };
+          })
+        );
+      }
+      showToast(
+        `Cor "${targetColor.nome}" atualizada para ${disponibilidadeLabels[nextStatus]}!`
+      );
+      router.refresh();
     } else {
-      // Se a variação ainda não possui ID no Supabase, salva o produto inteiro
-      const updatedProduct = {
-        ...product,
-        cores: getProductColors(product).map((c, i) =>
-          i === colorIndex ? { ...c, disponibilidade: nextStatus } : c
-        ),
-      };
-      await saveProductToSupabaseAction(updatedProduct);
-      showToast(`Cor "${targetColor.nome}" salva no Supabase!`);
+      // Reverte estado otimista em caso de erro
+      setProducts((prev) =>
+        prev.map((p) => {
+          if (p.id !== productId) return p;
+          const revertedColors = getProductColors(p).map((c, i) =>
+            i === colorIndex ? { ...c, disponibilidade: currentStatus } : c
+          );
+          return { ...p, cores: revertedColors };
+        })
+      );
+      showToast(`Erro ao atualizar: ${res.error || 'Falha na conexão'}`, true);
     }
   };
 
   const handleDelete = async (id: string) => {
-    if (confirm('Tem certeza que deseja excluir permanentemente este veículo do Supabase?')) {
+    if (confirm('Tem certeza que deseja excluir permanentemente este veículo?')) {
       setProducts((prev) => prev.filter((p) => p.id !== id));
       const res = await deleteProductFromSupabaseAction(id);
       if (res.success) {
-        showToast('Veículo removido com sucesso do banco de dados.');
+        showToast('Veículo removido com sucesso.');
+        router.refresh();
       } else {
-        showToast(`Erro ao excluir: ${res.error || 'Falha no Supabase'}`);
+        showToast(`Erro ao excluir: ${res.error || 'Tente novamente'}`, true);
       }
     }
   };
@@ -231,7 +291,10 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
 
     const res = await toggleProductDestaqueAction(id, newDestaque);
     if (res.success) {
-      showToast(`Destaque ${newDestaque ? 'ativado' : 'desativado'} no Supabase!`);
+      showToast(`Destaque ${newDestaque ? 'ativado' : 'desativado'}!`);
+      router.refresh();
+    } else {
+      showToast(res.error || 'Erro ao atualizar destaque.', true);
     }
   };
 
@@ -282,7 +345,6 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
       cores,
     };
 
-    // Chamada direta à Data API do Supabase (Server Action)
     const res = await saveProductToSupabaseAction(updatedProd);
 
     setIsSaving(false);
@@ -300,9 +362,10 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
       }
 
       setIsModalOpen(false);
-      showToast('Produto e variações salvos com sucesso no Supabase!');
+      showToast('Alterações salvas com sucesso!');
+      router.refresh();
     } else {
-      alert(`Erro ao salvar no Supabase: ${res.error || 'Verifique sua conexão.'}`);
+      showToast(`Erro ao salvar: ${res.error || 'Verifique sua conexão.'}`, true);
     }
   };
 
@@ -314,9 +377,10 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
     if (res.success) {
       setConfigSaved(true);
       setTimeout(() => setConfigSaved(false), 3000);
-      showToast('Configurações salvas no Supabase!');
+      showToast('Configurações salvas com sucesso!');
+      router.refresh();
     } else {
-      alert(`Erro ao salvar configurações: ${res.error}`);
+      showToast(`Erro ao salvar configurações: ${res.error}`, true);
     }
   };
 
@@ -328,15 +392,23 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
     <div className="flex flex-col gap-6">
       {/* Toast Notification */}
       {feedback && (
-        <div className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-lg bg-gray-950 px-4 py-3 text-xs font-medium text-white shadow-xl animate-fade-in">
-          <Database className="h-4 w-4 text-emerald-400" />
-          <span>{feedback}</span>
+        <div
+          className={`fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-lg px-4 py-3 text-xs font-medium text-white shadow-xl animate-fade-in ${
+            feedback.isError ? 'bg-red-600' : 'bg-gray-950'
+          }`}
+        >
+          {feedback.isError ? (
+            <XCircle className="h-4 w-4 text-white" />
+          ) : (
+            <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+          )}
+          <span>{feedback.text}</span>
         </div>
       )}
 
-      {/* Abas Superiores */}
+      {/* Abas Superiores e Ações de Sessão */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 pb-3">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => setActiveTab('produtos')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-colors ${
@@ -374,9 +446,22 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
           </button>
         </div>
 
-        <div className="flex items-center gap-2 text-[11px] font-medium text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">
-          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-          Conectado ao Supabase (Persistência Real)
+        <div className="flex items-center gap-2">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs font-semibold text-gray-700 hover:bg-gray-100 hover:text-gray-950 transition-colors"
+          >
+            <Home className="h-3.5 w-3.5" />
+            Início
+          </Link>
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-700 hover:bg-red-100 transition-colors"
+          >
+            <LogOut className="h-3.5 w-3.5" />
+            Sair
+          </button>
         </div>
       </div>
 
@@ -384,11 +469,11 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
       {activeTab === 'produtos' && (
         <div className="flex flex-col gap-4">
           <div className="rounded-lg border border-emerald-200 bg-emerald-50/80 px-4 py-3 text-[11px] leading-relaxed text-emerald-950 flex items-start gap-2.5">
-            <Database className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
+            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />
             <div>
-              <strong>Persistência em Tempo Real:</strong> Clique nos botões de cor abaixo
-              (<strong>Pronta</strong> / <strong>Pedido</strong>) para atualizar instantaneamente
-              a disponibilidade no Supabase e refletir no site para os clientes.
+              <strong>Atualização Instantânea:</strong> Clique nos botões de cor abaixo
+              (<strong>Pronta</strong> / <strong>Pedido</strong>) para alternar a disponibilidade
+              e atualizar imediatamente a vitrine para os clientes.
             </div>
           </div>
 
@@ -506,7 +591,7 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
                                 key={`${p.id}-${color.nome}-${index}`}
                                 type="button"
                                 onClick={() => handleQuickToggle(p.id, index)}
-                                title={`${color.nome}: ${disponibilidadeLabels[color.disponibilidade]}. Clique para alternar no Supabase.`}
+                                title={`${color.nome}: ${disponibilidadeLabels[color.disponibilidade]}. Clique para alternar.`}
                                 className={`flex items-center gap-1 rounded-full border px-2 py-1 text-[10px] font-semibold transition-all ${
                                   isProntaEntrega
                                     ? 'border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 shadow-2xs'
@@ -602,7 +687,7 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
           <div>
             <h3 className="font-bold text-base text-gray-900">Configurações Gerais da Loja</h3>
             <p className="text-xs text-gray-500">
-              Atualize o contato e localização salvos diretamente no banco de dados Supabase.
+              Atualize os dados de atendimento e localização da loja.
             </p>
           </div>
 
@@ -639,11 +724,11 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
               className="flex items-center gap-2 bg-gray-900 hover:bg-black text-white font-bold text-sm px-5 py-2.5 rounded-lg shadow-xs transition-colors disabled:opacity-50"
             >
               {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-              Salvar no Supabase
+              Salvar Alterações
             </button>
             {configSaved && (
               <span className="text-xs text-emerald-600 font-semibold flex items-center gap-1">
-                <CheckCircle2 className="w-4 h-4" /> Salvo no Supabase com sucesso!
+                <CheckCircle2 className="w-4 h-4" /> Salvo com sucesso!
               </span>
             )}
           </div>
@@ -659,9 +744,6 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
                 <h3 className="font-bold text-lg text-gray-900">
                   {editingProduct ? 'Editar Veículo' : 'Cadastrar Novo Veículo'}
                 </h3>
-                <span className="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">
-                  Supabase Live
-                </span>
               </div>
               <button
                 onClick={() => setIsModalOpen(false)}
@@ -766,7 +848,7 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
                         Cores e disponibilidade
                       </h4>
                       <p className="text-[11px] leading-relaxed text-gray-500">
-                        A primeira cor é a capa do card. Cada alteração é salva nas tabelas do Supabase.
+                        A primeira cor é a capa do card. As alterações são atualizadas em tempo real.
                       </p>
                     </div>
                   </div>
@@ -966,7 +1048,7 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
                   className="flex items-center gap-1.5 px-5 py-2 text-xs font-bold bg-[#25D366] hover:bg-[#20ba59] text-white rounded-lg shadow-xs transition-colors disabled:opacity-50"
                 >
                   {isSaving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : null}
-                  {isSaving ? 'Salvando no Supabase...' : 'Salvar no Supabase'}
+                  {isSaving ? 'Salvando...' : 'Salvar Alterações'}
                 </button>
               </div>
             </form>

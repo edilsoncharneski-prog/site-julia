@@ -5,6 +5,9 @@ import { getProductColors } from '@/lib/products';
 import { SITE_NAME } from '@/lib/site';
 import { ProductDetail } from './ProductDetail';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 type PageProps = {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ cor?: string | string[] }>;

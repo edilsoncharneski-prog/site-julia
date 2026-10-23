@@ -1,6 +1,6 @@
 [
   {
-    "id": "cappuccino",
+    "id": "cdf8b44c-9e27-40de-b8c9-11580c4066cd",
     "nome": "Scooter Cappuccino 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica Cappuccino 1000W",
@@ -25,14 +25,16 @@
         "nome": "Bege",
         "hex": "#e3d5c3",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_bege.webp",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "be3839cf-1486-45cd-9cad-c302b17b2024"
       },
       {
         "nome": "Cinza",
         "hex": "#7d8288",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_cinza__10.webp",
         "slug_legado": "scooter-eletrica-cappuccino-1000w-cinza-bateria-de-litio-60v-20ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "b508a0c6-c6cc-45a1-a805-20fe80eb760e"
       },
       {
         "nome": "Rosa/Bege",
@@ -40,34 +42,39 @@
         "hex_secundario": "#ead9c6",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_rosa_b_8.webp",
         "slug_legado": "scooter-eletrica-cappuccino-1000w-rosa-bege-bateria-de-litio-60v-20ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "3d84030d-ab43-4301-9041-3cdf110fb808"
       },
       {
         "nome": "Verde/Bege",
         "hex": "#b7d3bd",
         "hex_secundario": "#e6d6c2",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_verde_bege.webp",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "e33749be-842d-4279-8d01-169484b3c0da"
       },
       {
         "nome": "Vermelho/Bege",
         "hex": "#a52323",
         "hex_secundario": "#ead9c6",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_vermelho_bege.webp",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "585417e3-7812-410f-9b63-cdbd86c0346d"
       },
       {
         "nome": "Verde",
         "hex": "#486b4a",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_verde.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "be1ca816-83c4-4cb2-a185-6068172b3e41"
       },
       {
         "nome": "Vermelho",
         "hex": "#a52323",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_vermel_13.webp",
         "slug_legado": "scooter-eletrica-cappuccino-1000w-vermelho-bateria-de-litio-60v-20ah",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "7559f43e-b2f4-447d-a05a-10b72c81a2f9"
       }
     ],
     "video_url": "https://drive.google.com/file/d/1_cgTjV7lDGbxZZozYV6CvIvAvqBm9Ib3/view",
@@ -95,7 +102,7 @@
     }
   },
   {
-    "id": "shark",
+    "id": "6140a87f-35e1-4610-b90b-73a5508afec9",
     "nome": "Scooter Shark 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica Shark 1000W",
@@ -120,13 +127,15 @@
         "nome": "Amarelo",
         "hex": "#f2c200",
         "imagem": "/motos/scooter_eletrica_shark_1000w_amarelo.webp",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "36bd00ee-3baa-41f6-9b1a-fce15522ffc4"
       },
       {
         "nome": "Vermelho",
         "hex": "#c62828",
         "imagem": "/motos/scooter_eletrica_shark_1000w_vermelho.webp",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "d378606d-df29-4b81-805d-4a5cfac9fd7e"
       }
     ],
     "video_url": "https://drive.google.com/file/d/1r_K6beWVq01shhq18Uqr5_PDhwa-ANe3/view",
@@ -154,7 +163,7 @@
     }
   },
   {
-    "id": "h9",
+    "id": "f3b6b5e2-838a-49a8-95c4-c603a2e1ecc2",
     "nome": "Scooter H9 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica H9 1000W",
@@ -181,7 +190,8 @@
         "hex_secundario": "#b9bdc1",
         "imagem": "/motos/scooter_eletrica_h9_1000w_preto_prata_ba_16.webp",
         "slug_legado": "scooter-eletrica-h9-1000w-preto-prata-bateria-de-litio-60v-20ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "5476a2a2-b167-418b-9f62-1dcf5d75bb03"
       }
     ],
     "video_url": "https://drive.google.com/file/d/1vCMhzhbWKME-HmG_qEFV9VpqKPPBRgDX/view",
@@ -209,7 +219,7 @@
     }
   },
   {
-    "id": "b3",
+    "id": "cdf250d1-cafd-421e-bcae-511e4189a083",
     "nome": "Scooter B3 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica B3 1000W",
@@ -235,14 +245,16 @@
         "hex": "#151719",
         "imagem": "/motos/scooter_eletrica_b3_1000w_preto_bateria__14.webp",
         "slug_legado": "scooter-eletrica-b3-1000w-preto-bateria-de-grafeno-60v-26ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "c38b2065-6e4d-426c-acf1-796d01902aac"
       },
       {
         "nome": "Verde",
         "hex": "#486b4a",
         "imagem": "/motos/scooter_eletrica_b3_1000w_verde_bateria__15.webp",
         "slug_legado": "scooter-eletrica-b3-1000w-verde-bateria-de-grafeno-60v-26ah",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "60949c19-ece6-4bc7-a343-bd3934a55956"
       }
     ],
     "video_url": "https://drive.google.com/file/d/1L1qUNOAU3ePLN2E3UqOrZujXyqL4lc6Z/view",
@@ -269,7 +281,7 @@
     }
   },
   {
-    "id": "t1",
+    "id": "fcaa088b-1580-45ad-a02a-2bf9d1730d8a",
     "nome": "Scooter T1 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica T1 1000W",
@@ -295,14 +307,16 @@
         "hex": "#1f5a74",
         "imagem": "/motos/scooter_eletrica_t1_1000w_azul_camaleao__5.webp",
         "slug_legado": "scooter-eletrica-t1-1000w-azul-camaleao-bateria-de-litio-64v-20ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "81a207a3-e925-4760-af84-c568a049a999"
       },
       {
         "nome": "Verde Camaleão",
         "hex": "#2f5d3a",
         "imagem": "/motos/scooter_eletrica_t1_1000w_verde_camaleao_4.webp",
         "slug_legado": "scooter-eletrica-t1-1000w-verde-camaleao-bateria-de-litio-64v-20ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "030d6621-846c-4162-ac01-c5a6522ee37e"
       },
       {
         "nome": "Vermelho/Prata",
@@ -310,51 +324,59 @@
         "hex_secundario": "#c3c6c9",
         "imagem": "/motos/scooter_eletrica_t1_1000w_vermelho_prata_3.webp",
         "slug_legado": "scooter-eletrica-t1-1000w-vermelho-prata-bateria-de-litio-64v-20ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "a810228b-7dc9-4ea9-9c07-58a88b63312e"
       },
       {
         "nome": "Azul",
         "hex": "#1f5a74",
         "imagem": "/motos/scooter_eletrica_t1_1000w_azul.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "87d022ff-04d7-4f9f-91e8-1d9501f8421e"
       },
       {
         "nome": "Branco",
         "hex": "#f2f2ef",
         "imagem": "/motos/scooter_eletrica_t1_1000w_branco.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "8ad8c7d0-4ff0-4ece-9784-6f4a04c98587"
       },
       {
         "nome": "Prata",
         "hex": "#c3c6c9",
         "imagem": "/motos/scooter_eletrica_t1_1000w_prata_bateria__7.webp",
         "slug_legado": "scooter-eletrica-t1-1000w-prata-bateria-de-litio-64v-20ah",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "2c13fe10-70d7-4b8e-9b2b-455876da8f6f"
       },
       {
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/scooter_eletrica_t1_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "ef38c834-2b4e-43d6-9eda-f1688ad039f0"
       },
       {
         "nome": "Preto/Prata",
         "hex": "#16181a",
         "hex_secundario": "#c3c6c9",
         "imagem": "/motos/scooter_eletrica_t1_1000w_preto_prata.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "4908dff0-f87c-4c0c-b59c-3e17e4de17a4"
       },
       {
         "nome": "Verde Militar",
         "hex": "#3f3f46",
         "imagem": "/motos/scooter_eletrica_t1_1000w_verde_militar.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "115b6d62-0cb7-482f-a6e6-891a724c7493"
       },
       {
         "nome": "Vermelho",
         "hex": "#a52323",
         "imagem": "/motos/scooter_eletrica_t1_1000w_vermelho.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "ea103515-1aed-450f-af7e-388b8fb6e7fd"
       }
     ],
     "video_url": "https://drive.google.com/file/d/1auxm0uI0MlR9tekJ63DTMJIgmjUtZlb3/view",
@@ -381,7 +403,7 @@
     }
   },
   {
-    "id": "jsl",
+    "id": "faecf6c8-b36d-49a1-88b9-ebc4c1ffdace",
     "nome": "Bike JSL 1000W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica JSL 1000W",
@@ -408,13 +430,15 @@
         "hex_secundario": "#6b4b34",
         "imagem": "/motos/bicicleta_jsl_1000w_preto_marrom_bateria_6.webp",
         "slug_legado": "bicicleta-jsl-1000w-preto-marrom-bateria-de-litio-48v-18ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "aa6876ae-af37-408c-ad20-6fea959ece04"
       },
       {
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_jsl_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "1e2b226b-99b6-4a7d-8c2a-c6bd2e7e1764"
       }
     ],
     "video_url": "https://drive.google.com/file/d/1Ri86TGnCzsA7kRd2wJlKsS_zDcaXYzey/view",
@@ -440,7 +464,7 @@
     }
   },
   {
-    "id": "harley",
+    "id": "8f87a720-a816-4f01-a218-46f02bce6a52",
     "nome": "Scooter Harley 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica Harley 1000W",
@@ -465,33 +489,38 @@
         "nome": "Azul",
         "hex": "#1e2f8f",
         "imagem": "/motos/scooter_eletrica_harley_1000w_azul.webp",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "b7c07065-111a-40e6-bd2c-041cc9ae717d"
       },
       {
         "nome": "Branco",
         "hex": "#f2f2ef",
         "imagem": "/motos/scooter_eletrica_harley_1000w_branco_bat_11.webp",
         "slug_legado": "scooter-eletrica-harley-1000w-branco-bateria-de-litio-60v-20ah",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "694a8f30-cb2f-42f7-bbea-d086a5a17bc2"
       },
       {
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/scooter_eletrica_harley_1000w_preto.webp",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "61bc52c8-b101-4f82-831b-eaf37573da90"
       },
       {
         "nome": "Vermelho",
         "hex": "#a8202a",
         "imagem": "/motos/scooter_eletrica_harley_1000w_vermelho_b_12.webp",
         "slug_legado": "scooter-eletrica-harley-1000w-vermelho-bateria-de-litio-60v",
-        "disponibilidade": "pronta_entrega"
+        "disponibilidade": "pronta_entrega",
+        "id": "2e56c9f6-e8f9-4e9f-8be1-d79fc010047b"
       },
       {
         "nome": "Amarelo",
         "hex": "#f2c200",
         "imagem": "/motos/scooter_eletrica_harley_1000w_amarelo.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "9baf748a-1617-4f93-998e-61501fc96e0b"
       }
     ],
     "video_url": "https://drive.google.com/file/d/1rU_ChCrHi3AAdaFtvYJ-8faCBxPUYQJN/view",
@@ -519,7 +548,7 @@
     }
   },
   {
-    "id": "scooter-eletrica-artist-1000w",
+    "id": "db959d35-8ee8-4178-86d4-df1b1c8cfed4",
     "nome": "Scooter Artist 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica Artist 1000W",
@@ -542,25 +571,29 @@
         "nome": "Azul",
         "hex": "#1f5a74",
         "imagem": "/motos/scooter_eletrica_artist_1000w_azul.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "1527ed23-7caa-481a-b3c6-2c6142f41173"
       },
       {
         "nome": "Gold",
         "hex": "#c9a227",
         "imagem": "/motos/scooter_eletrica_artist_1000w_gold.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "21d81deb-b264-49db-bc3e-be4a160d76ce"
       },
       {
         "nome": "Marrom",
         "hex": "#6b4b34",
         "imagem": "/motos/scooter_eletrica_artist_1000w_marrom.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "70f50f1b-4f3a-4019-8b4f-47e8a64fc881"
       },
       {
         "nome": "Verde",
         "hex": "#486b4a",
         "imagem": "/motos/scooter_eletrica_artist_1000w_verde.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "d331d81b-89db-406b-9fbd-178ac168a16e"
       }
     ],
     "imagem_capa": "/motos/scooter_eletrica_artist_1000w_azul.webp",
@@ -586,7 +619,7 @@
     }
   },
   {
-    "id": "scooter-eletrica-citycoco-1000w",
+    "id": "e753f67a-53b8-4950-a204-c5902047b249",
     "nome": "Scooter CityCoco 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica CityCoco 1000W",
@@ -609,37 +642,43 @@
         "nome": "Azul",
         "hex": "#1f5a74",
         "imagem": "/motos/scooter_eletrica_citycoco_1000w_azul.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "9f5a17e0-f983-47c3-aab6-a87fe792fa6f"
       },
       {
         "nome": "Branco",
         "hex": "#f2f2ef",
         "imagem": "/motos/scooter_eletrica_citycoco_1000w_branco.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "e23623bd-780c-4df6-807f-21fa39b85ea8"
       },
       {
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/scooter_eletrica_citycoco_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "5cf7ec83-4b1c-4ed0-8a5a-98095d6a7ecd"
       },
       {
         "nome": "Verde",
         "hex": "#486b4a",
         "imagem": "/motos/scooter_eletrica_citycoco_1000w_verde.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "f9e0fce8-6684-4854-8fac-c87f97eb0f25"
       },
       {
         "nome": "Vermelho",
         "hex": "#a52323",
         "imagem": "/motos/scooter_eletrica_citycoco_1000w_vermelho.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "8848ae80-eed0-42b5-a43b-e5ff67db1ddd"
       },
       {
         "nome": "Vermelho Vinho",
         "hex": "#3f3f46",
         "imagem": "/motos/scooter_eletrica_citycoco_1000w_vermelho_vinho.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "0e20d7e1-9af3-45f3-9d51-f812dda8e1cf"
       }
     ],
     "imagem_capa": "/motos/scooter_eletrica_citycoco_1000w_azul.webp",
@@ -667,7 +706,7 @@
     }
   },
   {
-    "id": "scooter-eletrica-g105-1000w",
+    "id": "cdf93cc5-82ff-4d16-9180-356258030fa4",
     "nome": "Scooter G105 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica G105 1000W",
@@ -690,19 +729,22 @@
         "nome": "Branco",
         "hex": "#f2f2ef",
         "imagem": "/motos/scooter_eletrica_g105_1000w_branco.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "1f5309c1-db0d-42dc-9ed3-d3b84360aa82"
       },
       {
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/scooter_eletrica_g105_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "c2a997f1-1a0b-472a-8532-dea3687a068a"
       },
       {
         "nome": "Verde",
         "hex": "#486b4a",
         "imagem": "/motos/scooter_eletrica_g105_1000w_verde.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "2d8c6a7d-9362-49fa-b8c4-e99e669e8f1b"
       }
     ],
     "imagem_capa": "/motos/scooter_eletrica_g105_1000w_branco.webp",
@@ -731,7 +773,7 @@
     }
   },
   {
-    "id": "scooter-eletrica-k007-1000w",
+    "id": "b02ec8b4-7be2-4006-8bc1-f1f7da4f92a8",
     "nome": "Scooter K007 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica K007 1000W",
@@ -754,26 +796,30 @@
         "nome": "Branco",
         "hex": "#f2f2ef",
         "imagem": "/motos/scooter_eletrica_k007_1000w_branco.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "5b1af24a-d87a-40b7-ad25-869eca16de68"
       },
       {
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/scooter_eletrica_k007_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "e0248bf1-dc27-462d-8177-9953196ff106"
       },
       {
         "nome": "Preto/Cinza",
         "hex": "#151719",
         "imagem": "/motos/scooter_eletrica_k007_1000w_preto_cinza.webp",
         "hex_secundario": "#7d8288",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "7c1d6266-c564-41d9-9a47-b9fbe0084995"
       },
       {
         "nome": "Verde",
         "hex": "#486b4a",
         "imagem": "/motos/scooter_eletrica_k007_1000w_verde.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "4bcc1226-4a6b-4819-ae4a-ad2bd4d6adb7"
       }
     ],
     "imagem_capa": "/motos/scooter_eletrica_k007_1000w_branco.webp",
@@ -802,7 +848,7 @@
     }
   },
   {
-    "id": "scooter-eletrica-mg-16-1000w",
+    "id": "6bfb3224-0f3c-4254-aa4d-4dc236998ddd",
     "nome": "Scooter MG-16 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica MG-16 1000W",
@@ -825,14 +871,15 @@
         "nome": "Bandeira Inglesa",
         "hex": "#1e3a8a",
         "imagem": "/motos/scooter_eletrica_mg_16_1000w_bandeira_inglesa.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "07482910-f039-485a-bdb0-9d884b1cf60c"
       }
     ],
     "imagem_capa": "/motos/scooter_eletrica_mg_16_1000w_bandeira_inglesa.webp",
     "especificacoes_tecnicas": {}
   },
   {
-    "id": "scooter-eletrica-mz-1000w",
+    "id": "3050fd6b-ed0d-4d6c-acaf-107e814a5e85",
     "nome": "Scooter MZ 1000W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica MZ 1000W",
@@ -855,32 +902,37 @@
         "nome": "Cinza",
         "hex": "#7d8288",
         "imagem": "/motos/scooter_eletrica_mz_1000w_cinza.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "7253bdfd-1f03-4881-9f08-4775f93930db"
       },
       {
         "nome": "Dark",
         "hex": "#1a1a1a",
         "imagem": "/motos/scooter_eletrica_mz_1000w_dark.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "66e4a57a-e9b6-42ea-9842-6d1c03a4a045"
       },
       {
         "nome": "Laranja/Prata",
         "hex": "#e8761a",
         "imagem": "/motos/scooter_eletrica_mz_1000w_laranja_prata.webp",
         "hex_secundario": "#c3c6c9",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "7f5910e6-e621-44bd-9b8e-453fcec2f037"
       },
       {
         "nome": "Prata",
         "hex": "#c3c6c9",
         "imagem": "/motos/scooter_eletrica_mz_1000w_prata.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "7f7cf7ca-f48d-4172-b345-d18e3c91d196"
       },
       {
         "nome": "Roxo",
         "hex": "#5b2a86",
         "imagem": "/motos/scooter_eletrica_mz_1000w_roxo.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "23749d23-ac03-4240-a72f-eac24bd41c4a"
       }
     ],
     "imagem_capa": "/motos/scooter_eletrica_mz_1000w_cinza.webp",
@@ -906,7 +958,7 @@
     }
   },
   {
-    "id": "scooter-eletrica-tank-800w",
+    "id": "0ab4e372-0c56-4a45-bd50-8caf512d7f97",
     "nome": "Scooter Tank 800W",
     "emoji": "🛵",
     "titulo": "Scooter Elétrica Tank 800W",
@@ -929,13 +981,15 @@
         "nome": "Cinza",
         "hex": "#7d8288",
         "imagem": "/motos/scooter_eletrica_tank_800w_cinza.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "13404ddf-bf22-4847-acd1-e9c9b07533a6"
       },
       {
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/scooter_eletrica_tank_800w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "37efb63e-f28b-48fe-bd74-6ec68fe60fee"
       }
     ],
     "imagem_capa": "/motos/scooter_eletrica_tank_800w_cinza.webp",
@@ -962,7 +1016,7 @@
     }
   },
   {
-    "id": "triciclo-eletrica-t5-500w",
+    "id": "9e9e8365-a6e7-44ee-937f-a12dea17d01d",
     "nome": "Triciclo T5 500W",
     "emoji": "🛺",
     "titulo": "Triciclo Elétrico T5 500W",
@@ -986,7 +1040,8 @@
         "hex": "#f2f2ef",
         "imagem": "/motos/triciclo_eletrica_t5_500w_branco_bege.webp",
         "hex_secundario": "#e3d5c3",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "075dc272-ce3e-4e41-8ed8-4ae185adc45a"
       }
     ],
     "imagem_capa": "/motos/triciclo_eletrica_t5_500w_branco_bege.webp",
@@ -1005,7 +1060,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-advantage-750w",
+    "id": "6f955ff5-c9c6-413f-8fd8-515b014a9599",
     "nome": "Bike Advantage 750W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Advantage 750W",
@@ -1029,49 +1084,56 @@
         "hex": "#7d8288",
         "imagem": "/motos/bicicleta_eletrica_advantage_750w_cinza_branco.webp",
         "hex_secundario": "#f2f2ef",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "22ad6eb1-7be8-491c-8c04-02856d9b2857"
       },
       {
         "nome": "Cinza/Laranja",
         "hex": "#7d8288",
         "imagem": "/motos/bicicleta_eletrica_advantage_750w_cinza_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "01fe5221-c09d-4271-ab23-cfa54352c402"
       },
       {
         "nome": "Cinza/Vermelho",
         "hex": "#7d8288",
         "imagem": "/motos/bicicleta_eletrica_advantage_750w_cinza_vermelho.webp",
         "hex_secundario": "#a52323",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "cf3ad5f1-e02d-42e0-9655-9a78f3446179"
       },
       {
         "nome": "Preto/Branco",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_advantage_750w_preto_branco.webp",
         "hex_secundario": "#f2f2ef",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "cccfb527-7036-4df4-858c-6fe12868be77"
       },
       {
         "nome": "Preto/Cinza",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_advantage_750w_preto_cinza.webp",
         "hex_secundario": "#7d8288",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "a29d4c8e-3a63-4a46-9bdc-b80f86c3bf25"
       },
       {
         "nome": "Preto/Laranja",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_advantage_750w_preto_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "72917809-9076-4d5d-96ef-7a08d40a8adf"
       },
       {
         "nome": "Preto/Vermelho",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_advantage_750w_preto_vermelho.webp",
         "hex_secundario": "#a52323",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "964b9e9a-2fae-4765-9889-87bbe13cfb17"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_advantage_750w_cinza_branco.webp",
@@ -1091,7 +1153,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-avant-750w",
+    "id": "06b808dc-9387-40bd-959b-5bead9e3c711",
     "nome": "Bike Avant 750W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Avant 750W",
@@ -1115,7 +1177,8 @@
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_avant_750w_preto_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "d4dc718f-c60c-4ac1-b932-02e66e73c8bd"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_avant_750w_preto_laranja.webp",
@@ -1135,7 +1198,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-black-fish-500w",
+    "id": "87502aec-8465-4de8-8685-3647713cdd35",
     "nome": "Bike Black Fish 500W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Black Fish 500W",
@@ -1158,14 +1221,16 @@
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_black_fish_500w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "4266c195-3523-4b41-bd78-7e5de79fc36a"
       },
       {
         "nome": "Preto/Bege",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_black_fish_500w_preto_bege.webp",
         "hex_secundario": "#e3d5c3",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "953b4412-249f-496d-8535-242289f65ddb"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_black_fish_500w_preto.webp",
@@ -1185,7 +1250,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-c6-500w",
+    "id": "ee43d239-64c2-44a7-ace5-3eefa8cea6f5",
     "nome": "Bike C6 500W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica C6 500W",
@@ -1209,7 +1274,8 @@
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_c6_500w_preto_azul.webp",
         "hex_secundario": "#1f5a74",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "ca8860a5-858e-49f8-bb91-c8f98121436b"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_c6_500w_preto_azul.webp",
@@ -1229,7 +1295,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-connection-500w",
+    "id": "936b0ddd-df61-4021-98c5-741fa52932fe",
     "nome": "Bike Connection 500W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Connection 500W",
@@ -1253,21 +1319,24 @@
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_connection_500w_preto_branco.webp",
         "hex_secundario": "#f2f2ef",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "d324fbba-dacd-4349-9bd2-96ecd593de03"
       },
       {
         "nome": "Preto/Cinza",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_connection_500w_preto_cinza.webp",
         "hex_secundario": "#7d8288",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "df5ac061-8f00-4c73-be3c-04c7e55b4656"
       },
       {
         "nome": "Preto/Laranja",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_connection_500w_preto_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "026fb3e6-1454-486a-8d69-46983f8ac53f"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_connection_500w_preto_branco.webp",
@@ -1287,7 +1356,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-explorer-ii-750w",
+    "id": "e354edc3-deea-431f-b0ce-07d201e32df0",
     "nome": "Bike Explorer II 750W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Explorer II 750W",
@@ -1311,14 +1380,16 @@
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_explorer_ii_750w_preto_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "9898343f-0f07-402c-9825-2aeecaf5354a"
       },
       {
         "nome": "Verde/Branco",
         "hex": "#486b4a",
         "imagem": "/motos/bicicleta_eletrica_explorer_ii_750w_verde_branco.webp",
         "hex_secundario": "#f2f2ef",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "d3775e04-511d-49a4-842d-1436f37ea259"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_explorer_ii_750w_preto_laranja.webp",
@@ -1338,7 +1409,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-fast-trail-750w",
+    "id": "f3bc4c4f-51fb-476a-9502-f73bf03f1417",
     "nome": "Bike Fast Trail 750W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Fast Trail 750W",
@@ -1362,28 +1433,32 @@
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_fast_trail_750w_preto_azul.webp",
         "hex_secundario": "#1f5a74",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "fe397d10-c2df-4888-be00-25b4afb5a905"
       },
       {
         "nome": "Preto/Branco",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_fast_trail_750w_preto_branco.webp",
         "hex_secundario": "#f2f2ef",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "6c788172-6892-4eb9-8e24-357682b3ac33"
       },
       {
         "nome": "Preto/Laranja",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_fast_trail_750w_preto_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "553eac34-ea08-4fc9-adfa-0c90d9429bfc"
       },
       {
         "nome": "Preto/Verde",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_fast_trail_750w_preto_verde.webp",
         "hex_secundario": "#486b4a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "deaa382b-a2f6-4926-8f00-2df8e0216782"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_fast_trail_750w_preto_azul.webp",
@@ -1403,7 +1478,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-jazz-e700-1000w",
+    "id": "4bc0db23-78ab-43ce-bdd0-804f26e6edf3",
     "nome": "Bike Jazz E700 1000W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Jazz E700 1000W",
@@ -1426,14 +1501,16 @@
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_jazz_e700_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "d3697715-2fb3-4a0c-975b-ee1b20076fc2"
       },
       {
         "nome": "Preto/Marrom",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_jazz_e700_1000w_preto_marrom.webp",
         "hex_secundario": "#6b4b34",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "f6eba113-136c-4da8-afe9-b280ce3e399c"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_jazz_e700_1000w_preto.webp",
@@ -1460,7 +1537,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-qje-05-1000w",
+    "id": "81229936-9317-4d45-af7d-d80ecf6b06ae",
     "nome": "Bike QJE-05 1000W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica QJE-05 1000W",
@@ -1483,14 +1560,16 @@
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_qje_05_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "20c3deed-4cf2-45b4-98ae-429f31d8b080"
       },
       {
         "nome": "Preto/Marrom",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_qje_05_1000w_preto_marrom.webp",
         "hex_secundario": "#6b4b34",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "269b51e5-6583-4e7e-b8e5-70b8d024b1d9"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_qje_05_1000w_preto.webp",
@@ -1517,7 +1596,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-ride-pro-750w",
+    "id": "4c092cfe-0060-4e1a-bccc-241e4539cc52",
     "nome": "Bike Ride Pro 750W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Ride Pro 750W",
@@ -1541,28 +1620,32 @@
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_ride_pro_750w_preto_branco.webp",
         "hex_secundario": "#f2f2ef",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "ff204e98-7cf8-4f28-bb9d-46cf0950d53d"
       },
       {
         "nome": "Preto/Cinza",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_ride_pro_750w_preto_cinza.webp",
         "hex_secundario": "#7d8288",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "fa93ab37-03c9-4d2f-a005-a76ed4b1bd5a"
       },
       {
         "nome": "Preto/Laranja",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_ride_pro_750w_preto_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "347bb4d9-ce1b-42e7-8657-80649b2f071e"
       },
       {
         "nome": "Preto/Vermelho",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_ride_pro_750w_preto_vermelho.webp",
         "hex_secundario": "#a52323",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "704aa0c8-9e57-41b6-b1b8-d5e5a78fe148"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_ride_pro_750w_preto_branco.webp",
@@ -1583,7 +1666,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-rider-pro-1000w",
+    "id": "f90b6f18-872e-492c-a9ec-90a306bc117d",
     "nome": "Bike Rider Pro 1000W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Rider Pro 1000W",
@@ -1606,14 +1689,16 @@
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_rider_pro_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "86c8a65e-9cf7-4652-8116-0149d798be2c"
       },
       {
         "nome": "Preto/Marrom",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_rider_pro_1000w_preto_marrom.webp",
         "hex_secundario": "#6b4b34",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "2ebdbf34-3dda-4e0b-a861-cb01701af94d"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_rider_pro_1000w_preto.webp",
@@ -1640,7 +1725,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-tjsr-b-035-1000w",
+    "id": "c6487fa3-4337-4f70-8175-668576e18a96",
     "nome": "Bike TJSR-B-035 1000W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica TJSR-B-035 1000W",
@@ -1663,14 +1748,16 @@
         "nome": "Preto",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_tjsr_b_035_1000w_preto.webp",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "0fbf0c5c-037c-4b5d-a49c-11c00bbd7ec5"
       },
       {
         "nome": "Preto/Marrom",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_tjsr_b_035_1000w_preto_marrom.webp",
         "hex_secundario": "#6b4b34",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "59dfa064-5d88-4b50-b46d-c75b71f20418"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_tjsr_b_035_1000w_preto.webp",
@@ -1698,7 +1785,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-voyager-750w",
+    "id": "7baa256a-a019-48d5-bc13-37827a9e0293",
     "nome": "Bike Voyager 750W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Voyager 750W",
@@ -1722,28 +1809,32 @@
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_voyager_750w_preto_branco.webp",
         "hex_secundario": "#f2f2ef",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "ab46c47c-6682-4665-908a-18ce5e985a69"
       },
       {
         "nome": "Preto/Laranja",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_voyager_750w_preto_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "79dc40a0-4abd-4bec-a5fe-449ea94a068c"
       },
       {
         "nome": "Preto/Verde",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_voyager_750w_preto_verde.webp",
         "hex_secundario": "#486b4a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "dc81411d-f4f3-45d7-8f85-288a71ebb417"
       },
       {
         "nome": "Preto/Vermelho",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_voyager_750w_preto_vermelho.webp",
         "hex_secundario": "#a52323",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "6f4a1152-3a7d-448a-a67e-8934ab41c193"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_voyager_750w_preto_branco.webp",
@@ -1763,7 +1854,7 @@
     }
   },
   {
-    "id": "bicicleta-eletrica-winner-750w",
+    "id": "bde31763-9e4a-40e1-b348-ac354478b322",
     "nome": "Bike Winner 750W",
     "emoji": "🚲",
     "titulo": "Bicicleta Elétrica Winner 750W",
@@ -1787,21 +1878,24 @@
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_winner_750w_preto_laranja.webp",
         "hex_secundario": "#e8761a",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "c5d35057-4d1f-4953-8709-bdcb9cb62496"
       },
       {
         "nome": "Preto/Prata",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_winner_750w_preto_prata.webp",
         "hex_secundario": "#c3c6c9",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "f2150792-7728-4830-bbdb-7ad78153b431"
       },
       {
         "nome": "Preto/Vermelho",
         "hex": "#151719",
         "imagem": "/motos/bicicleta_eletrica_winner_750w_preto_vermelho.webp",
         "hex_secundario": "#a52323",
-        "disponibilidade": "sob_pedido"
+        "disponibilidade": "sob_pedido",
+        "id": "9d0d21a9-ed8d-41e2-ace0-9ca8fa71cb36"
       }
     ],
     "imagem_capa": "/motos/bicicleta_eletrica_winner_750w_preto_laranja.webp",

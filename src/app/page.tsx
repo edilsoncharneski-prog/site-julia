@@ -2,6 +2,9 @@ import { ProductCard } from '@/components/ProductCard';
 import { getCatalog } from '@/lib/catalog';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function Home() {
   const products = await getCatalog();
 
@@ -58,12 +61,12 @@ export default async function Home() {
 
             <details className="group border border-gray-200 bg-white p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-gray-900 sm:text-base">
-                Como funciona a garantia e assistência técnica?
+                Como funciona a garantia de fábrica?
                 <ChevronDown className="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-2 text-xs leading-relaxed text-gray-600 sm:text-sm">
-                Oferecemos garantia de fábrica com suporte direto em nossa loja física em
-                Cotriguaçu/MT. Dispomos de peças de reposição e técnicos capacitados.
+                Oferecemos garantia oficial de fábrica com atendimento direto em nossa loja física em
+                Cotriguaçu/MT e suporte para encomenda de peças de reposição.
               </p>
             </details>
 

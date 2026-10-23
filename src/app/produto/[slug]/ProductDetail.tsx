@@ -137,13 +137,22 @@ export function ProductDetail({
     <div className="min-h-screen bg-white py-6 sm:py-10">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6">
         <div className="mb-6 flex items-center justify-between gap-3">
-          <Link
-            href="/produtos"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 transition-colors hover:text-gray-950 sm:text-sm"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Voltar ao catálogo
-          </Link>
+          <div className="flex items-center gap-2 text-xs font-semibold text-gray-600 sm:text-sm">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-gray-950"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Início
+            </Link>
+            <span className="text-gray-300">/</span>
+            <Link
+              href="/produtos"
+              className="transition-colors hover:text-gray-950"
+            >
+              Catálogo
+            </Link>
+          </div>
 
           <button
             type="button"
