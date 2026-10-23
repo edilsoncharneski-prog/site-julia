@@ -9,9 +9,11 @@ import {
   BatteryCharging,
   Check,
   ChevronDown,
+  ExternalLink,
   Gauge,
   HelpCircle,
   MessageCircle,
+  Play,
   Share2,
   ShieldCheck,
   Timer,
@@ -26,6 +28,8 @@ import {
   getColorSlug,
   getProductColors,
   getDriveEmbedUrl,
+  getDriveStreamUrl,
+  getDriveViewUrl,
   type Product,
 } from '@/lib/products';
 
@@ -48,9 +52,12 @@ export function ProductDetail({
   const colors = getProductColors(product);
   const [activeColor, setActiveColor] = useState(initialColorIndex);
   const [copied, setCopied] = useState(false);
+  const [useIframePlayer, setUseIframePlayer] = useState(false);
   const selectedColor = colors[activeColor] ?? colors[0];
   const selectedColorParam = getColorSlug(selectedColor?.nome) || encodeURIComponent(selectedColor?.nome || '');
   const videoEmbedUrl = getDriveEmbedUrl(product.video_url);
+  const videoStreamUrl = getDriveStreamUrl(product.video_url);
+  const videoViewUrl = getDriveViewUrl(product.video_url);
 
   const productUrl =
     typeof window !== 'undefined'
@@ -336,26 +343,57 @@ export function ProductDetail({
           <p className="text-sm leading-relaxed text-gray-600">{product.descricao}</p>
         </section>
 
-        {/* Vídeo de Apresentação (Google Drive) */}
+        {/* Vídeo de Apresentação */}
         {videoEmbedUrl && (
           <section className="max-w-4xl border-b border-gray-100 py-10">
-            <div className="mb-4">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-amber-500">
-                Apresentação Oficial
-              </span>
-              <h2 className="mt-1 text-lg font-semibold text-gray-950 sm:text-xl">
-                Conheça em detalhes
-              </h2>
+            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-amber-500">
+                  Apresentação Oficial
+                </span>
+                <h2 className="mt-1 text-lg font-semibold text-gray-950 sm:text-xl">
+                  Conheça em detalhes
+                </h2>
+              </div>
+
+              {videoViewUrl && (
+                <a
+                  href={videoViewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:border-gray-900 hover:bg-gray-900 hover:text-white"
+                >
+                  <Play className="h-3.5 w-3.5 fill-current" />
+                  <span>Abrir vídeo em tela cheia</span>
+                  <ExternalLink className="h-3 w-3 opacity-70" />
+                </a>
+              )}
             </div>
 
             <div className="relative aspect-video w-full overflow-hidden border border-gray-200 bg-black shadow-sm">
-              <iframe
-                src={videoEmbedUrl}
-                title={`Apresentação do veículo ${product.titulo}`}
-                className="absolute inset-0 h-full w-full border-0"
-                allow="autoplay; encrypted-media; fullscreen"
-                allowFullScreen
-              />
+              {videoStreamUrl && !useIframePlayer ? (
+                <video
+                  key={videoStreamUrl}
+                  src={videoStreamUrl}
+                  poster={selectedColor?.imagem || product.imagem_capa || '/logo.png'}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  onError={() => setUseIframePlayer(true)}
+                  className="h-full w-full object-contain bg-black"
+                >
+                  <source src={videoStreamUrl} type="video/mp4" />
+                  Seu navegador não suporta a reprodução de vídeo.
+                </video>
+              ) : (
+                <iframe
+                  src={videoEmbedUrl}
+                  title={`Apresentação do veículo ${product.titulo}`}
+                  className="absolute inset-0 h-full w-full border-0"
+                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
             </div>
           </section>
         )}

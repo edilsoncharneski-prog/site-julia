@@ -174,12 +174,12 @@ export const categoriaCurta: Record<string, string> = {
  */
 const DRIVE_ID = /^[A-Za-z0-9_-]{25,}$/;
 
-export function getDriveEmbedUrl(value?: string | null): string | null {
+export function getDriveFileId(value?: string | null): string | null {
   const raw = value?.trim();
   if (!raw) return null;
 
   if (DRIVE_ID.test(raw)) {
-    return `https://drive.google.com/file/d/${raw}/preview`;
+    return raw;
   }
 
   let url: URL;
@@ -189,7 +189,11 @@ export function getDriveEmbedUrl(value?: string | null): string | null {
     return null;
   }
 
-  if (url.protocol !== 'https:' || url.hostname !== 'drive.google.com') {
+  if (
+    url.protocol !== 'https:' ||
+    (url.hostname !== 'drive.google.com' &&
+      url.hostname !== 'drive.usercontent.google.com')
+  ) {
     return null;
   }
 
@@ -198,7 +202,20 @@ export function getDriveEmbedUrl(value?: string | null): string | null {
     url.searchParams.get('id') ||
     '';
 
-  return DRIVE_ID.test(id)
-    ? `https://drive.google.com/file/d/${id}/preview`
-    : null;
+  return DRIVE_ID.test(id) ? id : null;
+}
+
+export function getDriveEmbedUrl(value?: string | null): string | null {
+  const id = getDriveFileId(value);
+  return id ? `https://drive.google.com/file/d/${id}/preview` : null;
+}
+
+export function getDriveStreamUrl(value?: string | null): string | null {
+  const id = getDriveFileId(value);
+  return id ? `/api/video/${id}` : null;
+}
+
+export function getDriveViewUrl(value?: string | null): string | null {
+  const id = getDriveFileId(value);
+  return id ? `https://drive.google.com/file/d/${id}/view` : null;
 }
