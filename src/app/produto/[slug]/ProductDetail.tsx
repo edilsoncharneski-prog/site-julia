@@ -23,6 +23,7 @@ import { StatusBadge } from '@/components/StatusBadge';
 import { buildAvailabilityWhatsAppLink, formatCurrency } from '@/lib/utils';
 import {
   disponibilidadeLabels,
+  getColorSlug,
   getProductColors,
   getDriveEmbedUrl,
   type Product,
@@ -48,11 +49,12 @@ export function ProductDetail({
   const [activeColor, setActiveColor] = useState(initialColorIndex);
   const [copied, setCopied] = useState(false);
   const selectedColor = colors[activeColor] ?? colors[0];
+  const selectedColorParam = getColorSlug(selectedColor?.nome) || encodeURIComponent(selectedColor?.nome || '');
   const videoEmbedUrl = getDriveEmbedUrl(product.video_url);
 
   const productUrl =
     typeof window !== 'undefined'
-      ? `${window.location.origin}/produto/${product.slug}?cor=${activeColor}`
+      ? `${window.location.origin}/produto/${product.slug}?cor=${selectedColorParam}`
       : undefined;
 
   const whatsappUrl = buildAvailabilityWhatsAppLink(
@@ -61,10 +63,21 @@ export function ProductDetail({
     productUrl
   );
 
+  const handleColorChange = (index: number) => {
+    setActiveColor(index);
+    if (typeof window !== 'undefined') {
+      const nextColor = colors[index] ?? colors[0];
+      const nextColorParam =
+        getColorSlug(nextColor?.nome) || encodeURIComponent(nextColor?.nome || '');
+      const nextUrl = `${window.location.pathname}?cor=${nextColorParam}`;
+      window.history.replaceState(null, '', nextUrl);
+    }
+  };
+
   const handleShare = () => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
       navigator.clipboard.writeText(
-        `${window.location.origin}/produto/${product.slug}?cor=${activeColor}`
+        `${window.location.origin}/produto/${product.slug}?cor=${selectedColorParam}`
       );
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
@@ -218,7 +231,7 @@ export function ProductDetail({
               <ColorSwatches
                 colors={colors}
                 activeIndex={activeColor}
-                onChange={setActiveColor}
+                onChange={handleColorChange}
                 productName={product.nome}
               />
             </div>

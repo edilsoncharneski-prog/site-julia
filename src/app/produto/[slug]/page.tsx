@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { findProductBySlug } from '@/lib/catalog';
-import { getProductColors } from '@/lib/products';
+import { getProductColors, resolveColorParamIndex } from '@/lib/products';
 import { SITE_NAME } from '@/lib/site';
 import { ProductDetail } from './ProductDetail';
 
@@ -57,13 +57,11 @@ export default async function ProductPage({ params, searchParams }: PageProps) {
   }
 
   const colors = getProductColors(found.product);
-  const requestedColor = Number.parseInt(Array.isArray(cor) ? cor[0] : cor || '', 10);
-  const initialColorIndex =
-    Number.isInteger(requestedColor) &&
-    requestedColor >= 0 &&
-    requestedColor < colors.length
-      ? requestedColor
-      : found.colorIndex;
+  const initialColorIndex = resolveColorParamIndex(
+    colors,
+    cor,
+    found.colorIndex
+  );
 
   return (
     <ProductDetail

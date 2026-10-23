@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { ColorSwatches } from '@/components/ColorSwatches';
 import { StatusBadge } from '@/components/StatusBadge';
 import {
+  getColorSlug,
   getInitialColorIndex,
   getProductColors,
   type Product,
@@ -23,7 +24,10 @@ export function ProductCard({
   const [activeColor, setActiveColor] = useState(initialIndex);
   const selectedColor = colors[activeColor] ?? colors[0];
   const safeSlug = (product.slug || product.id || '').trim();
-  const productHref = `/produto/${safeSlug}`;
+  const colorSlug = getColorSlug(selectedColor?.nome);
+  const productHref = colorSlug
+    ? `/produto/${safeSlug}?cor=${colorSlug}`
+    : `/produto/${safeSlug}`;
 
   return (
     <article className="group flex h-full flex-col">
@@ -71,7 +75,7 @@ export function ProductCard({
 
         <div className="mt-auto w-full pt-5">
           <Link
-            href={`/produto/${safeSlug}`}
+            href={productHref}
             className="flex w-full items-center justify-center border border-gray-300 px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-800 transition-colors duration-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white sm:text-[11px]"
           >
             VER DETALHES

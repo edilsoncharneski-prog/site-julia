@@ -98,6 +98,54 @@ export function countProntaEntrega(product: Product): number {
   ).length;
 }
 
+/**
+ * Converte o nome de uma cor em um slug limpo para uso na query string `?cor=`.
+ * Ex: "Azul/Camaleão" -> "azul-camaleao", "Amarelo" -> "amarelo"
+ */
+export function getColorSlug(colorName: string): string {
+  return (colorName || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+}
+
+/**
+ * Resolve o parâmetro `?cor=` da URL (que pode ser o nome/slug da cor ou um índice numérico legado)
+ * para o índice correspondente na lista de cores do produto.
+ */
+export function resolveColorParamIndex(
+  colors: ProductColor[],
+  param?: string | string[] | null,
+  fallbackIndex = 0
+): number {
+  const raw = (Array.isArray(param) ? param[0] : param || '').trim();
+  if (!raw) return fallbackIndex;
+
+  const targetSlug = getColorSlug(raw);
+  if (targetSlug) {
+    const byName = colors.findIndex(
+      (color) =>
+        getColorSlug(color.nome) === targetSlug ||
+        color.nome.toLowerCase() === raw.toLowerCase()
+    );
+    if (byName >= 0) return byName;
+  }
+
+  const parsedIndex = Number.parseInt(raw, 10);
+  if (
+    /^\d+$/.test(raw) &&
+    Number.isInteger(parsedIndex) &&
+    parsedIndex >= 0 &&
+    parsedIndex < colors.length
+  ) {
+    return parsedIndex;
+  }
+
+  return fallbackIndex;
+}
+
 export const categoryLabels: Record<string, string> = {
   autopropelidos: 'Autopropelidos',
   'bikes-eletricas': 'Bikes Elétricas',
