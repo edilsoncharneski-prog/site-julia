@@ -10,6 +10,9 @@
     "convert:motos": "node scripts/convert-motos-webp.mjs",
     "brand:assets": "node scripts/generate-brand-assets.mjs",
     "import:soollar": "node scripts/import-soollar-images.mjs",
+    "import:soollar:full": "node scripts/import-soollar-full-images.mjs",
+    "scan:soollar": "node scripts/scan-soollar-full.mjs",
+    "db:migrate": "node scripts/apply-supabase-migration.mjs",
     "db:seed": "node scripts/seed-supabase.mjs"
   },
   "dependencies": {
@@ -28,6 +31,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
+    "pg": "^8.23.1",
     "puppeteer-core": "^25.16.0",
     "sharp": "^0.35.5",
     "tailwindcss": "^4",

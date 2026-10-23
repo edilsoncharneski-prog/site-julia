@@ -41,6 +41,20 @@ if (pingError) {
   process.exit(1);
 }
 
+const { error: variantsTableError } = await supabase
+  .from('produto_variacoes')
+  .select('id')
+  .limit(1);
+
+if (variantsTableError) {
+  console.error(
+    'A tabela produto_variacoes ainda não existe. Aplique a migração ' +
+      'supabase/migrations/20261022_produto_variacoes.sql antes do seed.'
+  );
+  console.error(variantsTableError.message);
+  process.exit(1);
+}
+
 const { data: categories, error: categoriesError } = await supabase
   .from('categorias')
   .select('id, slug');
@@ -51,6 +65,7 @@ if (categoriesError) {
 }
 
 const categoryBySlug = new Map((categories || []).map((c) => [c.slug, c.id]));
+let failures = 0;
 
 for (const [index, product] of products.entries()) {
   const payload = {
@@ -84,7 +99,7 @@ for (const [index, product] of products.entries()) {
 
   if (productError || !savedProduct) {
     console.error(`Erro ao gravar ${product.slug}: ${productError?.message}`);
-    process.exitCode = 1;
+    failures += 1;
     continue;
   }
 
@@ -95,7 +110,7 @@ for (const [index, product] of products.entries()) {
 
   if (deleteError) {
     console.error(`Erro ao limpar variações de ${product.slug}: ${deleteError.message}`);
-    process.exitCode = 1;
+    failures += 1;
     continue;
   }
 
@@ -116,11 +131,16 @@ for (const [index, product] of products.entries()) {
 
   if (variantsError) {
     console.error(`Erro ao gravar variações de ${product.slug}: ${variantsError.message}`);
-    process.exitCode = 1;
+    failures += 1;
     continue;
   }
 
   console.log(`✓ ${product.nome}: ${variants.length} variações`);
+}
+
+if (failures > 0) {
+  console.error(`\nSincronização interrompida com ${failures} erro(s).`);
+  process.exit(1);
 }
 
 console.log('\nSincronização concluída.');

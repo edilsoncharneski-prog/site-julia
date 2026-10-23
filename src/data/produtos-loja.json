@@ -28,6 +28,13 @@
         "disponibilidade": "pronta_entrega"
       },
       {
+        "nome": "Cinza",
+        "hex": "#7d8288",
+        "imagem": "/motos/scooter_eletrica_cappuccino_1000w_cinza__10.webp",
+        "slug_legado": "scooter-eletrica-cappuccino-1000w-cinza-bateria-de-litio-60v-20ah",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
         "nome": "Rosa/Bege",
         "hex": "#d9a7ad",
         "hex_secundario": "#ead9c6",
@@ -50,11 +57,10 @@
         "disponibilidade": "pronta_entrega"
       },
       {
-        "nome": "Cinza",
-        "hex": "#7d8288",
-        "imagem": "/motos/scooter_eletrica_cappuccino_1000w_cinza__10.webp",
-        "slug_legado": "scooter-eletrica-cappuccino-1000w-cinza-bateria-de-litio-60v-20ah",
-        "disponibilidade": "pronta_entrega"
+        "nome": "Verde",
+        "hex": "#486b4a",
+        "imagem": "/motos/scooter_eletrica_cappuccino_1000w_verde.webp",
+        "disponibilidade": "sob_pedido"
       },
       {
         "nome": "Vermelho",
@@ -216,10 +222,15 @@
         "disponibilidade": "pronta_entrega"
       },
       {
-        "nome": "Preto/Prata",
-        "hex": "#16181a",
-        "hex_secundario": "#c3c6c9",
-        "imagem": "/motos/scooter_eletrica_t1_1000w_preto_prata.webp",
+        "nome": "Azul",
+        "hex": "#1f5a74",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_azul.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Branco",
+        "hex": "#f2f2ef",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_branco.webp",
         "disponibilidade": "sob_pedido"
       },
       {
@@ -227,6 +238,31 @@
         "hex": "#c3c6c9",
         "imagem": "/motos/scooter_eletrica_t1_1000w_prata_bateria__7.webp",
         "slug_legado": "scooter-eletrica-t1-1000w-prata-bateria-de-litio-64v-20ah",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Prata",
+        "hex": "#16181a",
+        "hex_secundario": "#c3c6c9",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_preto_prata.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Verde Militar",
+        "hex": "#3f3f46",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_verde_militar.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Vermelho",
+        "hex": "#a52323",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_vermelho.webp",
         "disponibilidade": "sob_pedido"
       }
     ]
@@ -260,6 +296,12 @@
         "imagem": "/motos/bicicleta_jsl_1000w_preto_marrom_bateria_6.webp",
         "slug_legado": "bicicleta-jsl-1000w-preto-marrom-bateria-de-litio-48v-18ah",
         "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_jsl_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
       }
     ]
   },
@@ -318,5 +360,908 @@
         "disponibilidade": "sob_pedido"
       }
     ]
+  },
+  {
+    "id": "scooter-eletrica-artist-1000w",
+    "nome": "Scooter Artist 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica Artist 1000W",
+    "slug": "scooter-eletrica-artist-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "descricao": "Scooter Elétrica Artist 1000W com motor 1000W e bateria Grafeno 60V 20Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 13500,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Grafeno 60V 20Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Azul",
+        "hex": "#1f5a74",
+        "imagem": "/motos/scooter_eletrica_artist_1000w_azul.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Gold",
+        "hex": "#c9a227",
+        "imagem": "/motos/scooter_eletrica_artist_1000w_gold.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Marrom",
+        "hex": "#6b4b34",
+        "imagem": "/motos/scooter_eletrica_artist_1000w_marrom.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Verde",
+        "hex": "#486b4a",
+        "imagem": "/motos/scooter_eletrica_artist_1000w_verde.webp",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/scooter_eletrica_artist_1000w_azul.webp"
+  },
+  {
+    "id": "scooter-eletrica-citycoco-1000w",
+    "nome": "Scooter CityCoco 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica CityCoco 1000W",
+    "slug": "scooter-eletrica-citycoco-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "descricao": "Scooter Elétrica CityCoco 1000W com motor 1000W e bateria Lítio 60V 24Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 4990,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 60V 24Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Azul",
+        "hex": "#1f5a74",
+        "imagem": "/motos/scooter_eletrica_citycoco_1000w_azul.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Branco",
+        "hex": "#f2f2ef",
+        "imagem": "/motos/scooter_eletrica_citycoco_1000w_branco.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/scooter_eletrica_citycoco_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Verde",
+        "hex": "#486b4a",
+        "imagem": "/motos/scooter_eletrica_citycoco_1000w_verde.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Vermelho",
+        "hex": "#a52323",
+        "imagem": "/motos/scooter_eletrica_citycoco_1000w_vermelho.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Vermelho Vinho",
+        "hex": "#3f3f46",
+        "imagem": "/motos/scooter_eletrica_citycoco_1000w_vermelho_vinho.webp",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/scooter_eletrica_citycoco_1000w_azul.webp"
+  },
+  {
+    "id": "scooter-eletrica-g105-1000w",
+    "nome": "Scooter G105 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica G105 1000W",
+    "slug": "scooter-eletrica-g105-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "descricao": "Scooter Elétrica G105 1000W com motor 1000W e bateria Lítio 60V 20Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 13500,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 60V 20Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Branco",
+        "hex": "#f2f2ef",
+        "imagem": "/motos/scooter_eletrica_g105_1000w_branco.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/scooter_eletrica_g105_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Verde",
+        "hex": "#486b4a",
+        "imagem": "/motos/scooter_eletrica_g105_1000w_verde.webp",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/scooter_eletrica_g105_1000w_branco.webp"
+  },
+  {
+    "id": "scooter-eletrica-k007-1000w",
+    "nome": "Scooter K007 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica K007 1000W",
+    "slug": "scooter-eletrica-k007-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "descricao": "Scooter Elétrica K007 1000W com motor 1000W e bateria LÍTIO 60V. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 13500,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "LÍTIO 60V",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Branco",
+        "hex": "#f2f2ef",
+        "imagem": "/motos/scooter_eletrica_k007_1000w_branco.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/scooter_eletrica_k007_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Cinza",
+        "hex": "#151719",
+        "imagem": "/motos/scooter_eletrica_k007_1000w_preto_cinza.webp",
+        "hex_secundario": "#7d8288",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Verde",
+        "hex": "#486b4a",
+        "imagem": "/motos/scooter_eletrica_k007_1000w_verde.webp",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/scooter_eletrica_k007_1000w_branco.webp"
+  },
+  {
+    "id": "scooter-eletrica-mg-16-1000w",
+    "nome": "Scooter MG-16 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica MG-16 1000W",
+    "slug": "scooter-eletrica-mg-16-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "descricao": "Scooter Elétrica MG-16 1000W com motor 1000W e bateria Lítio 48V 18,2Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 4999.9,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 48V 18,2Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Bandeira Inglesa",
+        "hex": "#1e3a8a",
+        "imagem": "/motos/scooter_eletrica_mg_16_1000w_bandeira_inglesa.webp",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/scooter_eletrica_mg_16_1000w_bandeira_inglesa.webp"
+  },
+  {
+    "id": "scooter-eletrica-mz-1000w",
+    "nome": "Scooter MZ 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica MZ 1000W",
+    "slug": "scooter-eletrica-mz-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "descricao": "Scooter Elétrica MZ 1000W com motor 1000W e bateria Grafeno 72V. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 6990,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Grafeno 72V",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Cinza",
+        "hex": "#7d8288",
+        "imagem": "/motos/scooter_eletrica_mz_1000w_cinza.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Dark",
+        "hex": "#1a1a1a",
+        "imagem": "/motos/scooter_eletrica_mz_1000w_dark.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Laranja/Prata",
+        "hex": "#e8761a",
+        "imagem": "/motos/scooter_eletrica_mz_1000w_laranja_prata.webp",
+        "hex_secundario": "#c3c6c9",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Prata",
+        "hex": "#c3c6c9",
+        "imagem": "/motos/scooter_eletrica_mz_1000w_prata.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Roxo",
+        "hex": "#5b2a86",
+        "imagem": "/motos/scooter_eletrica_mz_1000w_roxo.webp",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/scooter_eletrica_mz_1000w_cinza.webp"
+  },
+  {
+    "id": "scooter-eletrica-tank-800w",
+    "nome": "Scooter Tank 800W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica Tank 800W",
+    "slug": "scooter-eletrica-tank-800w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "descricao": "Scooter Elétrica Tank 800W com motor 800W e bateria Grafeno 60V 26Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3990,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "800W",
+    "tipo_bateria": "Grafeno 60V 26Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Cinza",
+        "hex": "#7d8288",
+        "imagem": "/motos/scooter_eletrica_tank_800w_cinza.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/scooter_eletrica_tank_800w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/scooter_eletrica_tank_800w_cinza.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-advantage-750w",
+    "nome": "Bike Advantage 750W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Advantage 750W",
+    "slug": "bicicleta-eletrica-advantage-750w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Advantage 750W com motor 750W e bateria Lítio 48V 18,2Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3999.9,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "750W",
+    "tipo_bateria": "Lítio 48V 18,2Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Cinza/Branco",
+        "hex": "#7d8288",
+        "imagem": "/motos/bicicleta_eletrica_advantage_750w_cinza_branco.webp",
+        "hex_secundario": "#f2f2ef",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Cinza/Laranja",
+        "hex": "#7d8288",
+        "imagem": "/motos/bicicleta_eletrica_advantage_750w_cinza_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Cinza/Vermelho",
+        "hex": "#7d8288",
+        "imagem": "/motos/bicicleta_eletrica_advantage_750w_cinza_vermelho.webp",
+        "hex_secundario": "#a52323",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Branco",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_advantage_750w_preto_branco.webp",
+        "hex_secundario": "#f2f2ef",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Cinza",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_advantage_750w_preto_cinza.webp",
+        "hex_secundario": "#7d8288",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Laranja",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_advantage_750w_preto_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Vermelho",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_advantage_750w_preto_vermelho.webp",
+        "hex_secundario": "#a52323",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_advantage_750w_cinza_branco.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-avant-750w",
+    "nome": "Bike Avant 750W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Avant 750W",
+    "slug": "bicicleta-eletrica-avant-750w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Avant 750W com motor 750W e bateria Lítio 48V 18,2Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3999.91,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "750W",
+    "tipo_bateria": "Lítio 48V 18,2Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto/Laranja",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_avant_750w_preto_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_avant_750w_preto_laranja.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-black-fish-500w",
+    "nome": "Bike Black Fish 500W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Black Fish 500W",
+    "slug": "bicicleta-eletrica-black-fish-500w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Black Fish 500W com motor 500W e bateria Chumbo 48V 12Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 2990,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "500W",
+    "tipo_bateria": "Chumbo 48V 12Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_black_fish_500w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Bege",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_black_fish_500w_preto_bege.webp",
+        "hex_secundario": "#e3d5c3",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_black_fish_500w_preto.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-c6-500w",
+    "nome": "Bike C6 500W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica C6 500W",
+    "slug": "bicicleta-eletrica-c6-500w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica C6 500W com motor 500W e bateria Chumbo 48V 12Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 5716,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "500W",
+    "tipo_bateria": "Chumbo 48V 12Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto/Azul",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_c6_500w_preto_azul.webp",
+        "hex_secundario": "#1f5a74",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_c6_500w_preto_azul.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-connection-500w",
+    "nome": "Bike Connection 500W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Connection 500W",
+    "slug": "bicicleta-eletrica-connection-500w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Connection 500W com motor 500W e bateria Lítio 48V 18,2Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3999.91,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "500W",
+    "tipo_bateria": "Lítio 48V 18,2Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto/Branco",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_connection_500w_preto_branco.webp",
+        "hex_secundario": "#f2f2ef",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Cinza",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_connection_500w_preto_cinza.webp",
+        "hex_secundario": "#7d8288",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Laranja",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_connection_500w_preto_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_connection_500w_preto_branco.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-explorer-ii-750w",
+    "nome": "Bike Explorer II 750W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Explorer II 750W",
+    "slug": "bicicleta-eletrica-explorer-ii-750w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Explorer II 750W com motor 750W e bateria Lítio 48V. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3999.92,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "750W",
+    "tipo_bateria": "Lítio 48V",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto/Laranja",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_explorer_ii_750w_preto_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Verde/Branco",
+        "hex": "#486b4a",
+        "imagem": "/motos/bicicleta_eletrica_explorer_ii_750w_verde_branco.webp",
+        "hex_secundario": "#f2f2ef",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_explorer_ii_750w_preto_laranja.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-fast-trail-750w",
+    "nome": "Bike Fast Trail 750W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Fast Trail 750W",
+    "slug": "bicicleta-eletrica-fast-trail-750w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Fast Trail 750W com motor 750W e bateria Lítio 48V 18,2Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3999.91,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "750W",
+    "tipo_bateria": "Lítio 48V 18,2Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto/Azul",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_fast_trail_750w_preto_azul.webp",
+        "hex_secundario": "#1f5a74",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Branco",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_fast_trail_750w_preto_branco.webp",
+        "hex_secundario": "#f2f2ef",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Laranja",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_fast_trail_750w_preto_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Verde",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_fast_trail_750w_preto_verde.webp",
+        "hex_secundario": "#486b4a",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_fast_trail_750w_preto_azul.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-jazz-e700-1000w",
+    "nome": "Bike Jazz E700 1000W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Jazz E700 1000W",
+    "slug": "bicicleta-eletrica-jazz-e700-1000w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Jazz E700 1000W com motor 1000W e bateria Lítio 48V 20Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3990,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 48V 20Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_jazz_e700_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Marrom",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_jazz_e700_1000w_preto_marrom.webp",
+        "hex_secundario": "#6b4b34",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_jazz_e700_1000w_preto.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-qje-05-1000w",
+    "nome": "Bike QJE-05 1000W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica QJE-05 1000W",
+    "slug": "bicicleta-eletrica-qje-05-1000w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica QJE-05 1000W com motor 1000W e bateria Lítio 48V 18Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3990,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 48V 18Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_qje_05_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Marrom",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_qje_05_1000w_preto_marrom.webp",
+        "hex_secundario": "#6b4b34",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_qje_05_1000w_preto.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-ride-pro-750w",
+    "nome": "Bike Ride Pro 750W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Ride Pro 750W",
+    "slug": "bicicleta-eletrica-ride-pro-750w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Ride Pro 750W com motor 750W e bateria Lítio 48V. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3999.89,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "750W",
+    "tipo_bateria": "Lítio 48V",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto/Branco",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_ride_pro_750w_preto_branco.webp",
+        "hex_secundario": "#f2f2ef",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Cinza",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_ride_pro_750w_preto_cinza.webp",
+        "hex_secundario": "#7d8288",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Laranja",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_ride_pro_750w_preto_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Vermelho",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_ride_pro_750w_preto_vermelho.webp",
+        "hex_secundario": "#a52323",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_ride_pro_750w_preto_branco.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-rider-pro-1000w",
+    "nome": "Bike Rider Pro 1000W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Rider Pro 1000W",
+    "slug": "bicicleta-eletrica-rider-pro-1000w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Rider Pro 1000W com motor 1000W e bateria Lítio 48V 20Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3990,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 48V 20Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_rider_pro_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Marrom",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_rider_pro_1000w_preto_marrom.webp",
+        "hex_secundario": "#6b4b34",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_rider_pro_1000w_preto.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-tjsr-b-035-1000w",
+    "nome": "Bike TJSR-B-035 1000W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica TJSR-B-035 1000W",
+    "slug": "bicicleta-eletrica-tjsr-b-035-1000w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica TJSR-B-035 1000W com motor 1000W e bateria Lítio 48V 18Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3990,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 48V 18Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_tjsr_b_035_1000w_preto.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Marrom",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_tjsr_b_035_1000w_preto_marrom.webp",
+        "hex_secundario": "#6b4b34",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_tjsr_b_035_1000w_preto.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-voyager-750w",
+    "nome": "Bike Voyager 750W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Voyager 750W",
+    "slug": "bicicleta-eletrica-voyager-750w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Voyager 750W com motor 750W e bateria Lítio 48V 18,2Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3999.92,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "750W",
+    "tipo_bateria": "Lítio 48V 18,2Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto/Branco",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_voyager_750w_preto_branco.webp",
+        "hex_secundario": "#f2f2ef",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Laranja",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_voyager_750w_preto_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Verde",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_voyager_750w_preto_verde.webp",
+        "hex_secundario": "#486b4a",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Vermelho",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_voyager_750w_preto_vermelho.webp",
+        "hex_secundario": "#a52323",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_voyager_750w_preto_branco.webp"
+  },
+  {
+    "id": "bicicleta-eletrica-winner-750w",
+    "nome": "Bike Winner 750W",
+    "emoji": "🚲",
+    "titulo": "Bicicleta Elétrica Winner 750W",
+    "slug": "bicicleta-eletrica-winner-750w",
+    "categoria": "Bike",
+    "categoria_slug": "bikes-eletricas",
+    "descricao": "Bicicleta Elétrica Winner 750W com motor 750W e bateria Lítio 48V. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 3999.92,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "750W",
+    "tipo_bateria": "Lítio 48V",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Preto/Laranja",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_winner_750w_preto_laranja.webp",
+        "hex_secundario": "#e8761a",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Prata",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_winner_750w_preto_prata.webp",
+        "hex_secundario": "#c3c6c9",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Preto/Vermelho",
+        "hex": "#151719",
+        "imagem": "/motos/bicicleta_eletrica_winner_750w_preto_vermelho.webp",
+        "hex_secundario": "#a52323",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/bicicleta_eletrica_winner_750w_preto_laranja.webp"
   }
 ]

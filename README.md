@@ -24,6 +24,8 @@ npm run build          # valida a compilação de produção
 npm run convert:motos  # converte os PNGs de public/motos para WebP (qualidade 85)
 npm run brand:assets   # regenera logo, ícone e imagem Open Graph
 npm run import:soollar # importa as imagens oficiais da Soollar para WebP
+npm run import:soollar:full # importa as 71 imagens do catálogo completo
+npm run scan:soollar   # autentica na Soollar e gera o inventário completo
 npm run db:seed        # envia produtos e variações para o Supabase
 ```
 
@@ -40,6 +42,10 @@ lista de variações de cor. Cada variação possui nome, cor hexadecimal, image
 slug antigo (para preservar links já compartilhados) e o campo
 `disponibilidade`, que aceita `pronta_entrega` ou `sob_pedido`.
 
+O catálogo completo tem **28 modelos e 93 variações**, sendo **17 variações com
+pronta entrega** e as restantes sob pedido. As imagens oficiais ficam em
+`public/motos/` no formato WebP.
+
 Os cards da vitrine exibem foto quadrada, nome do modelo, amostras de cor, badge
 de disponibilidade e o botão "VER DETALHES". O badge e a mensagem de WhatsApp
 mudam junto com a cor selecionada. A ficha técnica completa fica na página
@@ -51,13 +57,14 @@ Em `/admin`, cada cor pode ser alternada entre **Pronta Entrega** e **Sob Pedido
 com um clique na coluna "Disponibilidade por cor" ou no formulário de edição. O
 formulário também permite adicionar, remover e editar as cores do modelo.
 
-Enquanto a ligação ao Supabase estiver indisponível, o painel guarda as alterações
-no `localStorage` do navegador. A migração do banco está em
-`supabase/migrations/20261022_produto_variacoes.sql`; depois de configurar uma URL
-de Supabase válida, execute a migração e rode `npm run db:seed` para persistir o
-catálogo.
+O painel guarda alterações no `localStorage` e também está preparado para a
+persistência no Supabase. A migração do banco está em
+`supabase/migrations/20261022_produto_variacoes.sql`.
 
-## Deploy
+> A `SUPABASE_SERVICE_ROLE_KEY` permite ler/escrever na Data API, mas **não executa
+> DDL**. Para criar a tabela `produto_variacoes`, aplique a migração pelo SQL
+> Editor do Supabase ou por uma conexão Postgres com a senha do banco. Depois rode
+> `npm run db:seed`.
 
 ## Deploy
 
