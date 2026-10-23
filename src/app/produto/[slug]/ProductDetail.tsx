@@ -390,36 +390,90 @@ export function ProductDetail({
           <div className="flex flex-col gap-3">
             <details className="group border border-gray-200 bg-gray-50 p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-gray-900">
-                Como recarregar a bateria?
+                1. Este modelo precisa de CNH ou emplacamento?
                 <ChevronDown className="h-4 w-4 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-2 border-t border-gray-200 pt-2 text-xs leading-relaxed text-gray-600">
-                Basta ligar o carregador bivolt incluso diretamente em qualquer tomada padrão
-                (110V ou 220V). O tempo médio de carga é de 6 a 8 horas para carga total.
+                {product.dispensa_cnh ? (
+                  <>
+                    <strong>Não precisa de CNH nem emplacamento.</strong> Este modelo enquadra-se nos limites de
+                    equipamento de mobilidade individual autopropelido da{" "}
+                    <strong>Resolução CONTRAN nº 996/2023</strong> (potência nominal até 1000W e velocidade
+                    limitada a 32 km/h), sendo isento de CNH, ACC, licenciamento e IPVA.
+                  </>
+                ) : (
+                  <>
+                    Consulte a classificação exata conforme a <strong>Resolução CONTRAN nº 996/2023</strong>:
+                    autopropelidos até 1000W e 32 km/h dispensam CNH e emplacamento, enquanto ciclomotores
+                    acima desses limites requerem registro e habilitação ACC ou Categoria A.
+                  </>
+                )}
               </p>
             </details>
 
             <details className="group border border-gray-200 bg-gray-50 p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-gray-900">
-                Como funciona a garantia e suporte técnico?
+                2. É obrigatório usar capacete? Onde posso circular?
                 <ChevronDown className="h-4 w-4 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-2 border-t border-gray-200 pt-2 text-xs leading-relaxed text-gray-600">
-                A Eletrosom Ebikes oferece garantia oficial de fábrica e suporte para encomenda
-                de peças de reposição (pastilhas de freio, câmaras, pneus, aceleradores e baterias)
-                para que você tenha tranquilidade ao rodar com seu veículo elétrico.
+                <strong>Sim, o uso de capacete de proteção é indispensável</strong> para o condutor e passageiro.
+                Você pode circular em <strong>ciclovias, ciclofaixas e vias urbanas locais</strong> (mantendo-se à
+                direita da pista e respeitando o sentido do trânsito, conforme o Art. 57 do CTB). Não é permitido
+                transitar sobre calçadas ou em rodovias de trânsito rápido.
               </p>
             </details>
 
             <details className="group border border-gray-200 bg-gray-50 p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-gray-900">
-                Esse modelo precisa de CNH ou emplacamento?
+                3. Como carregar a bateria e quanto gasta na conta de luz?
                 <ChevronDown className="h-4 w-4 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-2 border-t border-gray-200 pt-2 text-xs leading-relaxed text-gray-600">
-                Não. Os modelos comercializados pela Eletrosom Ebikes são autopropelidos
-                elétricos dentro dos limites da Resolução CONTRAN 996/23 e dispensam CNH,
-                emplacamento e IPVA.
+                Basta conectar o <strong>carregador bivolt ({product.especificacoes_tecnicas?.["Carregador"] || "110V/220V"})</strong> incluso em
+                qualquer tomada comum residencial. O tempo médio de recarga deste modelo é de{" "}
+                <strong>{product.tempo_recarga || "4 a 7 horas"}</strong>, e o consumo elétrico é extremamente
+                baixo: cerca de <strong>R$ 0,50 a R$ 1,50 por carga completa</strong>. Dica: recarregue antes de
+                zerar totalmente a carga para preservar a vida útil da bateria (3 a 8 anos).
+              </p>
+            </details>
+
+            <details className="group border border-gray-200 bg-gray-50 p-4">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-gray-900">
+                4. Posso andar na chuva com este modelo?
+                <ChevronDown className="h-4 w-4 text-gray-400 transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 border-t border-gray-200 pt-2 text-xs leading-relaxed text-gray-600">
+                <strong>Sim, em chuvas leves a moderadas.</strong> Os componentes elétricos possuem vedação para uso
+                urbano sob chuva. Evite apenas atravessar ruas alagadas (onde a água cubra o eixo da roda/motor ou o
+                assoalho da bateria) e nunca utilize lavadoras de alta pressão diretamente no painel ou compartimento
+                elétrico.
+              </p>
+            </details>
+
+            <details className="group border border-gray-200 bg-gray-50 p-4">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-gray-900">
+                5. Qual o peso suportado e a autonomia real?
+                <ChevronDown className="h-4 w-4 text-gray-400 transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 border-t border-gray-200 pt-2 text-xs leading-relaxed text-gray-600">
+                Este modelo tem capacidade máxima indicada de <strong>{product.capacidade_carga || "até 150 kg"}</strong>{" "}
+                e autonomia estimada de <strong>{product.autonomia || "45 a 60 km"}</strong> por carga completa. A
+                autonomia exata varia conforme o peso transportado, relevo (subidas), calibragem dos pneus e nível de
+                velocidade utilizado.
+              </p>
+            </details>
+
+            <details className="group border border-gray-200 bg-gray-50 p-4">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-gray-900">
+                6. Qual o custo de manutenção, garantia e suporte?
+                <ChevronDown className="h-4 w-4 text-gray-400 transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="mt-2 border-t border-gray-200 pt-2 text-xs leading-relaxed text-gray-600">
+                O custo de manutenção é até <strong>80% menor</strong> que o de uma moto a gasolina, pois não há
+                troca de óleo, filtros, velas ou embreagem — apenas revisões básicas de freios, pneus e suspensão. A{" "}
+                <strong>Eletrosom Ebikes</strong> oferece <strong>garantia oficial de fábrica</strong> e suporte
+                para encomenda de peças de reposição.
               </p>
             </details>
           </div>
