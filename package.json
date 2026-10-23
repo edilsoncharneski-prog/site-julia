@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "convert:motos": "node scripts/convert-motos-webp.mjs",
-    "brand:assets": "node scripts/generate-brand-assets.mjs"
+    "brand:assets": "node scripts/generate-brand-assets.mjs",
+    "import:soollar": "node scripts/import-soollar-images.mjs",
+    "db:seed": "node scripts/seed-supabase.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

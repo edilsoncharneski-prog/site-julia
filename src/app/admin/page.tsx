@@ -13,13 +13,32 @@ import {
   Zap,
   Save,
   Search,
+  Palette,
+  Clock,
+  Truck,
 } from 'lucide-react';
 import Image from 'next/image';
 import { formatCurrency } from '@/lib/utils';
-import type { Product } from '@/lib/products';
+import {
+  disponibilidadeLabels,
+  getProductColors,
+  type Disponibilidade,
+  type Product,
+  type ProductColor,
+} from '@/lib/products';
 import initialProductsData from '@/data/produtos-loja.json';
 
 const INITIAL_MOCK_PRODUCTS: Product[] = initialProductsData as Product[];
+const STORAGE_KEY = 'eletrosom_admin_products_v2';
+
+function emptyColor(): ProductColor {
+  return {
+    nome: 'Nova cor',
+    hex: '#111111',
+    imagem: '',
+    disponibilidade: 'sob_pedido',
+  };
+}
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<'produtos' | 'banners' | 'configuracoes'>('produtos');
@@ -39,7 +58,7 @@ export default function AdminPage() {
   const [formDestaque, setFormDestaque] = useState(true);
   const [formDispensaCnh, setFormDispensaCnh] = useState(true);
   const [formDescricao, setFormDescricao] = useState('');
-  const [formImagemUrl, setFormImagemUrl] = useState('');
+  const [formCores, setFormCores] = useState<ProductColor[]>([emptyColor()]);
 
   // Configurações da Loja
   const [whatsapp, setWhatsapp] = useState('5566984202988');
@@ -49,13 +68,13 @@ export default function AdminPage() {
   // Carregar produtos salvos
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('eletrosom_admin_products');
+      const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setProducts(JSON.parse(saved));
       } else {
         setProducts(INITIAL_MOCK_PRODUCTS);
-        localStorage.setItem('eletrosom_admin_products', JSON.stringify(INITIAL_MOCK_PRODUCTS));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_MOCK_PRODUCTS));
       }
 
       const savedWp = localStorage.getItem('eletrosom_admin_wp');
@@ -71,7 +90,7 @@ export default function AdminPage() {
   const saveProductsToStorage = (updated: Product[]) => {
     setProducts(updated);
     try {
-      localStorage.setItem('eletrosom_admin_products', JSON.stringify(updated));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
     } catch {
       // Ignore
     }
@@ -89,7 +108,7 @@ export default function AdminPage() {
     setFormDestaque(true);
     setFormDispensaCnh(true);
     setFormDescricao('');
-    setFormImagemUrl('');
+    setFormCores([emptyColor()]);
     setIsModalOpen(true);
   };
 
@@ -105,8 +124,69 @@ export default function AdminPage() {
     setFormDestaque(p.destaque || false);
     setFormDispensaCnh(p.dispensa_cnh !== false);
     setFormDescricao(p.descricao || '');
-    setFormImagemUrl(p.imagem_capa || '');
+    setFormCores(
+      getProductColors(p).map((color) => ({
+        ...color,
+        disponibilidade: color.disponibilidade || 'sob_pedido',
+      }))
+    );
     setIsModalOpen(true);
+  };
+
+  const updateColor = <K extends keyof ProductColor>(
+    index: number,
+    field: K,
+    value: ProductColor[K]
+  ) => {
+    setFormCores((colors) =>
+      colors.map((color, i) => (i === index ? { ...color, [field]: value } : color))
+    );
+  };
+
+  const addColor = () => {
+    setFormCores((colors) => [...colors, emptyColor()]);
+  };
+
+  const removeColor = (index: number) => {
+    setFormCores((colors) => {
+      if (colors.length === 1) return colors;
+      return colors.filter((_, i) => i !== index);
+    });
+  };
+
+  const toggleColorAvailability = (index: number) => {
+    setFormCores((colors) =>
+      colors.map((color, i) =>
+        i === index
+          ? {
+              ...color,
+              disponibilidade:
+                color.disponibilidade === 'pronta_entrega'
+                  ? 'sob_pedido'
+                  : 'pronta_entrega',
+            }
+          : color
+      )
+    );
+  };
+
+  const handleQuickToggle = (productId: string, colorIndex: number) => {
+    const updated = products.map((product) => {
+      if (product.id !== productId) return product;
+      const colors = getProductColors(product).map((color, index) =>
+        index === colorIndex
+          ? {
+              ...color,
+              disponibilidade:
+                color.disponibilidade === 'pronta_entrega'
+                  ? ('sob_pedido' as Disponibilidade)
+                  : ('pronta_entrega' as Disponibilidade),
+            }
+          : color
+      );
+      return { ...product, cores: colors };
+    });
+    saveProductsToStorage(updated);
   };
 
   const handleDelete = (id: string) => {
@@ -134,20 +214,15 @@ export default function AdminPage() {
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)+/g, '');
 
-    const imagemCapa = formImagemUrl.trim();
-    const existingColors = editingProduct?.cores?.length
-      ? editingProduct.cores
-      : [
-          {
-            nome: 'Padrão',
-            hex: '#111111',
-            imagem: imagemCapa || '/logo.png',
-          },
-        ];
-
-    const cores = existingColors.map((color, index) =>
-      index === 0 && imagemCapa ? { ...color, imagem: imagemCapa } : color
-    );
+    const cores = formCores
+      .map((color) => ({
+        ...color,
+        nome: color.nome.trim() || 'Padrão',
+        imagem: color.imagem.trim() || '/logo.png',
+        disponibilidade: color.disponibilidade || 'sob_pedido',
+      }))
+      .slice(0, 12);
+    const imagemCapa = cores[0]?.imagem;
 
     const newProd: Product = {
       id: editingProduct ? editingProduct.id : Date.now().toString(),
@@ -168,7 +243,7 @@ export default function AdminPage() {
       velocidade_maxima: formVelocidade.trim(),
       capacidade_carga: editingProduct?.capacidade_carga || '150 kg',
       tempo_recarga: editingProduct?.tempo_recarga || '6 a 8 horas',
-      imagem_capa: imagemCapa || cores[0]?.imagem,
+      imagem_capa: imagemCapa,
       cores,
     };
 
@@ -243,6 +318,13 @@ export default function AdminPage() {
       {/* ABA: PRODUTOS */}
       {activeTab === 'produtos' && (
         <div className="flex flex-col gap-4">
+          <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-[11px] leading-relaxed text-amber-800">
+            <strong>Disponibilidade por cor:</strong> use os chips da coluna
+            &quot;Disponibilidade por cor&quot; para alternar com um clique. As alterações
+            ficam salvas neste navegador até a sincronização com o Supabase ser
+            restabelecida.
+          </div>
+
           {/* Barra de Ações: Busca e Botão Novo */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white p-4 rounded-xl border border-gray-200 shadow-2xs">
             <div className="relative w-full sm:w-80">
@@ -274,6 +356,7 @@ export default function AdminPage() {
                     <th className="py-3 px-4">Veículo</th>
                     <th className="py-3 px-4">Especificações</th>
                     <th className="py-3 px-4">Preço / Visibilidade</th>
+                    <th className="py-3 px-4">Disponibilidade por cor</th>
                     <th className="py-3 px-4 text-center">Destaque</th>
                     <th className="py-3 px-4 text-right">Ações</th>
                   </tr>
@@ -331,6 +414,40 @@ export default function AdminPage() {
                         )}
                       </td>
 
+                      <td className="py-3.5 px-4">
+                        <div className="flex max-w-[290px] flex-wrap gap-1.5">
+                          {getProductColors(p).map((color, index) => {
+                            const isProntaEntrega =
+                              color.disponibilidade === 'pronta_entrega';
+
+                            return (
+                              <button
+                                key={`${p.id}-${color.nome}-${index}`}
+                                type="button"
+                                onClick={() => handleQuickToggle(p.id, index)}
+                                title={`${color.nome}: ${disponibilidadeLabels[color.disponibilidade]}. Clique para alternar.`}
+                                className={`flex items-center gap-1 rounded-full border px-2 py-1 text-[10px] font-semibold transition-colors ${
+                                  isProntaEntrega
+                                    ? 'border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                                    : 'border-gray-200 bg-gray-50 text-gray-500 hover:bg-gray-100'
+                                }`}
+                              >
+                                <span
+                                  className="h-2.5 w-2.5 rounded-full border border-black/10"
+                                  style={{ backgroundColor: color.hex }}
+                                />
+                                <span className="max-w-[92px] truncate">
+                                  {color.nome}
+                                </span>
+                                <span className="uppercase tracking-wide">
+                                  {isProntaEntrega ? 'Pronta' : 'Pedido'}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </td>
+
                       <td className="py-3.5 px-4 text-center">
                         <button
                           onClick={() => handleToggleDestaque(p.id)}
@@ -366,7 +483,7 @@ export default function AdminPage() {
                   ))}
                   {filteredProducts.length === 0 && (
                     <tr>
-                      <td colSpan={5} className="text-center py-8 text-gray-400">
+                      <td colSpan={6} className="text-center py-8 text-gray-400">
                         Nenhum veículo encontrado com este nome.
                       </td>
                     </tr>
@@ -533,17 +650,138 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
-                  URL da Imagem de Capa
-                </label>
-                <input
-                  type="text"
-                  value={formImagemUrl}
-                  onChange={(e) => setFormImagemUrl(e.target.value)}
-                  placeholder="https://... ou caminho da imagem"
-                  className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:outline-hidden focus:border-gray-500"
-                />
+              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-start gap-2">
+                    <Palette className="mt-0.5 h-4 w-4 text-emerald-600" />
+                    <div>
+                      <h4 className="text-xs font-bold text-gray-900">
+                        Cores e disponibilidade
+                      </h4>
+                      <p className="text-[11px] leading-relaxed text-gray-500">
+                        A primeira cor é a capa do card. Defina cada variação como
+                        pronta entrega ou sob pedido.
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={addColor}
+                    className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-[11px] font-semibold text-gray-700 transition-colors hover:border-gray-900 hover:text-gray-950"
+                  >
+                    <Plus className="h-3.5 w-3.5" />
+                    Adicionar cor
+                  </button>
+                </div>
+
+                <div className="mt-4 flex flex-col gap-3">
+                  {formCores.map((color, index) => {
+                    const isProntaEntrega =
+                      color.disponibilidade === 'pronta_entrega';
+
+                    return (
+                      <div
+                        key={index}
+                        className="rounded-lg border border-gray-200 bg-white p-3"
+                      >
+                        <div className="flex flex-wrap items-end gap-3">
+                          <div className="flex flex-col items-center gap-1">
+                            <span
+                              className="h-9 w-9 rounded-full border border-gray-300"
+                              style={{ backgroundColor: color.hex }}
+                            />
+                            <span className="text-[9px] text-gray-400">
+                              {index === 0 ? 'Capa' : `#${index + 1}`}
+                            </span>
+                          </div>
+
+                          <div className="min-w-[150px] flex-1">
+                            <label className="mb-1 block text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+                              Nome da cor
+                            </label>
+                            <input
+                              type="text"
+                              value={color.nome}
+                              onChange={(e) =>
+                                updateColor(index, 'nome', e.target.value)
+                              }
+                              placeholder="Ex: Azul"
+                              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-gray-500 focus:outline-hidden"
+                            />
+                          </div>
+
+                          <div className="w-[125px]">
+                            <label className="mb-1 block text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+                              Cor (hex)
+                            </label>
+                            <div className="flex items-center gap-1.5">
+                              <input
+                                type="color"
+                                value={color.hex}
+                                onChange={(e) =>
+                                  updateColor(index, 'hex', e.target.value)
+                                }
+                                className="h-9 w-9 cursor-pointer rounded border border-gray-200 bg-white p-0.5"
+                                aria-label={`Selecionar cor ${color.nome}`}
+                              />
+                              <input
+                                type="text"
+                                value={color.hex}
+                                onChange={(e) =>
+                                  updateColor(index, 'hex', e.target.value)
+                                }
+                                className="w-[78px] rounded-lg border border-gray-200 px-2 py-2 text-xs focus:border-gray-500 focus:outline-hidden"
+                              />
+                            </div>
+                          </div>
+
+                          <button
+                            type="button"
+                            onClick={() => toggleColorAvailability(index)}
+                            className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-[11px] font-semibold transition-colors ${
+                              isProntaEntrega
+                                ? 'border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                                : 'border-gray-200 bg-gray-50 text-gray-600 hover:bg-gray-100'
+                            }`}
+                            aria-pressed={isProntaEntrega}
+                          >
+                            {isProntaEntrega ? (
+                              <Truck className="h-3.5 w-3.5" />
+                            ) : (
+                              <Clock className="h-3.5 w-3.5" />
+                            )}
+                            {disponibilidadeLabels[color.disponibilidade]}
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={() => removeColor(index)}
+                            disabled={formCores.length === 1}
+                            className="rounded-lg p-2 text-red-500 transition-colors hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-30"
+                            title="Remover cor"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </button>
+                        </div>
+
+                        <div className="mt-3">
+                          <label className="mb-1 block text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+                            URL da imagem desta cor
+                          </label>
+                          <input
+                            type="text"
+                            value={color.imagem}
+                            onChange={(e) =>
+                              updateColor(index, 'imagem', e.target.value)
+                            }
+                            placeholder="/motos/modelo-cor.webp ou https://..."
+                            className="w-full rounded-lg border border-gray-200 px-3 py-2 text-xs focus:border-gray-500 focus:outline-hidden"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-xl border border-gray-200">

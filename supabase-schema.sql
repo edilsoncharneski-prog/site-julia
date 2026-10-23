@@ -23,9 +23,13 @@ CREATE TABLE IF NOT EXISTS public.categorias (
 CREATE TABLE IF NOT EXISTS public.produtos (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     categoria_id UUID REFERENCES public.categorias(id) ON DELETE SET NULL,
+    nome VARCHAR(150),
+    emoji VARCHAR(10),
+    tagline VARCHAR(200),
     titulo VARCHAR(150) NOT NULL,
     slug VARCHAR(180) UNIQUE NOT NULL,
     descricao TEXT,
+    imagem_capa VARCHAR(500),
     preco NUMERIC(10, 2),
     preco_promocional NUMERIC(10, 2),
     exibir_preco BOOLEAN DEFAULT false,          -- Se false, exibe 'Consulte no WhatsApp'
@@ -56,6 +60,23 @@ CREATE TABLE IF NOT EXISTS public.produto_imagens (
     ordem INT DEFAULT 0,
     is_capa BOOLEAN DEFAULT false,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- 4.1 Variações de Cor e Disponibilidade
+CREATE TABLE IF NOT EXISTS public.produto_variacoes (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    produto_id UUID NOT NULL REFERENCES public.produtos(id) ON DELETE CASCADE,
+    nome VARCHAR(80) NOT NULL,
+    hex VARCHAR(7) NOT NULL,
+    hex_secundario VARCHAR(7),
+    imagem VARCHAR(500) NOT NULL,
+    disponibilidade VARCHAR(20) NOT NULL DEFAULT 'sob_pedido'
+        CHECK (disponibilidade IN ('pronta_entrega', 'sob_pedido')),
+    slug_legado VARCHAR(180),
+    ordem INT DEFAULT 0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+    UNIQUE (produto_id, nome)
 );
 
 -- 5. Banners Promocionais da Home
@@ -109,6 +130,7 @@ ON CONFLICT (slug) DO NOTHING;
 ALTER TABLE public.categorias ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.produtos ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.produto_imagens ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.produto_variacoes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.banners ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.configuracoes_loja ENABLE ROW LEVEL SECURITY;
 
@@ -120,6 +142,9 @@ CREATE POLICY "Leitura pública de produtos publicados" ON public.produtos
     FOR SELECT USING (status = 'publicado');
 
 CREATE POLICY "Leitura pública de imagens de produtos" ON public.produto_imagens
+    FOR SELECT USING (true);
+
+CREATE POLICY "Leitura pública de variações" ON public.produto_variacoes
     FOR SELECT USING (true);
 
 CREATE POLICY "Leitura pública de banners ativos" ON public.banners
@@ -136,6 +161,9 @@ CREATE POLICY "Acesso total admin produtos" ON public.produtos
     FOR ALL USING (auth.role() = 'service_role' OR auth.role() = 'authenticated');
 
 CREATE POLICY "Acesso total admin produto_imagens" ON public.produto_imagens
+    FOR ALL USING (auth.role() = 'service_role' OR auth.role() = 'authenticated');
+
+CREATE POLICY "Acesso total admin variações" ON public.produto_variacoes
     FOR ALL USING (auth.role() = 'service_role' OR auth.role() = 'authenticated');
 
 CREATE POLICY "Acesso total admin banners" ON public.banners

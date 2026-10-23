@@ -19,8 +19,13 @@ import {
   Zap,
 } from 'lucide-react';
 import { ColorSwatches } from '@/components/ColorSwatches';
-import { buildWhatsAppLink, formatCurrency } from '@/lib/utils';
-import { getProductColors, type Product } from '@/lib/products';
+import { StatusBadge } from '@/components/StatusBadge';
+import { buildAvailabilityWhatsAppLink, formatCurrency } from '@/lib/utils';
+import {
+  disponibilidadeLabels,
+  getProductColors,
+  type Product,
+} from '@/lib/products';
 
 const diferenciais = [
   'Bateria de lítio/grafeno de alta durabilidade e recarga bivolt',
@@ -48,8 +53,9 @@ export function ProductDetail({
       ? `${window.location.origin}/produto/${product.slug}?cor=${activeColor}`
       : undefined;
 
-  const whatsappUrl = buildWhatsAppLink(
-    `${product.titulo} — Cor ${selectedColor.nome}`,
+  const whatsappUrl = buildAvailabilityWhatsAppLink(
+    product.nome,
+    selectedColor,
     productUrl
   );
 
@@ -94,6 +100,7 @@ export function ProductDetail({
     ['Tempo de recarga', product.tempo_recarga || '6 a 8 horas'],
     ['Capacidade de carga', product.capacidade_carga || '150 kg'],
     ['Cores disponíveis', colors.map((color) => color.nome).join(' • ')],
+    ['Disponibilidade', disponibilidadeLabels[selectedColor.disponibilidade]],
     [
       'CNH / CONTRAN',
       product.dispensa_cnh === false
@@ -152,8 +159,12 @@ export function ProductDetail({
                 />
               ))}
 
+              <div className="absolute left-4 top-4 z-10">
+                <StatusBadge status={selectedColor.disponibilidade} size="md" />
+              </div>
+
               {product.dispensa_cnh !== false && (
-                <div className="absolute left-4 top-4 bg-emerald-600 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] text-white">
+                <div className="absolute right-4 top-4 bg-emerald-600 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] text-white">
                   Dispensado CNH
                 </div>
               )}
@@ -164,9 +175,12 @@ export function ProductDetail({
                 <span className="block text-[9px] font-semibold uppercase tracking-[0.22em] text-gray-400">
                   Cor selecionada
                 </span>
-                <span className="mt-0.5 block text-sm font-medium text-gray-900">
-                  {selectedColor.nome}
-                </span>
+                <div className="mt-1 flex flex-wrap items-center gap-2">
+                  <span className="text-sm font-medium text-gray-900">
+                    {selectedColor.nome}
+                  </span>
+                  <StatusBadge status={selectedColor.disponibilidade} />
+                </div>
               </div>
               <ColorSwatches
                 colors={colors}

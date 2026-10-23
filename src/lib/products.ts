@@ -1,10 +1,13 @@
 import productsData from '@/data/produtos-loja.json';
 
+export type Disponibilidade = 'pronta_entrega' | 'sob_pedido';
+
 export interface ProductColor {
   nome: string;
   hex: string;
   hex_secundario?: string;
   imagem: string;
+  disponibilidade: Disponibilidade;
   /** Slug antigo da variação, mantido para não quebrar links já compartilhados. */
   slug_legado?: string;
 }
@@ -37,20 +40,51 @@ export interface Product {
 
 export const products = productsData as Product[];
 
+export const disponibilidadeLabels: Record<Disponibilidade, string> = {
+  pronta_entrega: 'Pronta Entrega',
+  sob_pedido: 'Sob Pedido',
+};
+
+export const disponibilidadeDescricao: Record<Disponibilidade, string> = {
+  pronta_entrega: 'Disponível para retirada imediata na loja',
+  sob_pedido: 'Encomenda sob consulta com a fábrica',
+};
+
 /**
  * Retorna as variações de cor de um modelo. Produtos antigos sem o campo
  * `cores` continuam funcionando com uma única cor derivada da imagem de capa.
  */
 export function getProductColors(product: Product): ProductColor[] {
-  if (product.cores?.length) return product.cores;
+  if (product.cores?.length) {
+    return product.cores.map((color) => ({
+      ...color,
+      disponibilidade: color.disponibilidade || 'sob_pedido',
+    }));
+  }
 
   return [
     {
       nome: 'Padrão',
       hex: '#1f2937',
       imagem: product.imagem_capa || '/logo.png',
+      disponibilidade: 'sob_pedido',
     },
   ];
+}
+
+/**
+ * A vitrine abre já na primeira cor disponível para pronta entrega,
+ * destacando o que o lojista tem em estoque.
+ */
+export function getInitialColorIndex(colors: ProductColor[]): number {
+  const index = colors.findIndex((color) => color.disponibilidade === 'pronta_entrega');
+  return index >= 0 ? index : 0;
+}
+
+export function countProntaEntrega(product: Product): number {
+  return getProductColors(product).filter(
+    (color) => color.disponibilidade === 'pronta_entrega'
+  ).length;
 }
 
 /**
@@ -62,7 +96,9 @@ export function findProductBySlug(slug: string): {
   colorIndex: number;
 } | null {
   const direct = products.find((product) => product.slug === slug);
-  if (direct) return { product: direct, colorIndex: 0 };
+  if (direct) {
+    return { product: direct, colorIndex: getInitialColorIndex(getProductColors(direct)) };
+  }
 
   for (const product of products) {
     const colorIndex = getProductColors(product).findIndex(

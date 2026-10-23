@@ -23,6 +23,8 @@ Abra [http://localhost:3000](http://localhost:3000).
 npm run build          # valida a compilação de produção
 npm run convert:motos  # converte os PNGs de public/motos para WebP (qualidade 85)
 npm run brand:assets   # regenera logo, ícone e imagem Open Graph
+npm run import:soollar # importa as imagens oficiais da Soollar para WebP
+npm run db:seed        # envia produtos e variações para o Supabase
 ```
 
 Para remover os PNGs originais após a conversão:
@@ -34,10 +36,28 @@ npm run convert:motos -- --delete-originals
 ## Catálogo
 
 Os modelos ficam em `src/data/produtos-loja.json`, agrupados por veículo com uma
-lista de variações de cor. Cada variação possui nome, cor hexadecimal, imagem e o
-slug antigo (para preservar links já compartilhados). Os cards da vitrine exibem
-apenas foto quadrada, nome do modelo, amostras de cor e o botão "VER DETALHES".
-A ficha técnica completa fica na página `/produto/[slug]`.
+lista de variações de cor. Cada variação possui nome, cor hexadecimal, imagem,
+slug antigo (para preservar links já compartilhados) e o campo
+`disponibilidade`, que aceita `pronta_entrega` ou `sob_pedido`.
+
+Os cards da vitrine exibem foto quadrada, nome do modelo, amostras de cor, badge
+de disponibilidade e o botão "VER DETALHES". O badge e a mensagem de WhatsApp
+mudam junto com a cor selecionada. A ficha técnica completa fica na página
+`/produto/[slug]`.
+
+## Estoque e painel administrativo
+
+Em `/admin`, cada cor pode ser alternada entre **Pronta Entrega** e **Sob Pedido**
+com um clique na coluna "Disponibilidade por cor" ou no formulário de edição. O
+formulário também permite adicionar, remover e editar as cores do modelo.
+
+Enquanto a ligação ao Supabase estiver indisponível, o painel guarda as alterações
+no `localStorage` do navegador. A migração do banco está em
+`supabase/migrations/20261022_produto_variacoes.sql`; depois de configurar uma URL
+de Supabase válida, execute a migração e rode `npm run db:seed` para persistir o
+catálogo.
+
+## Deploy
 
 ## Deploy
 

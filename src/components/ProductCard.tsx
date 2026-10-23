@@ -4,7 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { ColorSwatches } from '@/components/ColorSwatches';
-import { getProductColors, type Product } from '@/lib/products';
+import { StatusBadge } from '@/components/StatusBadge';
+import {
+  getInitialColorIndex,
+  getProductColors,
+  type Product,
+} from '@/lib/products';
 
 export function ProductCard({
   product,
@@ -14,7 +19,8 @@ export function ProductCard({
   priority?: boolean;
 }) {
   const colors = getProductColors(product);
-  const [activeColor, setActiveColor] = useState(0);
+  const [activeColor, setActiveColor] = useState(() => getInitialColorIndex(colors));
+  const selectedColor = colors[activeColor] ?? colors[0];
   const productHref = `/produto/${product.slug}${
     colors.length > 1 ? `?cor=${activeColor}` : ''
   }`;
@@ -45,6 +51,10 @@ export function ProductCard({
             }`}
           />
         ))}
+
+        <span className="pointer-events-none absolute left-3 top-3 z-10">
+          <StatusBadge status={selectedColor.disponibilidade} />
+        </span>
       </Link>
 
       <div className="flex flex-1 flex-col items-center px-1 pt-4 text-center">

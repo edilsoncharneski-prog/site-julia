@@ -1,90 +1,5 @@
 [
   {
-    "id": "t1",
-    "nome": "Scooter T1 1000W",
-    "emoji": "🛵",
-    "titulo": "Scooter Elétrica T1 1000W",
-    "slug": "scooter-eletrica-t1-1000w",
-    "categoria": "Scooter",
-    "categoria_slug": "autopropelidos",
-    "tagline": "Compacta, ágil e pronta para o dia a dia.",
-    "descricao": "A Scooter Elétrica T1 1000W reúne design compacto, motor de alta eficiência e bateria de lítio de longa durabilidade. Ideal para deslocamentos urbanos e para quem procura economia real no lugar da gasolina, com recarga simples em qualquer tomada e custo por carga inferior a R$ 1,50.",
-    "preco": 3990,
-    "exibir_preco": false,
-    "destaque": true,
-    "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 64V 20Ah",
-    "autonomia": "Até 50 km",
-    "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
-    "imagem_capa": "/motos/scooter_eletrica_t1_1000w_vermelho_prata_3.webp",
-    "cores": [
-      {
-        "nome": "Vermelho/Prata",
-        "hex": "#a51f24",
-        "hex_secundario": "#c3c6c9",
-        "imagem": "/motos/scooter_eletrica_t1_1000w_vermelho_prata_3.webp",
-        "slug_legado": "scooter-eletrica-t1-1000w-vermelho-prata-bateria-de-litio-64v-20ah"
-      },
-      {
-        "nome": "Verde Camaleão",
-        "hex": "#2f5d3a",
-        "imagem": "/motos/scooter_eletrica_t1_1000w_verde_camaleao_4.webp",
-        "slug_legado": "scooter-eletrica-t1-1000w-verde-camaleao-bateria-de-litio-64v-20ah"
-      },
-      {
-        "nome": "Azul Camaleão",
-        "hex": "#1f5a74",
-        "imagem": "/motos/scooter_eletrica_t1_1000w_azul_camaleao__5.webp",
-        "slug_legado": "scooter-eletrica-t1-1000w-azul-camaleao-bateria-de-litio-64v-20ah"
-      },
-      {
-        "nome": "Prata",
-        "hex": "#c3c6c9",
-        "imagem": "/motos/scooter_eletrica_t1_1000w_prata_bateria__7.webp",
-        "slug_legado": "scooter-eletrica-t1-1000w-prata-bateria-de-litio-64v-20ah"
-      }
-    ]
-  },
-  {
-    "id": "tank",
-    "nome": "Scooter Tank 800W",
-    "emoji": "🛵",
-    "titulo": "Scooter Elétrica Tank 800W",
-    "slug": "scooter-eletrica-tank-800w",
-    "categoria": "Scooter",
-    "categoria_slug": "autopropelidos",
-    "tagline": "Estrutura reforçada e bateria de grafeno.",
-    "descricao": "A Scooter Elétrica Tank 800W foi projetada para quem precisa de robustez no dia a dia. Com estrutura reforçada, bateria de grafeno 60V 26Ah e boa capacidade de carga, é uma escolha versátil para trabalhar, estudar ou circular pela cidade com conforto.",
-    "preco": 3990,
-    "exibir_preco": false,
-    "destaque": true,
-    "dispensa_cnh": true,
-    "potencia_motor": "800W",
-    "tipo_bateria": "Grafeno 60V 26Ah",
-    "autonomia": "Até 50 km",
-    "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
-    "imagem_capa": "/motos/scooter_eletrica_tank_800w_cinza_bateria_1.webp",
-    "cores": [
-      {
-        "nome": "Cinza",
-        "hex": "#6d7278",
-        "imagem": "/motos/scooter_eletrica_tank_800w_cinza_bateria_1.webp",
-        "slug_legado": "scooter-eletrica-tank-800w-cinza-bateria-de-grafeno-60v-26ah-arca-new-e-bike"
-      },
-      {
-        "nome": "Preto",
-        "hex": "#16181a",
-        "imagem": "/motos/scooter_eletrica_tank_800w_preto_bateria_2.webp",
-        "slug_legado": "scooter-eletrica-tank-800w-preto-bateria-de-grafeno-60v-26ah"
-      }
-    ]
-  },
-  {
     "id": "cappuccino",
     "nome": "Scooter Cappuccino 1000W",
     "emoji": "🛵",
@@ -104,104 +19,85 @@
     "velocidade_maxima": "32 km/h",
     "capacidade_carga": "150 kg",
     "tempo_recarga": "6 a 8 horas",
-    "imagem_capa": "/motos/scooter_eletrica_cappuccino_1000w_rosa_b_8.webp",
+    "imagem_capa": "/motos/scooter_eletrica_cappuccino_1000w_bege.webp",
     "cores": [
+      {
+        "nome": "Bege",
+        "hex": "#e3d5c3",
+        "imagem": "/motos/scooter_eletrica_cappuccino_1000w_bege.webp",
+        "disponibilidade": "pronta_entrega"
+      },
       {
         "nome": "Rosa/Bege",
         "hex": "#d9a7ad",
         "hex_secundario": "#ead9c6",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_rosa_b_8.webp",
-        "slug_legado": "scooter-eletrica-cappuccino-1000w-rosa-bege-bateria-de-litio-60v-20ah"
+        "slug_legado": "scooter-eletrica-cappuccino-1000w-rosa-bege-bateria-de-litio-60v-20ah",
+        "disponibilidade": "pronta_entrega"
       },
       {
-        "nome": "Verde",
-        "hex": "#667c5b",
-        "imagem": "/motos/scooter_eletrica_cappuccino_1000w_verde__9.webp",
-        "slug_legado": "scooter-eletrica-cappuccino-1000w-verde-bateria-de-litio-60v-20ah"
+        "nome": "Verde/Bege",
+        "hex": "#b7d3bd",
+        "hex_secundario": "#e6d6c2",
+        "imagem": "/motos/scooter_eletrica_cappuccino_1000w_verde_bege.webp",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Vermelho/Bege",
+        "hex": "#a52323",
+        "hex_secundario": "#ead9c6",
+        "imagem": "/motos/scooter_eletrica_cappuccino_1000w_vermelho_bege.webp",
+        "disponibilidade": "pronta_entrega"
       },
       {
         "nome": "Cinza",
         "hex": "#7d8288",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_cinza__10.webp",
-        "slug_legado": "scooter-eletrica-cappuccino-1000w-cinza-bateria-de-litio-60v-20ah"
+        "slug_legado": "scooter-eletrica-cappuccino-1000w-cinza-bateria-de-litio-60v-20ah",
+        "disponibilidade": "pronta_entrega"
       },
       {
         "nome": "Vermelho",
         "hex": "#a52323",
         "imagem": "/motos/scooter_eletrica_cappuccino_1000w_vermel_13.webp",
-        "slug_legado": "scooter-eletrica-cappuccino-1000w-vermelho-bateria-de-litio-60v-20ah"
+        "slug_legado": "scooter-eletrica-cappuccino-1000w-vermelho-bateria-de-litio-60v-20ah",
+        "disponibilidade": "sob_pedido"
       }
     ]
   },
   {
-    "id": "harley",
-    "nome": "Scooter Harley 1000W",
+    "id": "shark",
+    "nome": "Scooter Shark 1000W",
     "emoji": "🛵",
-    "titulo": "Scooter Elétrica Harley 1000W",
-    "slug": "scooter-eletrica-harley-1000w",
+    "titulo": "Scooter Elétrica Shark 1000W",
+    "slug": "scooter-eletrica-shark-1000w",
     "categoria": "Scooter",
     "categoria_slug": "autopropelidos",
-    "tagline": "Presença marcante e pilotagem confortável.",
-    "descricao": "A Harley 1000W traz um visual encorpado e postura de cruiser para quem quer conforto em trajetos mais longos. Suspensão reforçada, banco acolchoado e iluminação LED completam o pacote de uma scooter elétrica feita para chamar atenção.",
-    "preco": 4990,
+    "tagline": "Potência, autonomia e presença para o dia a dia.",
+    "descricao": "A Shark 1000W é a scooter elétrica mais robusta da linha, com bateria de grafeno 72V 26Ah e estrutura preparada para trajetos longos. O conjunto entrega autonomia de até 95 km, capacidade de carga de 200 kg e uma posição de pilotagem firme para quem não abre mão de potência.",
+    "preco": 5990.91,
     "exibir_preco": false,
     "destaque": true,
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 60V 20Ah",
-    "autonomia": "Até 50 km",
+    "tipo_bateria": "Grafeno 72V 26Ah",
+    "autonomia": "Até 95 km",
     "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
-    "imagem_capa": "/motos/scooter_eletrica_harley_1000w_branco_bat_11.webp",
+    "capacidade_carga": "200 kg",
+    "tempo_recarga": "6 a 9 horas",
+    "imagem_capa": "/motos/scooter_eletrica_shark_1000w_amarelo.webp",
     "cores": [
       {
-        "nome": "Branco",
-        "hex": "#f2f2ef",
-        "imagem": "/motos/scooter_eletrica_harley_1000w_branco_bat_11.webp",
-        "slug_legado": "scooter-eletrica-harley-1000w-branco-bateria-de-litio-60v-20ah"
+        "nome": "Amarelo",
+        "hex": "#f2c200",
+        "imagem": "/motos/scooter_eletrica_shark_1000w_amarelo.webp",
+        "disponibilidade": "pronta_entrega"
       },
       {
         "nome": "Vermelho",
-        "hex": "#a8202a",
-        "imagem": "/motos/scooter_eletrica_harley_1000w_vermelho_b_12.webp",
-        "slug_legado": "scooter-eletrica-harley-1000w-vermelho-bateria-de-litio-60v"
-      }
-    ]
-  },
-  {
-    "id": "b3",
-    "nome": "Scooter B3 1000W",
-    "emoji": "🛵",
-    "titulo": "Scooter Elétrica B3 1000W",
-    "slug": "scooter-eletrica-b3-1000w",
-    "categoria": "Scooter",
-    "categoria_slug": "autopropelidos",
-    "tagline": "Design urbano e bateria de grafeno.",
-    "descricao": "A B3 1000W é a scooter elétrica para quem busca um desenho urbano e moderno sem abrir mão de autonomia. A bateria de grafeno 60V 26Ah oferece ciclos de carga mais duradouros, enquanto o motor de 1000W garante agilidade nas saídas.",
-    "preco": 4990.92,
-    "exibir_preco": false,
-    "destaque": false,
-    "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Grafeno 60V 26Ah",
-    "autonomia": "Até 50 km",
-    "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
-    "imagem_capa": "/motos/scooter_eletrica_b3_1000w_preto_bateria__14.webp",
-    "cores": [
-      {
-        "nome": "Preto",
-        "hex": "#151719",
-        "imagem": "/motos/scooter_eletrica_b3_1000w_preto_bateria__14.webp",
-        "slug_legado": "scooter-eletrica-b3-1000w-preto-bateria-de-grafeno-60v-26ah"
-      },
-      {
-        "nome": "Verde",
-        "hex": "#486b4a",
-        "imagem": "/motos/scooter_eletrica_b3_1000w_verde_bateria__15.webp",
-        "slug_legado": "scooter-eletrica-b3-1000w-verde-bateria-de-grafeno-60v-26ah"
+        "hex": "#c62828",
+        "imagem": "/motos/scooter_eletrica_shark_1000w_vermelho.webp",
+        "disponibilidade": "pronta_entrega"
       }
     ]
   },
@@ -232,7 +128,106 @@
         "hex": "#1b1d1f",
         "hex_secundario": "#b9bdc1",
         "imagem": "/motos/scooter_eletrica_h9_1000w_preto_prata_ba_16.webp",
-        "slug_legado": "scooter-eletrica-h9-1000w-preto-prata-bateria-de-litio-60v-20ah"
+        "slug_legado": "scooter-eletrica-h9-1000w-preto-prata-bateria-de-litio-60v-20ah",
+        "disponibilidade": "pronta_entrega"
+      }
+    ]
+  },
+  {
+    "id": "b3",
+    "nome": "Scooter B3 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica B3 1000W",
+    "slug": "scooter-eletrica-b3-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "tagline": "Design urbano e bateria de grafeno.",
+    "descricao": "A B3 1000W é a scooter elétrica para quem busca um desenho urbano e moderno sem abrir mão de autonomia. A bateria de grafeno 60V 26Ah oferece ciclos de carga mais duradouros, enquanto o motor de 1000W garante agilidade nas saídas.",
+    "preco": 4990.92,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Grafeno 60V 26Ah",
+    "autonomia": "Até 50 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "150 kg",
+    "tempo_recarga": "6 a 8 horas",
+    "imagem_capa": "/motos/scooter_eletrica_b3_1000w_preto_bateria__14.webp",
+    "cores": [
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/scooter_eletrica_b3_1000w_preto_bateria__14.webp",
+        "slug_legado": "scooter-eletrica-b3-1000w-preto-bateria-de-grafeno-60v-26ah",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Verde",
+        "hex": "#486b4a",
+        "imagem": "/motos/scooter_eletrica_b3_1000w_verde_bateria__15.webp",
+        "slug_legado": "scooter-eletrica-b3-1000w-verde-bateria-de-grafeno-60v-26ah",
+        "disponibilidade": "sob_pedido"
+      }
+    ]
+  },
+  {
+    "id": "t1",
+    "nome": "Scooter T1 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica T1 1000W",
+    "slug": "scooter-eletrica-t1-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "tagline": "Compacta, ágil e pronta para o dia a dia.",
+    "descricao": "A Scooter Elétrica T1 1000W reúne design compacto, motor de alta eficiência e bateria de lítio de longa durabilidade. Ideal para deslocamentos urbanos e para quem procura economia real no lugar da gasolina, com recarga simples em qualquer tomada e custo por carga inferior a R$ 1,50.",
+    "preco": 3990,
+    "exibir_preco": false,
+    "destaque": true,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 64V 20Ah",
+    "autonomia": "Até 50 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "150 kg",
+    "tempo_recarga": "6 a 8 horas",
+    "imagem_capa": "/motos/scooter_eletrica_t1_1000w_azul_camaleao__5.webp",
+    "cores": [
+      {
+        "nome": "Azul Camaleão",
+        "hex": "#1f5a74",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_azul_camaleao__5.webp",
+        "slug_legado": "scooter-eletrica-t1-1000w-azul-camaleao-bateria-de-litio-64v-20ah",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Verde Camaleão",
+        "hex": "#2f5d3a",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_verde_camaleao_4.webp",
+        "slug_legado": "scooter-eletrica-t1-1000w-verde-camaleao-bateria-de-litio-64v-20ah",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Vermelho/Prata",
+        "hex": "#a51f24",
+        "hex_secundario": "#c3c6c9",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_vermelho_prata_3.webp",
+        "slug_legado": "scooter-eletrica-t1-1000w-vermelho-prata-bateria-de-litio-64v-20ah",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Preto/Prata",
+        "hex": "#16181a",
+        "hex_secundario": "#c3c6c9",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_preto_prata.webp",
+        "disponibilidade": "sob_pedido"
+      },
+      {
+        "nome": "Prata",
+        "hex": "#c3c6c9",
+        "imagem": "/motos/scooter_eletrica_t1_1000w_prata_bateria__7.webp",
+        "slug_legado": "scooter-eletrica-t1-1000w-prata-bateria-de-litio-64v-20ah",
+        "disponibilidade": "sob_pedido"
       }
     ]
   },
@@ -263,7 +258,64 @@
         "hex": "#211b17",
         "hex_secundario": "#6b4b34",
         "imagem": "/motos/bicicleta_jsl_1000w_preto_marrom_bateria_6.webp",
-        "slug_legado": "bicicleta-jsl-1000w-preto-marrom-bateria-de-litio-48v-18ah"
+        "slug_legado": "bicicleta-jsl-1000w-preto-marrom-bateria-de-litio-48v-18ah",
+        "disponibilidade": "pronta_entrega"
+      }
+    ]
+  },
+  {
+    "id": "harley",
+    "nome": "Scooter Harley 1000W",
+    "emoji": "🛵",
+    "titulo": "Scooter Elétrica Harley 1000W",
+    "slug": "scooter-eletrica-harley-1000w",
+    "categoria": "Scooter",
+    "categoria_slug": "autopropelidos",
+    "tagline": "Presença marcante e pilotagem confortável.",
+    "descricao": "A Harley 1000W traz um visual encorpado e postura de cruiser para quem quer conforto em trajetos mais longos. Suspensão reforçada, banco acolchoado e iluminação LED completam o pacote de uma scooter elétrica feita para chamar atenção.",
+    "preco": 4990,
+    "exibir_preco": false,
+    "destaque": true,
+    "dispensa_cnh": true,
+    "potencia_motor": "1000W",
+    "tipo_bateria": "Lítio 60V 20Ah",
+    "autonomia": "Até 50 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "150 kg",
+    "tempo_recarga": "6 a 8 horas",
+    "imagem_capa": "/motos/scooter_eletrica_harley_1000w_azul.webp",
+    "cores": [
+      {
+        "nome": "Azul",
+        "hex": "#1e2f8f",
+        "imagem": "/motos/scooter_eletrica_harley_1000w_azul.webp",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Branco",
+        "hex": "#f2f2ef",
+        "imagem": "/motos/scooter_eletrica_harley_1000w_branco_bat_11.webp",
+        "slug_legado": "scooter-eletrica-harley-1000w-branco-bateria-de-litio-60v-20ah",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Preto",
+        "hex": "#151719",
+        "imagem": "/motos/scooter_eletrica_harley_1000w_preto.webp",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Vermelho",
+        "hex": "#a8202a",
+        "imagem": "/motos/scooter_eletrica_harley_1000w_vermelho_b_12.webp",
+        "slug_legado": "scooter-eletrica-harley-1000w-vermelho-bateria-de-litio-60v",
+        "disponibilidade": "pronta_entrega"
+      },
+      {
+        "nome": "Amarelo",
+        "hex": "#f2c200",
+        "imagem": "/motos/scooter_eletrica_harley_1000w_amarelo.webp",
+        "disponibilidade": "sob_pedido"
       }
     ]
   }
