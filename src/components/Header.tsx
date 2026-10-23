@@ -28,7 +28,7 @@ export function Header() {
             <span className="text-gray-300">|</span>
             <span>Pronta Entrega + Encomenda</span>
             <span className="hidden text-gray-300 sm:inline">|</span>
-            <span className="hidden sm:inline">Peças e Oficina</span>
+            <span className="hidden sm:inline">Garantia de Fábrica</span>
           </div>
           <a
             href="https://wa.me/5566984202988"

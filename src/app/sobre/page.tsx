@@ -5,7 +5,7 @@ import { BatteryCharging, MapPin, ShieldCheck, Wrench, Zap } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Quem Somos',
   description:
-    'Conheça a Eletrosom Ebikes, loja de veículos elétricos em Cotriguaçu-MT. Scooters, bikes, triciclos, peças e oficina própria.',
+    'Conheça a Eletrosom Ebikes, loja de veículos elétricos em Cotriguaçu-MT. Scooters, bikes, triciclos, peças e suporte de fábrica.',
 };
 
 export default function SobrePage() {
@@ -26,8 +26,8 @@ export default function SobrePage() {
         </p>
         <p className="mt-4 text-sm leading-relaxed text-gray-600 sm:text-base">
           Mais do que vender veículos, queremos que você tenha tranquilidade para usar o
-          seu todos os dias. Por isso mantemos peças de reposição, assistência técnica e
-          uma equipe que conhece cada modelo do nosso catálogo.
+          seu todos os dias. Por isso trabalhamos com garantia de fábrica, peças de reposição e
+          uma equipe pronta para tirar qualquer dúvida antes e após sua compra.
         </p>
       </div>
 
@@ -42,10 +42,9 @@ export default function SobrePage() {
         </div>
         <div className="border border-gray-200 p-6">
           <Wrench className="h-5 w-5 text-amber-500" />
-          <h2 className="mt-4 text-sm font-semibold text-gray-950">Peças e oficina</h2>
+          <h2 className="mt-4 text-sm font-semibold text-gray-950">Garantia e peças</h2>
           <p className="mt-2 text-xs leading-relaxed text-gray-500">
-            Assistência técnica própria e peças de reposição para manter o seu veículo
-            em boas condições.
+            Garantia oficial de fábrica e disponibilidade de peças de reposição para o seu veículo.
           </p>
         </div>
         <div className="border border-gray-200 p-6">

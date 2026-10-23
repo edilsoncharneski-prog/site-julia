@@ -28,7 +28,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-2 text-xs font-medium text-emerald-400">
               <ShieldCheck className="h-4 w-4 shrink-0" />
-              <span>Garantia de fábrica & Oficina própria</span>
+              <span>Garantia de fábrica & Suporte Oficial</span>
             </div>
           </div>
 

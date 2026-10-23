@@ -33,8 +33,8 @@ const diferenciais = [
   'Freios a disco dianteiro e traseiro',
   'Iluminação 100% LED de alta visibilidade',
   'Painel digital completo e alarme sonoro',
-  'Garantia de fábrica e assistência técnica local',
-  'Peças de reposição disponíveis em Cotriguaçu/MT',
+  'Garantia de fábrica e suporte dedicado',
+  'Peças de reposição sob encomenda para Cotriguaçu/MT',
 ];
 
 export function ProductDetail({
@@ -370,13 +370,13 @@ export function ProductDetail({
 
             <details className="group border border-gray-200 bg-gray-50 p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-gray-900">
-                Vocês têm peças de reposição e oficina em Cotriguaçu?
+                Como funciona a garantia e suporte técnico?
                 <ChevronDown className="h-4 w-4 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-2 border-t border-gray-200 pt-2 text-xs leading-relaxed text-gray-600">
-                <strong>Sim!</strong> A Eletrosom Ebikes conta com assistência técnica própria
-                e peças de reposição (pastilhas de freio, câmaras, pneus, aceleradores e
-                baterias) para que você nunca fique na mão.
+                A Eletrosom Ebikes oferece garantia oficial de fábrica e suporte para encomenda
+                de peças de reposição (pastilhas de freio, câmaras, pneus, aceleradores e baterias)
+                para que você tenha tranquilidade ao rodar com seu veículo elétrico.
               </p>
             </details>
 

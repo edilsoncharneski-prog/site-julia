@@ -1,0 +1,118 @@
+{
+  "totalCards": 16,
+  "firstCardHtml": "<div class=\"MuiStack-root css-3dpmgj\" data-testid=\"product-card\"><div class=\"MuiBox-root css-nztdjh\"><img alt=\"Imagem do produto SCOOTER ELETRICA B3 1000W PRETO BATERIA DE GRAFENO 60V 26AH MARCA NEW E-BIKE \" loading=\"lazy\" decoding=\"async\" data-nimg=\"fill\" sizes=\"(max-width: 768px) 100vw, 50vw\" srcset=\"/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=3840&amp;q=75 3840w\" src=\"/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&amp;w=3840&amp;q=75\" style=\"position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: contain; color: rgb(56, 56, 56); font-size: 12px;\"></div><div class=\"MuiStack-root css-i58as4\"><p class=\"MuiTypography-root MuiTypography-body1 css-etiy8b\" data-testid=\"product-name\">SCOOTER ELETRICA B3 1000W PRETO BATERIA DE GRAFENO 60V 26AH MARCA NEW E-BIKE </p><p class=\"MuiTypography-root MuiTypography-body1 css-1s5ofpi\">658014</p></div><button class=\"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textInherit MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorInherit MuiButton-disableElevation MuiButton-root MuiButton-text MuiButton-textInherit MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorInherit MuiButton-disableElevation css-1cddq8a\" tabindex=\"0\" type=\"button\">Veja nosso preço<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" role=\"img\" class=\"iconify iconify--solar component-iconify MuiBox-root css-1uu7u3w\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M5.25 10.0546V8C5.25 4.27208 8.27208 1.25 12 1.25C15.7279 1.25 18.75 4.27208 18.75 8V10.0546C19.8648 10.1379 20.5907 10.348 21.1213 10.8787C22 11.7574 22 13.1716 22 16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H8C5.17157 22 3.75736 22 2.87868 21.1213C2 20.2426 2 18.8284 2 16C2 13.1716 2 11.7574 2.87868 10.8787C3.40931 10.348 4.13525 10.1379 5.25 10.0546ZM6.75 8C6.75 5.10051 9.10051 2.75 12 2.75C14.8995 2.75 17.25 5.10051 17.25 8V10.0036C16.867 10 16.4515 10 16 10H8C7.54849 10 7.13301 10 6.75 10.0036V8ZM14 16C14 17.1046 13.1046 18 12 18C10.8954 18 10 17.1046 10 16C10 14.8954 10.8954 14 12 14C13.1046 14 14 14.8954 14 16Z\" clip-rule=\"evenodd\"></path></svg></button></div>",
+  "cards": [
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA B3 1000W PRETO BATERIA DE GRAFENO 60V 26AH MARCA NEW E-BIKE",
+      "code": "658014",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F99d2ac7c-8552-4c7a-b529-f98eb2db6bbc.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "PREVISÃO 25/10 - SCOOTER ELETRICA CAPPUCCINO 1000W ROSA/BEGE BATERIA DE LITIO 60V 20AH MARCA NEW E-BIKE",
+      "code": "662429",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2Fb790d826-3489-4302-9231-cce72d8127d4.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "PREVISÃO 25/10 - SCOOTER ELETRICA CAPPUCCINO 1000W VERDE BATERIA DE LITIO 60V 20AH MARCA NEW E-BIKE",
+      "code": "688736",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2Ffc13f2a4-7865-4735-a392-150858f3d4ca.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA TANK 800W CINZA BATERIA DE GRAFENO 60V 26AH ARCA NEW E-BIKE",
+      "code": "658016",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F1e99be19-4277-4df5-b662-f798e12e1022.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA TANK 800W PRETO BATERIA DE GRAFENO 60V 26AH MARCA NEW E-BIKE",
+      "code": "658017",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2Fbc200e7b-cd59-4c23-8b25-88b04a853ee8.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA T1 1000W VERMELHO/PRATA BATERIA DE LITIO 64V 20AH MARCA NEW E-BIKE",
+      "code": "660299",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2Ff3bfb1ad-29f3-497d-9af8-1f27c6f30de3.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA T1 1000W VERDE CAMALEAO BATERIA DE LITIO 64V 20AH MARCA NEW E-BIKE",
+      "code": "660309",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F5e0b54cc-2261-44ff-bdda-f397bfa0ae70.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA T1 1000W AZUL CAMALEAO BATERIA DE LITIO 64V 20AH MARCA NEW E-BIKE",
+      "code": "660306",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F089f5406-5596-4ea0-91af-b8ffa19eaa40.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "PREVISÃO 25/10 - SCOOTER ELETRICA CAPPUCCINO 1000W CINZA BATERIA DE LITIO 60V 20AH MARCA NEW E-BIKE",
+      "code": "688740",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2Fdc9b04c9-ffd0-4e75-8b68-272ea5c43384.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA H9 1000W PRETO/PRATA BATERIA DE LITIO 60V 20AH MARCA NEW E-BIKE",
+      "code": "661424",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F92fb4600-d4f5-4a8e-bc71-e1e2b357ff40.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "PREVISÃO 20/10 - SCOOTER ELETRICA HARLEY 1000W BRANCO BATERIA DE LITIO 60V 20AH MARCA NEW E-BIKE",
+      "code": "675792",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2Fc66e7f93-81c9-41c4-af43-fbd13a920f72.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "PREVISÃO 25/10 - BICICLETA JSL 1000W PRETO/MARROM BATERIA DE LITIO 48V 18AH MARCA NEW E-BIKE",
+      "code": "661245",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F64be16fd-424d-4f02-ad4d-085efb1719d3.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "PREVISÃO 20/10 - SCOOTER ELETRICA HARLEY 1000W VERMELHO BATERIA DE LITIO 60V MARCA NEW E-BIKE",
+      "code": "675784",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F5ffb8dbe-b863-4b4c-96a9-87d87a8c5278.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA B3 1000W VERDE BATERIA DE GRAFENO 60V 26AH MARCA NEW E-BIKE",
+      "code": "658015",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2Ff59dac0f-4f16-41f0-8ac9-ee5513feba57.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "SCOOTER ELETRICA T1 1000W PRATA BATERIA DE LITIO 64V 20AH MARCA NEW E-BIKE",
+      "code": "660300",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F24d68619-ce7a-4988-b4b3-ea20a252e752.png&w=750&q=75"
+    },
+    {
+      "href": "",
+      "title": "PREVISÃO 25/10 - SCOOTER ELETRICA CAPPUCCINO 1000W VERMELHO BATERIA DE LITIO 60V 20AH MARCA NEW E-BIKE",
+      "code": "688738",
+      "price": "",
+      "img": "https://www.soollar.com.br/_next/image?url=https%3A%2F%2Fd242jwkdtnhx89.cloudfront.net%2Fsoollar_prd%2Fproducts%2F3cc67797-3080-434e-9899-53071038cd25.png&w=750&q=75"
+    }
+  ]
+}

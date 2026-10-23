@@ -8,7 +8,7 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://site-julia.vercel.app';
 
 export const SITE_DESCRIPTION =
-  'Sua loja de motos elétricas, scooters, bikes e triciclos em Cotriguaçu-MT. Sem necessidade de CNH nem emplacamento. Parcelamento em até 21x no cartão, peças e oficina própria.';
+  'Sua loja de motos elétricas, scooters, bikes e triciclos em Cotriguaçu-MT. Sem necessidade de CNH nem emplacamento. Parcelamento em até 21x no cartão, pronta entrega e garantia de fábrica.';
 
 export const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP || '5566984202988';

@@ -36,7 +36,7 @@ const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
   <text x="208" y="190" font-family="${FONT}" font-size="27" font-weight="600" letter-spacing="8" fill="#EAB308">EBIKES</text>
   <text x="74" y="360" font-family="${FONT}" font-size="64" font-weight="700" letter-spacing="-1.5" fill="#111111">Mobilidade elétrica</text>
   <text x="74" y="432" font-family="${FONT}" font-size="64" font-weight="700" letter-spacing="-1.5" fill="#111111">em Cotriguaçu-MT</text>
-  <text x="76" y="502" font-family="${FONT}" font-size="27" font-weight="500" fill="#6B7280">Sem CNH • Até 21x no cartão • Peças e oficina</text>
+  <text x="76" y="502" font-family="${FONT}" font-size="27" font-weight="500" fill="#6B7280">Sem CNH • Até 21x no cartão • Garantia de fábrica</text>
   <rect x="74" y="548" width="244" height="2" fill="#D1D5DB"/>
   <text x="74" y="590" font-family="${FONT}" font-size="22" font-weight="600" letter-spacing="2" fill="#9CA3AF">ELETROSOM EBIKES</text>
 </svg>`;

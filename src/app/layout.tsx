@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE_NAME} | Mobilidade Elétrica em Cotriguaçu-MT`,
     description:
-      'Scooters, motos, bikes e triciclos elétricos sem CNH. Até 21x no cartão, pronta entrega, peças e oficina própria.',
+      'Scooters, motos, bikes e triciclos elétricos sem CNH. Até 21x no cartão, pronta entrega e garantia de fábrica.',
     url: SITE_URL,
     siteName: SITE_NAME,
     images: [

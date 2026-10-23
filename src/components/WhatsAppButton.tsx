@@ -57,7 +57,7 @@ export function WhatsAppButton() {
               </a>
 
               <a
-                href="https://wa.me/5566984202988?text=Ol%C3%A1!+Gostaria+de+informa%C3%A7%C3%B5es+sobre+pe%C3%A7as+e+assist%C3%AAncia+t%C3%A9cnica."
+                href="https://wa.me/5566984202988?text=Ol%C3%A1!+Gostaria+de+informa%C3%A7%C3%B5es+sobre+garantia+e+suporte."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-white border border-gray-200 hover:border-[#25D366] hover:bg-emerald-50/50 transition-all text-gray-800 font-medium group"
@@ -67,8 +67,8 @@ export function WhatsAppButton() {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="font-semibold text-xs text-gray-900">Peças & Oficina</div>
-                    <div className="text-[10px] text-gray-500">Suporte local em Cotriguaçu</div>
+                    <div className="font-semibold text-xs text-gray-900">Garantia & Suporte</div>
+                    <div className="text-[10px] text-gray-500">Atendimento em Cotriguaçu</div>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors" />
