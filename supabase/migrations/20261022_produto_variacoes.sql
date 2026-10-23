@@ -3,6 +3,8 @@
 -- Eletrosom Ebikes — execute no SQL Editor do Supabase
 -- ====================================================================
 
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 -- Campos de apresentação que a vitrine usa por modelo
 ALTER TABLE public.produtos
   ADD COLUMN IF NOT EXISTS nome VARCHAR(150),
