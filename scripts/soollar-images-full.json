@@ -1,215 +1,5 @@
 [
   {
-    "file": "scooter_eletrica_tank_800w_cinza.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/1e99be19-4277-4df5-b662-f798e12e1022.png",
-    "code": "658016",
-    "model": "scooter-eletrica-tank-800w",
-    "color": "Cinza"
-  },
-  {
-    "file": "scooter_eletrica_tank_800w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/bc200e7b-cd59-4c23-8b25-88b04a853ee8.png",
-    "code": "658017",
-    "model": "scooter-eletrica-tank-800w",
-    "color": "Preto"
-  },
-  {
-    "file": "scooter_eletrica_t1_1000w_azul.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/cbc5fc0a-13b2-4c16-ab13-830a61751b55.png",
-    "code": "660319",
-    "model": "scooter-eletrica-t1-1000w",
-    "color": "Azul"
-  },
-  {
-    "file": "scooter_eletrica_t1_1000w_branco.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/8fb061ee-af6e-4dcb-ba36-bf2cd9987201.png",
-    "code": "660322",
-    "model": "scooter-eletrica-t1-1000w",
-    "color": "Branco"
-  },
-  {
-    "file": "scooter_eletrica_t1_1000w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/8e06045d-1b82-4267-9909-dc28ea887308.png",
-    "code": "660320",
-    "model": "scooter-eletrica-t1-1000w",
-    "color": "Preto"
-  },
-  {
-    "file": "scooter_eletrica_t1_1000w_verde_militar.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/2c2ef0aa-e220-439b-a344-6b7a2bf2da68.png",
-    "code": "660310",
-    "model": "scooter-eletrica-t1-1000w",
-    "color": "Verde Militar"
-  },
-  {
-    "file": "scooter_eletrica_t1_1000w_vermelho.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/4cc77cd5-fb72-4b6f-aaf6-6889526fdac5.png",
-    "code": "660321",
-    "model": "scooter-eletrica-t1-1000w",
-    "color": "Vermelho"
-  },
-  {
-    "file": "bicicleta_eletrica_jsl_1000w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/3e95d11b-9d25-495c-bbdf-cb460e955c4f.png",
-    "code": "661244",
-    "model": "bicicleta-eletrica-jsl-1000w",
-    "color": "Preto"
-  },
-  {
-    "file": "scooter_eletrica_cappuccino_1000w_verde.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/fc13f2a4-7865-4735-a392-150858f3d4ca.png",
-    "code": "688736",
-    "model": "scooter-eletrica-cappuccino-1000w",
-    "color": "Verde"
-  },
-  {
-    "file": "bicicleta_eletrica_ride_pro_750w_preto_branco.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/cbefa2fc-8004-4fcc-9bdb-432f52f89390.png",
-    "code": "657994",
-    "model": "bicicleta-eletrica-ride-pro-750w",
-    "color": "Preto/Branco"
-  },
-  {
-    "file": "bicicleta_eletrica_ride_pro_750w_preto_cinza.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/03bf8ed2-12c2-40bf-ab19-dd4defc2e50a.png",
-    "code": "657995",
-    "model": "bicicleta-eletrica-ride-pro-750w",
-    "color": "Preto/Cinza"
-  },
-  {
-    "file": "bicicleta_eletrica_ride_pro_750w_preto_laranja.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/110b2cdf-e5d9-4646-80e6-1b362704dba2.png",
-    "code": "658023",
-    "model": "bicicleta-eletrica-ride-pro-750w",
-    "color": "Preto/Laranja"
-  },
-  {
-    "file": "bicicleta_eletrica_ride_pro_750w_preto_vermelho.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/1ae677d6-040b-4271-a9ff-c614c498c7a2.png",
-    "code": "658022",
-    "model": "bicicleta-eletrica-ride-pro-750w",
-    "color": "Preto/Vermelho"
-  },
-  {
-    "file": "bicicleta_eletrica_fast_trail_750w_preto_azul.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/acbe8bd8-8bae-4eb7-ba59-b6b1e690bf83.png",
-    "code": "658032",
-    "model": "bicicleta-eletrica-fast-trail-750w",
-    "color": "Preto/Azul"
-  },
-  {
-    "file": "bicicleta_eletrica_fast_trail_750w_preto_branco.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/92f363ca-1769-4588-91db-f5e11bc4d010.png",
-    "code": "658033",
-    "model": "bicicleta-eletrica-fast-trail-750w",
-    "color": "Preto/Branco"
-  },
-  {
-    "file": "bicicleta_eletrica_fast_trail_750w_preto_laranja.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/aa8dc41a-3265-4f93-a693-f4c205e3e2ea.png",
-    "code": "658030",
-    "model": "bicicleta-eletrica-fast-trail-750w",
-    "color": "Preto/Laranja"
-  },
-  {
-    "file": "bicicleta_eletrica_fast_trail_750w_preto_verde.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/5d744b32-6b10-479b-ac40-f8fe50ad7db2.png",
-    "code": "658031",
-    "model": "bicicleta-eletrica-fast-trail-750w",
-    "color": "Preto/Verde"
-  },
-  {
-    "file": "bicicleta_eletrica_connection_500w_preto_branco.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/9bec623b-482b-4811-9ede-905aa4a5bb13.png",
-    "code": "659434",
-    "model": "bicicleta-eletrica-connection-500w",
-    "color": "Preto/Branco"
-  },
-  {
-    "file": "bicicleta_eletrica_connection_500w_preto_cinza.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/35abbb94-7b1f-46b2-975a-ebe4811374e2.png",
-    "code": "574522",
-    "model": "bicicleta-eletrica-connection-500w",
-    "color": "Preto/Cinza"
-  },
-  {
-    "file": "bicicleta_eletrica_connection_500w_preto_laranja.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/d618e476-275d-4b89-be82-7d67d0ebc9d7.jpeg",
-    "code": "574523",
-    "model": "bicicleta-eletrica-connection-500w",
-    "color": "Preto/Laranja"
-  },
-  {
-    "file": "bicicleta_eletrica_explorer_ii_750w_preto_laranja.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/61a12478-b50d-4d75-a1ed-31a9e242a1d7.png",
-    "code": "658429",
-    "model": "bicicleta-eletrica-explorer-ii-750w",
-    "color": "Preto/Laranja"
-  },
-  {
-    "file": "bicicleta_eletrica_explorer_ii_750w_verde_branco.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/78c076ce-cf94-4a9b-86fa-726034eb723a.png",
-    "code": "658427",
-    "model": "bicicleta-eletrica-explorer-ii-750w",
-    "color": "Verde/Branco"
-  },
-  {
-    "file": "scooter_eletrica_mg_16_1000w_bandeira_inglesa.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/9c7343e3-1dab-4a06-ac6f-a59347a92f34.jpeg",
-    "code": "573632",
-    "model": "scooter-eletrica-mg-16-1000w",
-    "color": "Bandeira Inglesa"
-  },
-  {
-    "file": "scooter_eletrica_mz_1000w_cinza.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/c5b5b64f-2384-4cb1-a0af-bdfbb3a8b61b.png",
-    "code": "664780",
-    "model": "scooter-eletrica-mz-1000w",
-    "color": "Cinza"
-  },
-  {
-    "file": "scooter_eletrica_mz_1000w_dark.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/6d3c55e9-2448-47d0-b547-7bd44ad5e37c.png",
-    "code": "717816",
-    "model": "scooter-eletrica-mz-1000w",
-    "color": "Dark"
-  },
-  {
-    "file": "scooter_eletrica_mz_1000w_laranja_prata.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/72f29eee-f61a-40f6-82b1-6aa2b40bb0cf.png",
-    "code": "714915",
-    "model": "scooter-eletrica-mz-1000w",
-    "color": "Laranja/Prata"
-  },
-  {
-    "file": "scooter_eletrica_mz_1000w_prata.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/2d3354d4-18e2-4000-a5fc-58f873c05533.png",
-    "code": "664769",
-    "model": "scooter-eletrica-mz-1000w",
-    "color": "Prata"
-  },
-  {
-    "file": "scooter_eletrica_mz_1000w_roxo.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/60117c8e-8d5e-488c-b381-691d4a91e685.png",
-    "code": "664762",
-    "model": "scooter-eletrica-mz-1000w",
-    "color": "Roxo"
-  },
-  {
-    "file": "bicicleta_eletrica_black_fish_500w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/bd352494-e557-4bdc-a2b5-2531fab54ab0.png",
-    "code": "695723",
-    "model": "bicicleta-eletrica-black-fish-500w",
-    "color": "Preto"
-  },
-  {
-    "file": "bicicleta_eletrica_black_fish_500w_preto_bege.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/30d88a0c-29ec-490b-b505-3575d2e55be8.png",
-    "code": "695730",
-    "model": "bicicleta-eletrica-black-fish-500w",
-    "color": "Preto/Bege"
-  },
-  {
     "file": "bicicleta_eletrica_advantage_750w_cinza_branco.webp",
     "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/42d28628-d053-437c-8a49-470d223f6544.png",
     "code": "670726",
@@ -266,25 +56,179 @@
     "color": "Preto/Laranja"
   },
   {
-    "file": "bicicleta_eletrica_winner_750w_preto_laranja.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/4216114d-d6c7-4609-a57c-f64275461792.png",
-    "code": "573627",
-    "model": "bicicleta-eletrica-winner-750w",
+    "file": "bicicleta_eletrica_black_fish_500w_preto_bege.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/30d88a0c-29ec-490b-b505-3575d2e55be8.png",
+    "code": "695730",
+    "model": "bicicleta-eletrica-black-fish-500w",
+    "color": "Preto/Bege"
+  },
+  {
+    "file": "bicicleta_eletrica_black_fish_500w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/bd352494-e557-4bdc-a2b5-2531fab54ab0.png",
+    "code": "695723",
+    "model": "bicicleta-eletrica-black-fish-500w",
+    "color": "Preto"
+  },
+  {
+    "file": "bicicleta_eletrica_c6_500w_preto_azul.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/071df535-e8ee-4be1-8758-92547ec3c63a.png",
+    "code": "573393",
+    "model": "bicicleta-eletrica-c6-500w",
+    "color": "Preto/Azul"
+  },
+  {
+    "file": "bicicleta_eletrica_connection_500w_preto_branco.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/9bec623b-482b-4811-9ede-905aa4a5bb13.png",
+    "code": "659434",
+    "model": "bicicleta-eletrica-connection-500w",
+    "color": "Preto/Branco"
+  },
+  {
+    "file": "bicicleta_eletrica_connection_500w_preto_cinza.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/35abbb94-7b1f-46b2-975a-ebe4811374e2.png",
+    "code": "574522",
+    "model": "bicicleta-eletrica-connection-500w",
+    "color": "Preto/Cinza"
+  },
+  {
+    "file": "bicicleta_eletrica_connection_500w_preto_laranja.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/d618e476-275d-4b89-be82-7d67d0ebc9d7.jpeg",
+    "code": "574523",
+    "model": "bicicleta-eletrica-connection-500w",
     "color": "Preto/Laranja"
   },
   {
-    "file": "bicicleta_eletrica_winner_750w_preto_prata.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/5903204a-f8a2-4392-b9b8-6046c0d722b3.png",
-    "code": "562138",
-    "model": "bicicleta-eletrica-winner-750w",
-    "color": "Preto/Prata"
+    "file": "bicicleta_eletrica_explorer_ii_750w_preto_laranja.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/61a12478-b50d-4d75-a1ed-31a9e242a1d7.png",
+    "code": "658429",
+    "model": "bicicleta-eletrica-explorer-ii-750w",
+    "color": "Preto/Laranja"
   },
   {
-    "file": "bicicleta_eletrica_winner_750w_preto_vermelho.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/2bf28c30-5fd3-4ff6-8447-1ece92fb3375.png",
-    "code": "573624",
-    "model": "bicicleta-eletrica-winner-750w",
+    "file": "bicicleta_eletrica_explorer_ii_750w_verde_branco.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/78c076ce-cf94-4a9b-86fa-726034eb723a.png",
+    "code": "658427",
+    "model": "bicicleta-eletrica-explorer-ii-750w",
+    "color": "Verde/Branco"
+  },
+  {
+    "file": "bicicleta_eletrica_fast_trail_750w_preto_azul.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/acbe8bd8-8bae-4eb7-ba59-b6b1e690bf83.png",
+    "code": "658032",
+    "model": "bicicleta-eletrica-fast-trail-750w",
+    "color": "Preto/Azul"
+  },
+  {
+    "file": "bicicleta_eletrica_fast_trail_750w_preto_branco.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/92f363ca-1769-4588-91db-f5e11bc4d010.png",
+    "code": "658033",
+    "model": "bicicleta-eletrica-fast-trail-750w",
+    "color": "Preto/Branco"
+  },
+  {
+    "file": "bicicleta_eletrica_fast_trail_750w_preto_laranja.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/aa8dc41a-3265-4f93-a693-f4c205e3e2ea.png",
+    "code": "658030",
+    "model": "bicicleta-eletrica-fast-trail-750w",
+    "color": "Preto/Laranja"
+  },
+  {
+    "file": "bicicleta_eletrica_fast_trail_750w_preto_verde.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/5d744b32-6b10-479b-ac40-f8fe50ad7db2.png",
+    "code": "658031",
+    "model": "bicicleta-eletrica-fast-trail-750w",
+    "color": "Preto/Verde"
+  },
+  {
+    "file": "bicicleta_eletrica_jazz_e700_1000w_preto_marrom.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/6d6f7a87-2927-4fb9-ae80-462d7d689328.png",
+    "code": "714908",
+    "model": "bicicleta-eletrica-jazz-e700-1000w",
+    "color": "Preto/Marrom"
+  },
+  {
+    "file": "bicicleta_eletrica_jazz_e700_1000w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/d610e50a-4b56-49fb-af5c-6bd511f82c83.png",
+    "code": "714907",
+    "model": "bicicleta-eletrica-jazz-e700-1000w",
+    "color": "Preto"
+  },
+  {
+    "file": "bicicleta_eletrica_jsl_1000w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/3e95d11b-9d25-495c-bbdf-cb460e955c4f.png",
+    "code": "661244",
+    "model": "bicicleta-eletrica-jsl-1000w",
+    "color": "Preto"
+  },
+  {
+    "file": "bicicleta_eletrica_qje_05_1000w_preto_marrom.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/b1a85d0b-eb6d-494b-be13-d3a69e5e4748.png",
+    "code": "714842",
+    "model": "bicicleta-eletrica-qje-05-1000w",
+    "color": "Preto/Marrom"
+  },
+  {
+    "file": "bicicleta_eletrica_qje_05_1000w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/8c749cf4-f362-4a48-b63e-4753691b1540.png",
+    "code": "714840",
+    "model": "bicicleta-eletrica-qje-05-1000w",
+    "color": "Preto"
+  },
+  {
+    "file": "bicicleta_eletrica_ride_pro_750w_preto_branco.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/cbefa2fc-8004-4fcc-9bdb-432f52f89390.png",
+    "code": "657994",
+    "model": "bicicleta-eletrica-ride-pro-750w",
+    "color": "Preto/Branco"
+  },
+  {
+    "file": "bicicleta_eletrica_ride_pro_750w_preto_cinza.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/03bf8ed2-12c2-40bf-ab19-dd4defc2e50a.png",
+    "code": "657995",
+    "model": "bicicleta-eletrica-ride-pro-750w",
+    "color": "Preto/Cinza"
+  },
+  {
+    "file": "bicicleta_eletrica_ride_pro_750w_preto_laranja.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/110b2cdf-e5d9-4646-80e6-1b362704dba2.png",
+    "code": "658023",
+    "model": "bicicleta-eletrica-ride-pro-750w",
+    "color": "Preto/Laranja"
+  },
+  {
+    "file": "bicicleta_eletrica_ride_pro_750w_preto_vermelho.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/1ae677d6-040b-4271-a9ff-c614c498c7a2.png",
+    "code": "658022",
+    "model": "bicicleta-eletrica-ride-pro-750w",
     "color": "Preto/Vermelho"
+  },
+  {
+    "file": "bicicleta_eletrica_rider_pro_1000w_preto_marrom.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/bd30df97-1180-474f-b912-40d0c16926cc.png",
+    "code": "714923",
+    "model": "bicicleta-eletrica-rider-pro-1000w",
+    "color": "Preto/Marrom"
+  },
+  {
+    "file": "bicicleta_eletrica_rider_pro_1000w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/129e7379-9857-4a09-9424-68da7f9d033a.png",
+    "code": "714922",
+    "model": "bicicleta-eletrica-rider-pro-1000w",
+    "color": "Preto"
+  },
+  {
+    "file": "bicicleta_eletrica_tjsr_b_035_1000w_preto_marrom.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/8238e659-06d4-4b15-aeee-30b3f7494aa6.png",
+    "code": "659180",
+    "model": "bicicleta-eletrica-tjsr-b-035-1000w",
+    "color": "Preto/Marrom"
+  },
+  {
+    "file": "bicicleta_eletrica_tjsr_b_035_1000w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/0335c33c-c19d-46ba-b314-4ae37a6446da.png",
+    "code": "659179",
+    "model": "bicicleta-eletrica-tjsr-b-035-1000w",
+    "color": "Preto"
   },
   {
     "file": "bicicleta_eletrica_voyager_750w_preto_branco.webp",
@@ -315,95 +259,25 @@
     "color": "Preto/Vermelho"
   },
   {
-    "file": "scooter_eletrica_citycoco_1000w_azul.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/0b51b99a-a917-437d-9553-9058bac0a8b7.png",
-    "code": "718428",
-    "model": "scooter-eletrica-citycoco-1000w",
-    "color": "Azul"
+    "file": "bicicleta_eletrica_winner_750w_preto_laranja.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/4216114d-d6c7-4609-a57c-f64275461792.png",
+    "code": "573627",
+    "model": "bicicleta-eletrica-winner-750w",
+    "color": "Preto/Laranja"
   },
   {
-    "file": "scooter_eletrica_citycoco_1000w_branco.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/10a66e7a-52b7-4055-858f-26e0bee37155.png",
-    "code": "718431",
-    "model": "scooter-eletrica-citycoco-1000w",
-    "color": "Branco"
+    "file": "bicicleta_eletrica_winner_750w_preto_prata.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/5903204a-f8a2-4392-b9b8-6046c0d722b3.png",
+    "code": "562138",
+    "model": "bicicleta-eletrica-winner-750w",
+    "color": "Preto/Prata"
   },
   {
-    "file": "scooter_eletrica_citycoco_1000w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/31bda60c-8513-491a-8707-91415c9bd9c0.png",
-    "code": "718399",
-    "model": "scooter-eletrica-citycoco-1000w",
-    "color": "Preto"
-  },
-  {
-    "file": "scooter_eletrica_citycoco_1000w_verde.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/b8bd6ead-9422-4854-906d-3f46595dda6b.png",
-    "code": "718436",
-    "model": "scooter-eletrica-citycoco-1000w",
-    "color": "Verde"
-  },
-  {
-    "file": "scooter_eletrica_citycoco_1000w_vermelho.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/d8070af9-e73e-4c50-8804-bb01529d3451.png",
-    "code": "718435",
-    "model": "scooter-eletrica-citycoco-1000w",
-    "color": "Vermelho"
-  },
-  {
-    "file": "scooter_eletrica_citycoco_1000w_vermelho_vinho.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/6b1bc5ce-d82c-477f-b6c4-83424baaa840.png",
-    "code": "718434",
-    "model": "scooter-eletrica-citycoco-1000w",
-    "color": "Vermelho Vinho"
-  },
-  {
-    "file": "bicicleta_eletrica_c6_500w_preto_azul.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/071df535-e8ee-4be1-8758-92547ec3c63a.png",
-    "code": "573393",
-    "model": "bicicleta-eletrica-c6-500w",
-    "color": "Preto/Azul"
-  },
-  {
-    "file": "bicicleta_eletrica_jazz_e700_1000w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/d610e50a-4b56-49fb-af5c-6bd511f82c83.png",
-    "code": "714907",
-    "model": "bicicleta-eletrica-jazz-e700-1000w",
-    "color": "Preto"
-  },
-  {
-    "file": "bicicleta_eletrica_jazz_e700_1000w_preto_marrom.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/6d6f7a87-2927-4fb9-ae80-462d7d689328.png",
-    "code": "714908",
-    "model": "bicicleta-eletrica-jazz-e700-1000w",
-    "color": "Preto/Marrom"
-  },
-  {
-    "file": "bicicleta_eletrica_rider_pro_1000w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/129e7379-9857-4a09-9424-68da7f9d033a.png",
-    "code": "714922",
-    "model": "bicicleta-eletrica-rider-pro-1000w",
-    "color": "Preto"
-  },
-  {
-    "file": "bicicleta_eletrica_rider_pro_1000w_preto_marrom.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/bd30df97-1180-474f-b912-40d0c16926cc.png",
-    "code": "714923",
-    "model": "bicicleta-eletrica-rider-pro-1000w",
-    "color": "Preto/Marrom"
-  },
-  {
-    "file": "bicicleta_eletrica_qje_05_1000w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/8c749cf4-f362-4a48-b63e-4753691b1540.png",
-    "code": "714840",
-    "model": "bicicleta-eletrica-qje-05-1000w",
-    "color": "Preto"
-  },
-  {
-    "file": "bicicleta_eletrica_qje_05_1000w_preto_marrom.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/b1a85d0b-eb6d-494b-be13-d3a69e5e4748.png",
-    "code": "714842",
-    "model": "bicicleta-eletrica-qje-05-1000w",
-    "color": "Preto/Marrom"
+    "file": "bicicleta_eletrica_winner_750w_preto_vermelho.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/2bf28c30-5fd3-4ff6-8447-1ece92fb3375.png",
+    "code": "573624",
+    "model": "bicicleta-eletrica-winner-750w",
+    "color": "Preto/Vermelho"
   },
   {
     "file": "scooter_eletrica_artist_1000w_azul.webp",
@@ -434,46 +308,53 @@
     "color": "Verde"
   },
   {
-    "file": "scooter_eletrica_k007_1000w_branco.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/bd2dfb45-099a-4fad-8307-23abb63e91cc.png",
-    "code": "719511",
-    "model": "scooter-eletrica-k007-1000w",
-    "color": "Branco"
-  },
-  {
-    "file": "scooter_eletrica_k007_1000w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/c53a1492-e25f-42df-837f-0e9a45cc200b.png",
-    "code": "719497",
-    "model": "scooter-eletrica-k007-1000w",
-    "color": "Preto"
-  },
-  {
-    "file": "scooter_eletrica_k007_1000w_preto_cinza.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/49e4db80-d3cf-403c-9883-ff3d1924db21.png",
-    "code": "719503",
-    "model": "scooter-eletrica-k007-1000w",
-    "color": "Preto/Cinza"
-  },
-  {
-    "file": "scooter_eletrica_k007_1000w_verde.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/fb93414a-03ec-49dd-846a-fc33e081acc8.png",
-    "code": "719507",
-    "model": "scooter-eletrica-k007-1000w",
+    "file": "scooter_eletrica_cappuccino_1000w_verde.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/fc13f2a4-7865-4735-a392-150858f3d4ca.png",
+    "code": "688736",
+    "model": "scooter-eletrica-cappuccino-1000w",
     "color": "Verde"
   },
   {
-    "file": "bicicleta_eletrica_tjsr_b_035_1000w_preto.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/0335c33c-c19d-46ba-b314-4ae37a6446da.png",
-    "code": "659179",
-    "model": "bicicleta-eletrica-tjsr-b-035-1000w",
+    "file": "scooter_eletrica_citycoco_1000w_azul.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/0b51b99a-a917-437d-9553-9058bac0a8b7.png",
+    "code": "718428",
+    "model": "scooter-eletrica-citycoco-1000w",
+    "color": "Azul"
+  },
+  {
+    "file": "scooter_eletrica_citycoco_1000w_branco.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/10a66e7a-52b7-4055-858f-26e0bee37155.png",
+    "code": "718431",
+    "model": "scooter-eletrica-citycoco-1000w",
+    "color": "Branco"
+  },
+  {
+    "file": "scooter_eletrica_citycoco_1000w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/31bda60c-8513-491a-8707-91415c9bd9c0.png",
+    "code": "718399",
+    "model": "scooter-eletrica-citycoco-1000w",
     "color": "Preto"
   },
   {
-    "file": "bicicleta_eletrica_tjsr_b_035_1000w_preto_marrom.webp",
-    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/8238e659-06d4-4b15-aeee-30b3f7494aa6.png",
-    "code": "659180",
-    "model": "bicicleta-eletrica-tjsr-b-035-1000w",
-    "color": "Preto/Marrom"
+    "file": "scooter_eletrica_citycoco_1000w_verde.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/b8bd6ead-9422-4854-906d-3f46595dda6b.png",
+    "code": "718436",
+    "model": "scooter-eletrica-citycoco-1000w",
+    "color": "Verde"
+  },
+  {
+    "file": "scooter_eletrica_citycoco_1000w_vermelho_vinho.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/6b1bc5ce-d82c-477f-b6c4-83424baaa840.png",
+    "code": "718434",
+    "model": "scooter-eletrica-citycoco-1000w",
+    "color": "Vermelho Vinho"
+  },
+  {
+    "file": "scooter_eletrica_citycoco_1000w_vermelho.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/d8070af9-e73e-4c50-8804-bb01529d3451.png",
+    "code": "718435",
+    "model": "scooter-eletrica-citycoco-1000w",
+    "color": "Vermelho"
   },
   {
     "file": "scooter_eletrica_g105_1000w_branco.webp",
@@ -495,5 +376,131 @@
     "code": "703021",
     "model": "scooter-eletrica-g105-1000w",
     "color": "Verde"
+  },
+  {
+    "file": "scooter_eletrica_k007_1000w_branco.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/bd2dfb45-099a-4fad-8307-23abb63e91cc.png",
+    "code": "719511",
+    "model": "scooter-eletrica-k007-1000w",
+    "color": "Branco"
+  },
+  {
+    "file": "scooter_eletrica_k007_1000w_preto_cinza.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/49e4db80-d3cf-403c-9883-ff3d1924db21.png",
+    "code": "719503",
+    "model": "scooter-eletrica-k007-1000w",
+    "color": "Preto/Cinza"
+  },
+  {
+    "file": "scooter_eletrica_k007_1000w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/c53a1492-e25f-42df-837f-0e9a45cc200b.png",
+    "code": "719497",
+    "model": "scooter-eletrica-k007-1000w",
+    "color": "Preto"
+  },
+  {
+    "file": "scooter_eletrica_k007_1000w_verde.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/fb93414a-03ec-49dd-846a-fc33e081acc8.png",
+    "code": "719507",
+    "model": "scooter-eletrica-k007-1000w",
+    "color": "Verde"
+  },
+  {
+    "file": "scooter_eletrica_mg_16_1000w_bandeira_inglesa.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/9c7343e3-1dab-4a06-ac6f-a59347a92f34.jpeg",
+    "code": "573632",
+    "model": "scooter-eletrica-mg-16-1000w",
+    "color": "Bandeira Inglesa"
+  },
+  {
+    "file": "scooter_eletrica_mz_1000w_cinza.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/c5b5b64f-2384-4cb1-a0af-bdfbb3a8b61b.png",
+    "code": "664780",
+    "model": "scooter-eletrica-mz-1000w",
+    "color": "Cinza"
+  },
+  {
+    "file": "scooter_eletrica_mz_1000w_dark.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/6d3c55e9-2448-47d0-b547-7bd44ad5e37c.png",
+    "code": "717816",
+    "model": "scooter-eletrica-mz-1000w",
+    "color": "Dark"
+  },
+  {
+    "file": "scooter_eletrica_mz_1000w_laranja_prata.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/72f29eee-f61a-40f6-82b1-6aa2b40bb0cf.png",
+    "code": "714915",
+    "model": "scooter-eletrica-mz-1000w",
+    "color": "Laranja/Prata"
+  },
+  {
+    "file": "scooter_eletrica_mz_1000w_prata.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/2d3354d4-18e2-4000-a5fc-58f873c05533.png",
+    "code": "664769",
+    "model": "scooter-eletrica-mz-1000w",
+    "color": "Prata"
+  },
+  {
+    "file": "scooter_eletrica_mz_1000w_roxo.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/60117c8e-8d5e-488c-b381-691d4a91e685.png",
+    "code": "664762",
+    "model": "scooter-eletrica-mz-1000w",
+    "color": "Roxo"
+  },
+  {
+    "file": "scooter_eletrica_t1_1000w_azul.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/cbc5fc0a-13b2-4c16-ab13-830a61751b55.png",
+    "code": "660319",
+    "model": "scooter-eletrica-t1-1000w",
+    "color": "Azul"
+  },
+  {
+    "file": "scooter_eletrica_t1_1000w_branco.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/8fb061ee-af6e-4dcb-ba36-bf2cd9987201.png",
+    "code": "660322",
+    "model": "scooter-eletrica-t1-1000w",
+    "color": "Branco"
+  },
+  {
+    "file": "scooter_eletrica_t1_1000w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/8e06045d-1b82-4267-9909-dc28ea887308.png",
+    "code": "660320",
+    "model": "scooter-eletrica-t1-1000w",
+    "color": "Preto"
+  },
+  {
+    "file": "scooter_eletrica_t1_1000w_verde_militar.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/2c2ef0aa-e220-439b-a344-6b7a2bf2da68.png",
+    "code": "660310",
+    "model": "scooter-eletrica-t1-1000w",
+    "color": "Verde Militar"
+  },
+  {
+    "file": "scooter_eletrica_t1_1000w_vermelho.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/4cc77cd5-fb72-4b6f-aaf6-6889526fdac5.png",
+    "code": "660321",
+    "model": "scooter-eletrica-t1-1000w",
+    "color": "Vermelho"
+  },
+  {
+    "file": "scooter_eletrica_tank_800w_cinza.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/1e99be19-4277-4df5-b662-f798e12e1022.png",
+    "code": "658016",
+    "model": "scooter-eletrica-tank-800w",
+    "color": "Cinza"
+  },
+  {
+    "file": "scooter_eletrica_tank_800w_preto.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/bc200e7b-cd59-4c23-8b25-88b04a853ee8.png",
+    "code": "658017",
+    "model": "scooter-eletrica-tank-800w",
+    "color": "Preto"
+  },
+  {
+    "file": "triciclo_eletrica_t5_500w_branco_bege.webp",
+    "url": "https://d242jwkdtnhx89.cloudfront.net/soollar_prd/products/1929c7b9-b623-455e-baec-9773dc09c81b.png",
+    "code": "574525",
+    "model": "triciclo-eletrica-t5-500w",
+    "color": "Branco/Bege"
   }
 ]

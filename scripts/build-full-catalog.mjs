@@ -169,7 +169,9 @@ function parseTitle(title) {
     .replace(/\s+MARCA\s+.*$/i, '')
     .trim();
 
-  const categoryMatch = cleaned.match(/^(SCOOTER|BICICLETA|TRICICLO)\s+(?:EL[EÉ]TRICA\s+)?(.*)$/i);
+  const categoryMatch = cleaned.match(
+    /^(SCOOTER|BICICLETA|TRICICLO)\s+(?:EL[EÉ]TRIC[OA]\s+)?(.*)$/i
+  );
   if (!categoryMatch) return null;
 
   const category = categoryMatch[1].toUpperCase();
@@ -225,13 +227,17 @@ for (const item of full.catalog) {
     continue;
   }
 
+  const isScooter = parsed.category === 'SCOOTER';
+  const isTricycle = parsed.category === 'TRICICLO';
   const modelDisplay = `${titleCaseModel(parsed.model)} ${parsed.power}`;
-  const slug = `${parsed.category === 'SCOOTER' ? 'scooter' : 'bicicleta'}-eletrica-${slugify(
-    parsed.model
-  )}-${parsed.power.toLowerCase()}`;
-  const categoryLabel = parsed.category === 'SCOOTER' ? 'Scooter' : 'Bike';
-  const titleLabel =
-    parsed.category === 'SCOOTER' ? 'Scooter Elétrica' : 'Bicicleta Elétrica';
+  const slugPrefix = isScooter ? 'scooter' : isTricycle ? 'triciclo' : 'bicicleta';
+  const slug = `${slugPrefix}-eletrica-${slugify(parsed.model)}-${parsed.power.toLowerCase()}`;
+  const categoryLabel = isScooter ? 'Scooter' : isTricycle ? 'Triciclo' : 'Bike';
+  const titleLabel = isScooter
+    ? 'Scooter Elétrica'
+    : isTricycle
+      ? 'Triciclo Elétrico'
+      : 'Bicicleta Elétrica';
 
   if (!grouped.has(slug)) {
     grouped.set(slug, {
@@ -330,12 +336,21 @@ for (const model of grouped.values()) {
   const base = currentProduct || {
     id: model.slug,
     nome: `${model.categoryLabel} ${model.modelDisplay}`,
-    emoji: model.categoryLabel === 'Scooter' ? '🛵' : '🚲',
+    emoji:
+      model.categoryLabel === 'Scooter'
+        ? '🛵'
+        : model.categoryLabel === 'Triciclo'
+          ? '🛺'
+          : '🚲',
     titulo: `${model.titleLabel} ${model.modelDisplay}`,
     slug: model.slug,
     categoria: model.categoryLabel,
     categoria_slug:
-      model.categoryLabel === 'Scooter' ? 'autopropelidos' : 'bikes-eletricas',
+      model.categoryLabel === 'Scooter'
+        ? 'autopropelidos'
+        : model.categoryLabel === 'Triciclo'
+          ? 'triciclos'
+          : 'bikes-eletricas',
     descricao: `${model.titleLabel} ${model.modelDisplay} com motor ${model.power} e bateria ${model.battery}. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.`,
     preco: Math.min(...model.prices),
     exibir_preco: false,
@@ -363,14 +378,34 @@ result.sort((a, b) => {
     if (bi === -1) return -1;
     return ai - bi;
   }
-  if (a.categoria !== b.categoria) return a.categoria === 'Scooter' ? -1 : 1;
+  if (a.categoria !== b.categoria) {
+    const order = { Scooter: 0, Triciclo: 1, Bike: 2 };
+    return order[a.categoria] - order[b.categoria];
+  }
   return a.nome.localeCompare(b.nome);
 });
+
+let previousManifest = [];
+try {
+  previousManifest = JSON.parse(
+    await readFile('scripts/soollar-images-full.json', 'utf8')
+  );
+} catch {
+  // Primeira execução: ainda não há manifesto.
+}
+
+const manifestByFile = new Map(
+  previousManifest.map((item) => [item.file, item])
+);
+for (const item of imageManifest) manifestByFile.set(item.file, item);
+const mergedManifest = [...manifestByFile.values()].sort((a, b) =>
+  a.file.localeCompare(b.file)
+);
 
 await writeFile('src/data/produtos-loja.json', `${JSON.stringify(result, null, 2)}\n`);
 await writeFile(
   'scripts/soollar-images-full.json',
-  `${JSON.stringify(imageManifest, null, 2)}\n`
+  `${JSON.stringify(mergedManifest, null, 2)}\n`
 );
 
 console.log(`Modelos: ${result.length}`);

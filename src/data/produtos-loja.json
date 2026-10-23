@@ -675,6 +675,36 @@
     "imagem_capa": "/motos/scooter_eletrica_tank_800w_cinza.webp"
   },
   {
+    "id": "triciclo-eletrica-t5-500w",
+    "nome": "Triciclo T5 500W",
+    "emoji": "🛺",
+    "titulo": "Triciclo Elétrico T5 500W",
+    "slug": "triciclo-eletrica-t5-500w",
+    "categoria": "Triciclo",
+    "categoria_slug": "triciclos",
+    "descricao": "Triciclo Elétrico T5 500W com motor 500W e bateria Chumbo 60V 20Ah. Consulte cores, disponibilidade e condições de encomenda com a nossa equipe.",
+    "preco": 9999.9,
+    "exibir_preco": false,
+    "destaque": false,
+    "dispensa_cnh": true,
+    "potencia_motor": "500W",
+    "tipo_bateria": "Chumbo 60V 20Ah",
+    "autonomia": "Consulte no WhatsApp",
+    "velocidade_maxima": "Consulte no WhatsApp",
+    "capacidade_carga": "Consulte no WhatsApp",
+    "tempo_recarga": "Consulte no WhatsApp",
+    "cores": [
+      {
+        "nome": "Branco/Bege",
+        "hex": "#f2f2ef",
+        "imagem": "/motos/triciclo_eletrica_t5_500w_branco_bege.webp",
+        "hex_secundario": "#e3d5c3",
+        "disponibilidade": "sob_pedido"
+      }
+    ],
+    "imagem_capa": "/motos/triciclo_eletrica_t5_500w_branco_bege.webp"
+  },
+  {
     "id": "bicicleta-eletrica-advantage-750w",
     "nome": "Bike Advantage 750W",
     "emoji": "🚲",

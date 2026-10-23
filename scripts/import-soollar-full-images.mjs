@@ -18,10 +18,23 @@ const QUALITY = 85;
 await mkdir(OUTPUT_DIR, { recursive: true });
 
 let imported = 0;
+let skipped = 0;
 let failed = 0;
+const force = process.argv.includes('--force');
 
 for (const [index, item] of manifest.entries()) {
   try {
+    const outputPath = join(OUTPUT_DIR, item.file);
+    if (!force) {
+      try {
+        await stat(outputPath);
+        skipped += 1;
+        continue;
+      } catch {
+        // Imagem ainda não existe: importar.
+      }
+    }
+
     const response = await fetch(item.url);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
@@ -33,7 +46,6 @@ for (const [index, item] of manifest.entries()) {
       pipeline = pipeline.resize({ width: MAX_WIDTH, withoutEnlargement: true });
     }
 
-    const outputPath = join(OUTPUT_DIR, item.file);
     const info = await pipeline
       .webp({
         quality: QUALITY,
@@ -54,5 +66,7 @@ for (const [index, item] of manifest.entries()) {
   }
 }
 
-console.log(`\nImportadas ${imported} imagens; ${failed} falhas.`);
+console.log(
+  `\nImportadas ${imported} imagens; ${skipped} já existentes ignoradas; ${failed} falhas.`
+);
 if (failed > 0) process.exitCode = 1;

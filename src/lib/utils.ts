@@ -39,7 +39,8 @@ export function buildAvailabilityWhatsAppLink(
       ? 'Pronta Entrega'
       : 'Sob Pedido / Encomenda';
 
-  let message = `Olá, tenho interesse na ${productName} na cor ${color.nome} (${status}) vista no site.`;
+  const article = productName.startsWith('Triciclo') ? 'no' : 'na';
+  let message = `Olá, tenho interesse ${article} ${productName} na cor ${color.nome} (${status}) vista no site.`;
   if (productUrl) message += ` Link: ${productUrl}`;
 
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;

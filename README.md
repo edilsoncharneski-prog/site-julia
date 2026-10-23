@@ -42,7 +42,7 @@ lista de variações de cor. Cada variação possui nome, cor hexadecimal, image
 slug antigo (para preservar links já compartilhados) e o campo
 `disponibilidade`, que aceita `pronta_entrega` ou `sob_pedido`.
 
-O catálogo completo tem **28 modelos e 93 variações**, sendo **17 variações com
+O catálogo completo tem **29 modelos e 94 variações**, sendo **17 variações com
 pronta entrega** e as restantes sob pedido. As imagens oficiais ficam em
 `public/motos/` no formato WebP.
 

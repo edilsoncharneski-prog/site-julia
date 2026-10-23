@@ -28,7 +28,7 @@ import {
 } from '@/lib/products';
 
 const diferenciais = [
-  'Bateria de lítio/grafeno de alta durabilidade e recarga bivolt',
+  'Bateria de alta durabilidade e recarga bivolt',
   'Freios a disco dianteiro e traseiro',
   'Iluminação 100% LED de alta visibilidade',
   'Painel digital completo e alarme sonoro',
@@ -194,7 +194,11 @@ export function ProductDetail({
           {/* BuyBox */}
           <div className="flex flex-col">
             <span className="mb-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-amber-500">
-              {product.categoria} elétrica
+              {product.categoria === 'Scooter'
+                ? 'Scooter elétrica'
+                : product.categoria === 'Triciclo'
+                  ? 'Triciclo elétrico'
+                  : 'Bicicleta elétrica'}
             </span>
             <h1 className="text-2xl font-semibold leading-tight tracking-tight text-gray-950 sm:text-4xl">
               {product.titulo}
