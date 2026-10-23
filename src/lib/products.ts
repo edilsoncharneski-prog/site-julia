@@ -45,6 +45,7 @@ export interface Product {
   video_url?: string | null;
   cores: ProductColor[];
   itens_serie?: string[];
+  especificacoes_tecnicas?: Record<string, string>;
 }
 
 /** Catálogo estático de contingência (útil para Client Components e fallback). */

@@ -46,13 +46,15 @@ interface SupabaseProductRow {
   tempo_recarga?: string | null;
   imagem_capa?: string | null;
   video_url?: string | null;
+  especificacoes_tecnicas?: Record<string, string> | null;
   ordem?: number | null;
   categoria?: { nome: string; slug: string } | null;
   produto_variacoes?: SupabaseVariationRow[] | null;
 }
 
 function mapRowToProduct(row: SupabaseProductRow): Product {
-  const catSlug = row.categoria?.slug || 'autopropelidos';
+  const fallbackItem = FALLBACK_LIST.find((p) => p.slug === row.slug);
+  const catSlug = row.categoria?.slug || fallbackItem?.categoria_slug || 'autopropelidos';
   const catLabel =
     categoriaCurta[catSlug] || row.categoria?.nome || 'Veículo Elétrico';
 
@@ -98,7 +100,9 @@ function mapRowToProduct(row: SupabaseProductRow): Product {
     capacidade_carga: row.capacidade_carga || undefined,
     tempo_recarga: row.tempo_recarga || undefined,
     imagem_capa: row.imagem_capa || undefined,
-    video_url: row.video_url || undefined,
+    video_url: row.video_url || fallbackItem?.video_url || undefined,
+    especificacoes_tecnicas:
+      row.especificacoes_tecnicas || fallbackItem?.especificacoes_tecnicas || undefined,
     cores,
   };
 }

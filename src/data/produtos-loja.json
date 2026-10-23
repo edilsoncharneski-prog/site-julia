@@ -13,12 +13,12 @@
     "exibir_preco": false,
     "destaque": true,
     "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 60V 20Ah",
-    "autonomia": "Até 50 km",
+    "potencia_motor": "1.000W",
+    "tipo_bateria": "Lítio 60V 20AH",
+    "autonomia": "60-80 km",
     "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
+    "capacidade_carga": "180 kg",
+    "tempo_recarga": "Aproximadamente 6 horas",
     "imagem_capa": "/motos/scooter_eletrica_cappuccino_1000w_bege.webp",
     "cores": [
       {
@@ -69,7 +69,30 @@
         "slug_legado": "scooter-eletrica-cappuccino-1000w-vermelho-bateria-de-litio-60v-20ah",
         "disponibilidade": "sob_pedido"
       }
-    ]
+    ],
+    "video_url": "https://drive.google.com/file/d/1_cgTjV7lDGbxZZozYV6CvIvAvqBm9Ib3/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "Cappuccino",
+      "Cor": "Rosa/Bege",
+      "Motor Elétrico": "1.000W",
+      "Bateria": "Lítio 60V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "60-80 km",
+      "Tempo de Recarga": "Aproximadamente 6 horas",
+      "Capacidade máxima de carga": "180 kg",
+      "Marchas": "3 velocidades",
+      "Painel": "NFC",
+      "Freio Dianteiro": "Disco",
+      "Freio Traseiro": "Tambor",
+      "Pneus/Rodas": "3.0-10\" Polegadas",
+      "Alarme": "Sim",
+      "Controlador": "12 tubos",
+      "Carregador": "60V 3A Bivolt (100-240V)",
+      "Entre-eixos": "1.285 mm",
+      "Dimensões": "165x45x87 cm",
+      "Peso Líquido": "66 kg"
+    }
   },
   {
     "id": "shark",
@@ -85,12 +108,12 @@
     "exibir_preco": false,
     "destaque": true,
     "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Grafeno 72V 26Ah",
-    "autonomia": "Até 95 km",
+    "potencia_motor": "1.000W",
+    "tipo_bateria": "Grafeno 72V 26AH",
+    "autonomia": "95 km",
     "velocidade_maxima": "32 km/h",
     "capacidade_carga": "200 kg",
-    "tempo_recarga": "6 a 9 horas",
+    "tempo_recarga": "Aproximadamente 6 a 9 horas",
     "imagem_capa": "/motos/scooter_eletrica_shark_1000w_amarelo.webp",
     "cores": [
       {
@@ -105,7 +128,30 @@
         "imagem": "/motos/scooter_eletrica_shark_1000w_vermelho.webp",
         "disponibilidade": "pronta_entrega"
       }
-    ]
+    ],
+    "video_url": "https://drive.google.com/file/d/1r_K6beWVq01shhq18Uqr5_PDhwa-ANe3/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "SHARK",
+      "Cor": "Vermelho",
+      "Motor Elétrico": "1.000W",
+      "Bateria": "Grafeno 72V 26AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "95 km",
+      "Tempo de Recarga": "Aproximadamente 6 a 9 horas",
+      "Capacidade máxima de carga": "200 kg",
+      "Marchas": "3 velocidades",
+      "Painel": "LED sem NFC",
+      "Freio Dianteiro": "Hidráulico",
+      "Freio Traseiro": "Disco",
+      "Pneus/Rodas": "Pneu sem câmara (tubeless) 3.0-10\" Polegadas",
+      "Alarme": "Sim",
+      "Controlador": "12 tubos",
+      "Carregador": "72V 3A Bivolt (100-240V)",
+      "Entre-eixos": "1.290 mm",
+      "Dimensões": "183x57x86 cm",
+      "Peso Líquido": "118 kg"
+    }
   },
   {
     "id": "h9",
@@ -121,12 +167,12 @@
     "exibir_preco": false,
     "destaque": false,
     "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 60V 20Ah",
-    "autonomia": "Até 50 km",
+    "potencia_motor": "1.000W",
+    "tipo_bateria": "Lítio 60V 20AH",
+    "autonomia": "60-80 km",
     "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
+    "capacidade_carga": "180 kg",
+    "tempo_recarga": "Aproximadamente 6 horas",
     "imagem_capa": "/motos/scooter_eletrica_h9_1000w_preto_prata_ba_16.webp",
     "cores": [
       {
@@ -137,7 +183,30 @@
         "slug_legado": "scooter-eletrica-h9-1000w-preto-prata-bateria-de-litio-60v-20ah",
         "disponibilidade": "pronta_entrega"
       }
-    ]
+    ],
+    "video_url": "https://drive.google.com/file/d/1vCMhzhbWKME-HmG_qEFV9VpqKPPBRgDX/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "H9",
+      "Cor": "Preto/Prata",
+      "Motor Elétrico": "1.000W",
+      "Bateria": "Lítio 60V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "60-80 km",
+      "Tempo de Recarga": "Aproximadamente 6 horas",
+      "Capacidade máxima de carga": "180 kg",
+      "Marchas": "3 Velocidades",
+      "Painel": "LED",
+      "Freio Dianteiro": "Disco",
+      "Freio Traseiro": "Tambor",
+      "Pneus/Rodas": "3.0-20\" Polegadas",
+      "Alarme": "Sim",
+      "Controlador": "12 tubos",
+      "Carregador": "60V 3A Bivolt (100-240V)",
+      "Entre-eixos": "1.290 mm",
+      "Dimensões": "165x45x87 cm",
+      "Peso Líquido": "71 kg"
+    }
   },
   {
     "id": "b3",
@@ -154,11 +223,11 @@
     "destaque": false,
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
-    "tipo_bateria": "Grafeno 60V 26Ah",
-    "autonomia": "Até 50 km",
+    "tipo_bateria": "Grafeno 60V 26AH",
+    "autonomia": "95 km",
     "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
+    "capacidade_carga": "200 kg",
+    "tempo_recarga": "Aproximadamente 6 a 7 horas",
     "imagem_capa": "/motos/scooter_eletrica_b3_1000w_preto_bateria__14.webp",
     "cores": [
       {
@@ -175,7 +244,29 @@
         "slug_legado": "scooter-eletrica-b3-1000w-verde-bateria-de-grafeno-60v-26ah",
         "disponibilidade": "sob_pedido"
       }
-    ]
+    ],
+    "video_url": "https://drive.google.com/file/d/1L1qUNOAU3ePLN2E3UqOrZujXyqL4lc6Z/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "B3",
+      "Cor": "Preto",
+      "Motor Elétrico": "1000W",
+      "Bateria": "Grafeno 60V 26AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "95 km",
+      "Tempo de Recarga": "Aproximadamente 6 a 7 horas",
+      "Capacidade máxima de carga": "200 kg",
+      "Painel": "LED sem NFC",
+      "Freio Dianteiro": "Freios",
+      "Freio Traseiro": "Dsico Hidráulico",
+      "Pneus/Rodas": ": 3.0*10 Polegadas sem câmara de ar",
+      "Alarme": "Sim",
+      "Controlador": "12 MOSFETs",
+      "Carregador": "60V 4A carregador bivolt (100–240V)",
+      "Entre-eixos": "1180mm",
+      "Dimensões": "149x44x83 cm",
+      "Peso Líquido": "101 kg"
+    }
   },
   {
     "id": "t1",
@@ -192,11 +283,11 @@
     "destaque": true,
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 64V 20Ah",
-    "autonomia": "Até 50 km",
+    "tipo_bateria": "Lítio 64V 20AH",
+    "autonomia": "50 km",
     "velocidade_maxima": "32 km/h",
     "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
+    "tempo_recarga": "Aproximadamente 6 a 7 horas",
     "imagem_capa": "/motos/scooter_eletrica_t1_1000w_azul_camaleao__5.webp",
     "cores": [
       {
@@ -265,7 +356,29 @@
         "imagem": "/motos/scooter_eletrica_t1_1000w_vermelho.webp",
         "disponibilidade": "sob_pedido"
       }
-    ]
+    ],
+    "video_url": "https://drive.google.com/file/d/1auxm0uI0MlR9tekJ63DTMJIgmjUtZlb3/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "T1",
+      "Cor": "Vermelho/Prata",
+      "Motor Elétrico": "1000W",
+      "Bateria": "Lítio 64V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "50 km",
+      "Tempo de Recarga": "Aproximadamente 6 a 7 horas",
+      "Capacidade máxima de carga": "150 kg",
+      "Painel": "NFC",
+      "Freio Dianteiro": "Hidráulico",
+      "Freio Traseiro": "Tambor",
+      "Pneus/Rodas": "2.75*14 sem câmera de ar",
+      "Alarme": "Sim",
+      "Controlador": "12 MOSFETs",
+      "Carregador": "60V 3Ah",
+      "Entre-eixos": "1090mm",
+      "Dimensões": "158x67x111 cm",
+      "Peso Líquido": "57.5 kg"
+    }
   },
   {
     "id": "jsl",
@@ -282,11 +395,11 @@
     "destaque": false,
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 48V 18Ah",
-    "autonomia": "Até 50 km",
+    "tipo_bateria": "Lítio 48V 18AH",
+    "autonomia": "50 km",
     "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
+    "capacidade_carga": "200 kg",
+    "tempo_recarga": "Aproximadamente 9 horas",
     "imagem_capa": "/motos/bicicleta_jsl_1000w_preto_marrom_bateria_6.webp",
     "cores": [
       {
@@ -303,7 +416,28 @@
         "imagem": "/motos/bicicleta_eletrica_jsl_1000w_preto.webp",
         "disponibilidade": "sob_pedido"
       }
-    ]
+    ],
+    "video_url": "https://drive.google.com/file/d/1Ri86TGnCzsA7kRd2wJlKsS_zDcaXYzey/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "JSL",
+      "Motor Elétrico": "1000W",
+      "Bateria": "Lítio 48V 18AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "50 km",
+      "Tempo de Recarga": "Aproximadamente 9 horas",
+      "Capacidade máxima de carga": "200 kg",
+      "Painel": "NFC",
+      "Freio Dianteiro": "Hidráulico",
+      "Freio Traseiro": "Disco",
+      "Pneus/Rodas": "4.0*20 Polegadas para uso urbano (street tire)",
+      "Alarme": "Sim",
+      "Controlador": "48 V, protocolo 5S, 25 A, subtensão: 39 V.",
+      "Carregador": "48V 2Ah",
+      "Entre-eixos": "1285mm",
+      "Dimensões": "175x50x110 cm",
+      "Peso Líquido": "46 kg"
+    }
   },
   {
     "id": "harley",
@@ -320,11 +454,11 @@
     "destaque": true,
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 60V 20Ah",
-    "autonomia": "Até 50 km",
+    "tipo_bateria": "Lítio 60V 20AH",
+    "autonomia": "50 km",
     "velocidade_maxima": "32 km/h",
-    "capacidade_carga": "150 kg",
-    "tempo_recarga": "6 a 8 horas",
+    "capacidade_carga": "200 kg",
+    "tempo_recarga": "Aproximadamente 5 a 6 horas",
     "imagem_capa": "/motos/scooter_eletrica_harley_1000w_azul.webp",
     "cores": [
       {
@@ -359,7 +493,30 @@
         "imagem": "/motos/scooter_eletrica_harley_1000w_amarelo.webp",
         "disponibilidade": "sob_pedido"
       }
-    ]
+    ],
+    "video_url": "https://drive.google.com/file/d/1rU_ChCrHi3AAdaFtvYJ-8faCBxPUYQJN/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "HARLEY",
+      "Cor": "Branco",
+      "Motor Elétrico": "1000W",
+      "Bateria": "Lítio 60V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "50 km",
+      "Tempo de Recarga": "Aproximadamente 5 a 6 horas",
+      "Capacidade máxima de carga": "200 kg",
+      "Painel": "LCD com cartão inteligente NFC",
+      "Freio Dianteiro": "Disco",
+      "Freio Traseiro": "Hidráulico",
+      "Pneus/Rodas": "3.0*10 Polegadas para uso urbano (street tire)",
+      "Alarme": "Sim",
+      "Controlador": "12 tubos",
+      "Carregador": "60V 3A",
+      "Entre-eixos": "1280mm",
+      "Dimensões": "134x38x66 cm",
+      "Peso Líquido": "70 kg",
+      "Retrovisor": "Não contém"
+    }
   },
   {
     "id": "scooter-eletrica-artist-1000w",
@@ -374,12 +531,12 @@
     "exibir_preco": false,
     "destaque": false,
     "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Grafeno 60V 20Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "potencia_motor": "1.000W",
+    "tipo_bateria": "Grafeno 60V 20AH",
+    "autonomia": "70 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "185 kg",
+    "tempo_recarga": "Aproximadamente 6 horas",
     "cores": [
       {
         "nome": "Azul",
@@ -406,7 +563,27 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/scooter_eletrica_artist_1000w_azul.webp"
+    "imagem_capa": "/motos/scooter_eletrica_artist_1000w_azul.webp",
+    "video_url": "https://drive.google.com/file/d/1h3qm5R7Zl1E5kNcJAxzcS4uOH5hltuqs/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "Marrom",
+      "Cor": "Verde",
+      "Motor Elétrico": "1.000W",
+      "Bateria": "Grafeno 60V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "70 km",
+      "Tempo de Recarga": "Aproximadamente 6 horas",
+      "Capacidade máxima de carga": "185 kg",
+      "Marchas": "3 velocidades",
+      "Painel": "LED",
+      "Freio Traseiro": "Freios a disco",
+      "Controlador": "12 MOSFETs",
+      "Carregador": "60 V 3 A, bivolt (100–240 V)",
+      "Entre-eixos": "1122 mm",
+      "Dimensões": "1645x685x1100 cm",
+      "Peso Líquido": "91 kg"
+    }
   },
   {
     "id": "scooter-eletrica-citycoco-1000w",
@@ -421,12 +598,12 @@
     "exibir_preco": false,
     "destaque": false,
     "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 60V 24Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "potencia_motor": "1.000W",
+    "tipo_bateria": "Lítio 60V 24AH",
+    "autonomia": "60 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "150 kg",
+    "tempo_recarga": "Aproximadamente 7 horas",
     "cores": [
       {
         "nome": "Azul",
@@ -465,7 +642,29 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/scooter_eletrica_citycoco_1000w_azul.webp"
+    "imagem_capa": "/motos/scooter_eletrica_citycoco_1000w_azul.webp",
+    "video_url": "https://drive.google.com/file/d/1uzfZfoQ-tDIHzy5vjqWh18LodR72TMV0/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "CityCoco",
+      "Cor": "Preto",
+      "Motor Elétrico": "1.000W",
+      "Bateria": "Lítio 60V 24AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "60 km",
+      "Tempo de Recarga": "Aproximadamente 7 horas",
+      "Capacidade máxima de carga": "150 kg",
+      "Marchas": "3 marchas",
+      "Painel": "LED",
+      "Freio Dianteiro/Traseiro": "A disco",
+      "Pneus/Rodas": "225/40-10 -10 Polegadas",
+      "Alarme": "Sim",
+      "Controlador": "12 MOSFETs, potência de saída de 1.200 W",
+      "Carregador": "Saída de 60 V e 4 A; entrada de 100 V a 240 V",
+      "Entre-eixos": "1280 mm",
+      "Dimensões": "175x75,5x117,5 cm",
+      "Peso Líquido": "73,67 kg"
+    }
   },
   {
     "id": "scooter-eletrica-g105-1000w",
@@ -480,12 +679,12 @@
     "exibir_preco": false,
     "destaque": false,
     "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 60V 20Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "potencia_motor": "1.000W",
+    "tipo_bateria": "Lítio 60V 20AH",
+    "autonomia": "50-70 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "180 kg",
+    "tempo_recarga": "6-7 horas",
     "cores": [
       {
         "nome": "Branco",
@@ -506,7 +705,30 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/scooter_eletrica_g105_1000w_branco.webp"
+    "imagem_capa": "/motos/scooter_eletrica_g105_1000w_branco.webp",
+    "video_url": "https://drive.google.com/file/d/1ipiX1gXQr9rYZe_bsNAGHOdQjaPmm_hI/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "G105",
+      "Cor": "Branca",
+      "Motor Elétrico": "1.000W",
+      "Bateria": "Lítio 60V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "50-70 km",
+      "Tempo de Recarga": "6-7 horas",
+      "Capacidade máxima de carga": "180 kg",
+      "Marchas": "3 velocidades",
+      "Painel": "NFC",
+      "Freio Dianteiro": "Freio a disco hidráulico",
+      "Freio Traseiro": "Freio a disco hidráulico",
+      "Pneus/Rodas": "90/90-12\" Polegadas",
+      "Alarme": "Sim",
+      "Controlador": "12 tubos",
+      "Carregador": "60V / 3A",
+      "Entre-eixos": "1.280 mm",
+      "Dimensões": "1835 x 760 x 1120 cm",
+      "Peso Líquido": "80 kg"
+    }
   },
   {
     "id": "scooter-eletrica-k007-1000w",
@@ -521,12 +743,12 @@
     "exibir_preco": false,
     "destaque": false,
     "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "LÍTIO 60V",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "potencia_motor": "1.000W",
+    "tipo_bateria": "Lítio 60V 20AH",
+    "autonomia": "70 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "180 kg",
+    "tempo_recarga": "Aproximadamente 6 horas",
     "cores": [
       {
         "nome": "Branco",
@@ -554,7 +776,30 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/scooter_eletrica_k007_1000w_branco.webp"
+    "imagem_capa": "/motos/scooter_eletrica_k007_1000w_branco.webp",
+    "video_url": "https://drive.google.com/file/d/1bG7OELlIs2zidE3BNdxOQZs2jqrP1nEE/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "K007",
+      "Cor": "Verde",
+      "Motor Elétrico": "1.000W",
+      "Bateria": "Lítio 60V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "70 km",
+      "Tempo de Recarga": "Aproximadamente 6 horas",
+      "Capacidade máxima de carga": "180 kg",
+      "Marchas": "3 velocidades",
+      "Painel": "LED",
+      "Freio Dianteiro": "Disco",
+      "Freio Traseiro": "Tambor",
+      "Pneus/Rodas": "3.0-10\" Polegadas",
+      "Alarme": "Sim",
+      "Controlador": "12 tubos",
+      "Carregador": "60V 3A, padrão INMETRO",
+      "Entre-eixos": "1.290 mm",
+      "Dimensões": "165x45x87 cm",
+      "Peso Líquido": "73kg(bateria inclusa)"
+    }
   },
   {
     "id": "scooter-eletrica-mg-16-1000w",
@@ -583,7 +828,8 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/scooter_eletrica_mg_16_1000w_bandeira_inglesa.webp"
+    "imagem_capa": "/motos/scooter_eletrica_mg_16_1000w_bandeira_inglesa.webp",
+    "especificacoes_tecnicas": {}
   },
   {
     "id": "scooter-eletrica-mz-1000w",
@@ -600,10 +846,10 @@
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
     "tipo_bateria": "Grafeno 72V",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "autonomia": "100 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "185 kg",
+    "tempo_recarga": "Aproximadamente 6 horas",
     "cores": [
       {
         "nome": "Cinza",
@@ -637,7 +883,27 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/scooter_eletrica_mz_1000w_cinza.webp"
+    "imagem_capa": "/motos/scooter_eletrica_mz_1000w_cinza.webp",
+    "video_url": "https://drive.google.com/file/d/1VChOCXeaXgdHz4xDYBpM2ibl75QbS7q1/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "MZ",
+      "Motor Elétrico": "1000W",
+      "Bateria": "Grafeno 72V",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "100 km",
+      "Tempo de Recarga": "Aproximadamente 6 horas",
+      "Capacidade máxima de carga": "185 kg",
+      "Painel": "LED",
+      "Freio Dianteiro": "Disco Hidráulico",
+      "Freio Traseiro": "Disco Hidráulico",
+      "Pneus/Rodas": ": 3.0*10 Polegadas sem câmara de ar",
+      "Controlador": "12 MOSFETs",
+      "Carregador": "72V 5A carregador bivolt (100–240V)",
+      "Entre-eixos": "1290mm",
+      "Dimensões": "180 x 66 x 94 cm",
+      "Peso Líquido": "135 kg"
+    }
   },
   {
     "id": "scooter-eletrica-tank-800w",
@@ -653,11 +919,11 @@
     "destaque": false,
     "dispensa_cnh": true,
     "potencia_motor": "800W",
-    "tipo_bateria": "Grafeno 60V 26Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "tipo_bateria": "Grafeno 60V 26AH",
+    "autonomia": "70 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "200 kg",
+    "tempo_recarga": "Aproximadamente 6 a 7 horas",
     "cores": [
       {
         "nome": "Cinza",
@@ -672,7 +938,28 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/scooter_eletrica_tank_800w_cinza.webp"
+    "imagem_capa": "/motos/scooter_eletrica_tank_800w_cinza.webp",
+    "video_url": "https://drive.google.com/file/d/1I0uAkTWHCVVSeQtsj6vaLsY3ObDum4hI/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "TANK",
+      "Cor": "Cinza",
+      "Motor Elétrico": "800W",
+      "Bateria": "Grafeno 60V 26AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "70 km",
+      "Tempo de Recarga": "Aproximadamente 6 a 7 horas",
+      "Capacidade máxima de carga": "200 kg",
+      "Painel": "LED sem NFC",
+      "Freio Dianteiro": "Disco",
+      "Freio Traseiro": "Tambor",
+      "Pneus/Rodas": "Pneu sem câmara (tubeless) 2.75-10 Polegadas",
+      "Controlador": "12 tubos",
+      "Carregador": "60V 4A Bivolt (100-240V)",
+      "Entre-eixos": "1.100 mm",
+      "Dimensões": "140x35x76 cm",
+      "Peso Líquido": "81 kg"
+    }
   },
   {
     "id": "triciclo-eletrica-t5-500w",
@@ -689,10 +976,10 @@
     "dispensa_cnh": true,
     "potencia_motor": "500W",
     "tipo_bateria": "Chumbo 60V 20Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "autonomia": "Até 45 km",
+    "velocidade_maxima": "25 km/h",
+    "capacidade_carga": "160 kg",
+    "tempo_recarga": "6 a 8 horas",
     "cores": [
       {
         "nome": "Branco/Bege",
@@ -702,7 +989,20 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/triciclo_eletrica_t5_500w_branco_bege.webp"
+    "imagem_capa": "/motos/triciclo_eletrica_t5_500w_branco_bege.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "GTS",
+      "Linha": "T5 Triciclo",
+      "Motor Elétrico": "500W",
+      "Bateria": "Chumbo 60V 20Ah",
+      "Velocidade Máxima": "25 km/h",
+      "Autonomia": "Até 45 km",
+      "Tempo de Recarga": "6 a 8 horas",
+      "Capacidade máxima de carga": "160 kg",
+      "Painel": "Digital LED",
+      "Freios": "Tambor dianteiro e traseiro",
+      "Rodas": "Aro reforçado"
+    }
   },
   {
     "id": "bicicleta-eletrica-advantage-750w",
@@ -774,7 +1074,21 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_advantage_750w_cinza_branco.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_advantage_750w_cinza_branco.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "Konnan",
+      "Modelo": "Bike Advantage 750W",
+      "Motor Elétrico": "750W",
+      "Bateria": "Lítio 48V 18,2Ah",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 20 Fat Tire",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-avant-750w",
@@ -804,7 +1118,21 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_avant_750w_preto_laranja.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_avant_750w_preto_laranja.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "Konnan",
+      "Modelo": "Bike Avant 750W",
+      "Motor Elétrico": "750W",
+      "Bateria": "Lítio 48V 18,2Ah",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 20 Fat Tire",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-black-fish-500w",
@@ -840,7 +1168,21 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_black_fish_500w_preto.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_black_fish_500w_preto.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "GTS",
+      "Modelo": "Bike Black Fish 500W",
+      "Motor Elétrico": "500W",
+      "Bateria": "Chumbo 48V 12Ah",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 20 Fat Tire",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-c6-500w",
@@ -870,7 +1212,21 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_c6_500w_preto_azul.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_c6_500w_preto_azul.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "GTS",
+      "Modelo": "Bike C6 500W",
+      "Motor Elétrico": "500W",
+      "Bateria": "Chumbo 48V 12Ah",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 14",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-connection-500w",
@@ -914,7 +1270,21 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_connection_500w_preto_branco.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_connection_500w_preto_branco.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "Konnan",
+      "Modelo": "Bike Connection 500W",
+      "Motor Elétrico": "500W",
+      "Bateria": "Lítio 48V 18,2Ah",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 20 Fat Tire",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-explorer-ii-750w",
@@ -951,7 +1321,21 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_explorer_ii_750w_preto_laranja.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_explorer_ii_750w_preto_laranja.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "Konnan",
+      "Modelo": "Bike Explorer II 750W",
+      "Motor Elétrico": "750W",
+      "Bateria": "Lítio 48V",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 20 Fat Tire",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-fast-trail-750w",
@@ -1002,7 +1386,21 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_fast_trail_750w_preto_azul.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_fast_trail_750w_preto_azul.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "Konnan",
+      "Modelo": "Bike Fast Trail 750W",
+      "Motor Elétrico": "750W",
+      "Bateria": "Lítio 48V 18,2Ah",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 20 Fat Tire",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-jazz-e700-1000w",
@@ -1018,11 +1416,11 @@
     "destaque": false,
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 48V 20Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "tipo_bateria": "Lítio 48V 20AH",
+    "autonomia": "50 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "120 kg",
+    "tempo_recarga": "Aproximadamente 10 a 12 horas",
     "cores": [
       {
         "nome": "Preto",
@@ -1038,7 +1436,28 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_jazz_e700_1000w_preto.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_jazz_e700_1000w_preto.webp",
+    "video_url": "https://drive.google.com/file/d/1MJm1oni1jzK5Bmfy8HuIhxBTgaGTIQvy/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "JAZZ E700",
+      "Cor": "Preto",
+      "Motor Elétrico": "1000W",
+      "Bateria": "Lítio 48V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "50 km",
+      "Tempo de Recarga": "Aproximadamente 10 a 12 horas",
+      "Capacidade máxima de carga": "120 kg",
+      "Painel": "LCD com NFC",
+      "Freio Dianteiro": "Disco",
+      "Freio Traseiro": "Hidráulico",
+      "Pneus/Rodas": "20×4.0 polegadas",
+      "Controlador": "48V/27A",
+      "Carregador": "48V 2A Bivolt (100-240V)",
+      "Entre-eixos": "1.118 mm",
+      "Dimensões": "140x27,5x82,5 cm",
+      "Peso Líquido": "44.85 kg"
+    }
   },
   {
     "id": "bicicleta-eletrica-qje-05-1000w",
@@ -1054,11 +1473,11 @@
     "destaque": false,
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 48V 18Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "tipo_bateria": "Lítio 48V 18AH",
+    "autonomia": "50 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "200 kg",
+    "tempo_recarga": "Aproximadamente 6 horas",
     "cores": [
       {
         "nome": "Preto",
@@ -1074,7 +1493,28 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_qje_05_1000w_preto.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_qje_05_1000w_preto.webp",
+    "video_url": "https://drive.google.com/file/d/1fCCToC3K6ynpTxEcgX8FNOQUV5qgZBL6/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "QJE-05",
+      "Cor": "Preto/Marrom",
+      "Motor Elétrico": "1000W",
+      "Bateria": "Lítio 48V 18AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "50 km",
+      "Tempo de Recarga": "Aproximadamente 6 horas",
+      "Capacidade máxima de carga": "200 kg",
+      "Painel": "NFC",
+      "Freio Dianteiro": "Disco",
+      "Freio Traseiro": "Tambor",
+      "Pneus/Rodas": "20-4.0 Polegadas para uso urbano (street tire)",
+      "Controlador": "Controlador de onda senoidal, saída máxima de 48V 28Ah",
+      "Carregador": "48V 3Ah",
+      "Entre-eixos": "1180mm",
+      "Dimensões": "147x31x88 cm",
+      "Peso Líquido": "46 kg"
+    }
   },
   {
     "id": "bicicleta-eletrica-ride-pro-750w",
@@ -1125,7 +1565,22 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_ride_pro_750w_preto_branco.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_ride_pro_750w_preto_branco.webp",
+    "video_url": "https://drive.google.com/file/d/1Nb07bXUte9BxTkjPLxTuy35HQjKkiS03/view",
+    "especificacoes_tecnicas": {
+      "Marca": "Konnan",
+      "Modelo": "Bike Ride Pro 750W",
+      "Motor Elétrico": "750W",
+      "Bateria": "Lítio 48V",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 20 Fat Tire",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-rider-pro-1000w",
@@ -1141,11 +1596,11 @@
     "destaque": false,
     "dispensa_cnh": true,
     "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 48V 20Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "tipo_bateria": "Lítio 48V 20AH",
+    "autonomia": "50 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "200 kg",
+    "tempo_recarga": "Aproximadamente 6 horas",
     "cores": [
       {
         "nome": "Preto",
@@ -1161,7 +1616,28 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_rider_pro_1000w_preto.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_rider_pro_1000w_preto.webp",
+    "video_url": "https://drive.google.com/file/d/1EALX7VB7w8NgXhdtfQ66awSmkR_auOlc/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "RIDER PRO",
+      "Cor": "Preto",
+      "Motor Elétrico": "1000W",
+      "Bateria": "Lítio 48V 20AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "50 km",
+      "Tempo de Recarga": "Aproximadamente 6 horas",
+      "Capacidade máxima de carga": "200 kg",
+      "Painel": "Display de tela grande com NFC, sem botões de chave",
+      "Freio Dianteiro/Traseiro": "Freios hidráulicos dianteiro e traseiro LOGAN de 2 pistões",
+      "Pneus/Rodas": "Aro de liga de alumínio, 20 × 4.0",
+      "Alarme": "Sim",
+      "Controlador": "48V/30A",
+      "Carregador": "48V 2A Bivolt (100-240V)",
+      "Entre-eixos": "1.230 mm",
+      "Dimensões": "178x50x108 cm",
+      "Peso Líquido": "46 kg"
+    }
   },
   {
     "id": "bicicleta-eletrica-tjsr-b-035-1000w",
@@ -1176,12 +1652,12 @@
     "exibir_preco": false,
     "destaque": false,
     "dispensa_cnh": true,
-    "potencia_motor": "1000W",
-    "tipo_bateria": "Lítio 48V 18Ah",
-    "autonomia": "Consulte no WhatsApp",
-    "velocidade_maxima": "Consulte no WhatsApp",
-    "capacidade_carga": "Consulte no WhatsApp",
-    "tempo_recarga": "Consulte no WhatsApp",
+    "potencia_motor": "1.000W",
+    "tipo_bateria": "Lítio 48V 18AH",
+    "autonomia": "50 km",
+    "velocidade_maxima": "32 km/h",
+    "capacidade_carga": "200 kg",
+    "tempo_recarga": "Aproximadamente 6 horas",
     "cores": [
       {
         "nome": "Preto",
@@ -1197,7 +1673,29 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_tjsr_b_035_1000w_preto.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_tjsr_b_035_1000w_preto.webp",
+    "video_url": "https://drive.google.com/file/d/15Ktp-yzqUBa0XABnThi3oKnbOmFTFVYw/view",
+    "especificacoes_tecnicas": {
+      "Marca": "New E-Bike",
+      "Linha": "TJSR-B035",
+      "Cor": "Preto",
+      "Motor Elétrico": "1.000W",
+      "Bateria": "Lítio 48V 18AH",
+      "Velocidade Máxima": "32 km/h",
+      "Autonomia": "50 km",
+      "Tempo de Recarga": "Aproximadamente 6 horas",
+      "Capacidade máxima de carga": "200 kg",
+      "Marchas": "7 Velocidades",
+      "Painel": "LED com cartão inteligente NFC",
+      "Freio Dianteiro": "Hidráulico",
+      "Freio Traseiro": "Disco",
+      "Pneus/Rodas": "3.0-20\" Polegadas",
+      "Controlador": "Pôtencia elétrica 48V 30A",
+      "Carregador": "48V 3A Bivolt (100-240V)",
+      "Entre-eixos": "1.290 mm",
+      "Dimensões": "180x50x110 cm",
+      "Peso Líquido": "118 kg"
+    }
   },
   {
     "id": "bicicleta-eletrica-voyager-750w",
@@ -1248,7 +1746,21 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_voyager_750w_preto_branco.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_voyager_750w_preto_branco.webp",
+    "especificacoes_tecnicas": {
+      "Marca": "Konnan",
+      "Modelo": "Bike Voyager 750W",
+      "Motor Elétrico": "750W",
+      "Bateria": "Lítio 48V 18,2Ah",
+      "Velocidade Máxima": "Consulte no WhatsApp",
+      "Autonomia": "Consulte no WhatsApp",
+      "Tempo de Recarga": "Consulte no WhatsApp",
+      "Capacidade máxima de carga": "Consulte no WhatsApp",
+      "Sistema": "Pedalada Assistida (PAS) e Acelerador",
+      "Pneus/Rodas": "Aro 20 Fat Tire",
+      "Freios": "Disco dianteiro e traseiro",
+      "Suspensão": "Dianteira e central"
+    }
   },
   {
     "id": "bicicleta-eletrica-winner-750w",
@@ -1292,6 +1804,27 @@
         "disponibilidade": "sob_pedido"
       }
     ],
-    "imagem_capa": "/motos/bicicleta_eletrica_winner_750w_preto_laranja.webp"
+    "imagem_capa": "/motos/bicicleta_eletrica_winner_750w_preto_laranja.webp",
+    "especificacoes_tecnicas": {
+      "Guidão (Handle Bar)": "Aço φ22,2 × φ22,2 × 660 mm / B = 6° / H = 260",
+      "Mesa (Stem)": "Alumínio φ28,6 × φ25,4 / H = 41 mm / Extensão = 40 mm / +7°",
+      "Selim (Saddle)": "Conforme a imagem",
+      "Roda Livre (Free Wheel)": "7 velocidades indexadas SUNRUN 14–28T",
+      "Corrente (Chain)": "7 velocidades indexada 1/2\" × 11/128\" × 120 elos",
+      "Freio a Disco (Disc Brake)": "TONGLI T11",
+      "Movimento Central (BB)": "120 × 175 selado",
+      "Pedivela (Chainwheel)": "1/2\" × 3/32\" – 38T × 170 mm, aço, preto",
+      "Pedal": "Plástico 9/16 com esferas",
+      "Manete de Freio (Brake Lever)": "WUXING para e-bike",
+      "Alavanca de Câmbio (Shift Lever)": "SHIMANO MF-TX30-7",
+      "Câmbio Traseiro (RD)": "SHIMANO TY21",
+      "Aro (Rim)": "20\" × 4.0 em alumínio, 36 furos, raios 13G, válvula A/V, preto",
+      "Pneu (Tyre)": "20\" × 4.0 Fat Bike – Tianjin",
+      "Motor": "Motor traseiro 48V / 750W / velocidade 32 km/h",
+      "Paralama (Mudguard)": "20\" × 110 em aço",
+      "Bateria (Battery)": "48V / 18,2Ah",
+      "Display": "LCD 48V",
+      "Carregador (Charger)": "54,6V / 3A, conector DC 2.1"
+    }
   }
 ]

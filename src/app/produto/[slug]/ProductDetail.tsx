@@ -92,24 +92,46 @@ export function ProductDetail({
     },
   ];
 
-  const fichaTecnica = [
-    ['Modelo', product.titulo],
-    ['Categoria', product.categoria],
-    ['Motor', product.potencia_motor || '1000W'],
-    ['Bateria', product.tipo_bateria || 'Lítio'],
-    ['Autonomia', product.autonomia || 'Até 50 km'],
-    ['Velocidade máxima', product.velocidade_maxima || '32 km/h'],
-    ['Tempo de recarga', product.tempo_recarga || '6 a 8 horas'],
-    ['Capacidade de carga', product.capacidade_carga || '150 kg'],
-    ['Cores disponíveis', colors.map((color) => color.nome).join(' • ')],
-    ['Disponibilidade', disponibilidadeLabels[selectedColor.disponibilidade]],
-    [
-      'CNH / CONTRAN',
-      product.dispensa_cnh === false
-        ? 'Consulte requisitos'
-        : 'Dispensado de CNH — Resolução CONTRAN 996/23',
-    ],
-  ];
+  const fichaTecnica: [string, string][] = [];
+
+  if (product.especificacoes_tecnicas && Object.keys(product.especificacoes_tecnicas).length > 0) {
+    for (const [key, val] of Object.entries(product.especificacoes_tecnicas)) {
+      if (val && !['Cor', 'Link'].includes(key)) {
+        fichaTecnica.push([key, String(val)]);
+      }
+    }
+  }
+
+  const addedKeys = new Set(fichaTecnica.map(([k]) => k.toLowerCase()));
+  if (!addedKeys.has('modelo')) fichaTecnica.unshift(['Modelo', product.titulo]);
+  if (!addedKeys.has('categoria')) fichaTecnica.push(['Categoria', product.categoria]);
+  if (!addedKeys.has('motor elétrico') && !addedKeys.has('motor')) {
+    fichaTecnica.push(['Motor Elétrico', product.potencia_motor || '1000W']);
+  }
+  if (!addedKeys.has('bateria')) {
+    fichaTecnica.push(['Bateria', product.tipo_bateria || 'Lítio']);
+  }
+  if (!addedKeys.has('velocidade máxima')) {
+    fichaTecnica.push(['Velocidade Máxima', product.velocidade_maxima || '32 km/h']);
+  }
+  if (!addedKeys.has('autonomia')) {
+    fichaTecnica.push(['Autonomia', product.autonomia || 'Até 50 km']);
+  }
+  if (!addedKeys.has('tempo de recarga')) {
+    fichaTecnica.push(['Tempo de Recarga', product.tempo_recarga || '6 a 8 horas']);
+  }
+  if (!addedKeys.has('capacidade máxima de carga') && !addedKeys.has('capacidade de carga')) {
+    fichaTecnica.push(['Capacidade máxima de carga', product.capacidade_carga || '150 kg']);
+  }
+
+  fichaTecnica.push(['Cores disponíveis', colors.map((color) => color.nome).join(' • ')]);
+  fichaTecnica.push(['Disponibilidade da versão', disponibilidadeLabels[selectedColor.disponibilidade]]);
+  fichaTecnica.push([
+    'Regulamentação CONTRAN',
+    product.dispensa_cnh === false
+      ? 'Consulte requisitos de habilitação'
+      : 'Dispensado de CNH e emplacamento — Resolução CONTRAN 996/23',
+  ]);
 
   return (
     <div className="min-h-screen bg-white py-6 sm:py-10">
