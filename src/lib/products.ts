@@ -1,8 +1,15 @@
-import productsData from '@/data/produtos-loja.json';
+import fallbackProducts from '@/data/produtos-loja.json';
+
+/**
+ * Tipos e helpers PUROS do catálogo (seguros para Client Components).
+ * A leitura dinâmica dos dados fica em `lib/catalog.ts`.
+ */
 
 export type Disponibilidade = 'pronta_entrega' | 'sob_pedido';
 
 export interface ProductColor {
+  /** UUID da linha em `produto_variacoes` (ausente no catálogo de contingência). */
+  id?: string;
   nome: string;
   hex: string;
   hex_secundario?: string;
@@ -34,11 +41,14 @@ export interface Product {
   capacidade_carga?: string;
   tempo_recarga?: string;
   imagem_capa?: string;
+  /** Link do vídeo de apresentação (Google Drive, já no formato /preview). */
+  video_url?: string | null;
   cores: ProductColor[];
   itens_serie?: string[];
 }
 
-export const products = productsData as Product[];
+/** Catálogo estático de contingência (útil para Client Components e fallback). */
+export const products: Product[] = fallbackProducts as Product[];
 
 export const disponibilidadeLabels: Record<Disponibilidade, string> = {
   pronta_entrega: 'Pronta Entrega',
@@ -51,7 +61,7 @@ export const disponibilidadeDescricao: Record<Disponibilidade, string> = {
 };
 
 /**
- * Retorna as variações de cor de um modelo. Produtos antigos sem o campo
+ * Retorna as variações de cor de um modelo. Produtos sem o campo
  * `cores` continuam funcionando com uma única cor derivada da imagem de capa.
  */
 export function getProductColors(product: Product): ProductColor[] {
@@ -87,34 +97,6 @@ export function countProntaEntrega(product: Product): number {
   ).length;
 }
 
-/**
- * Busca um modelo pelo slug canônico ou pelo slug antigo de uma variação.
- * Também devolve o índice da cor correspondente ao link acessado.
- */
-export function findProductBySlug(slug: string): {
-  product: Product;
-  colorIndex: number;
-} | null {
-  const direct = products.find((product) => product.slug === slug);
-  if (direct) {
-    return { product: direct, colorIndex: getInitialColorIndex(getProductColors(direct)) };
-  }
-
-  for (const product of products) {
-    const colorIndex = getProductColors(product).findIndex(
-      (color) => color.slug_legado === slug
-    );
-
-    if (colorIndex >= 0) return { product, colorIndex };
-  }
-
-  return null;
-}
-
-export function getProductsByCategory(categoriaSlug: string): Product[] {
-  return products.filter((product) => product.categoria_slug === categoriaSlug);
-}
-
 export const categoryLabels: Record<string, string> = {
   autopropelidos: 'Autopropelidos',
   'bikes-eletricas': 'Bikes Elétricas',
@@ -122,3 +104,52 @@ export const categoryLabels: Record<string, string> = {
   patinetes: 'Patinetes',
   acessorios: 'Acessórios & Peças',
 };
+
+/** Rótulo curto usado em `Product.categoria`, derivado do slug da categoria. */
+export const categoriaCurta: Record<string, string> = {
+  autopropelidos: 'Scooter',
+  'bikes-eletricas': 'Bike',
+  triciclos: 'Triciclo',
+  patinetes: 'Patinete',
+  acessorios: 'Acessório',
+};
+
+/**
+ * Normaliza um link do Google Drive para o formato embutível
+ * `https://drive.google.com/file/d/{ID}/preview`.
+ *
+ * Aceita: link de compartilhamento (`/file/d/ID/view`), `open?id=ID`,
+ * `uc?id=ID`, o próprio `/preview` ou apenas o ID do arquivo.
+ * Retorna `null` para qualquer outro domínio/formato — o iframe só é
+ * montado com URLs do próprio Drive.
+ */
+const DRIVE_ID = /^[A-Za-z0-9_-]{25,}$/;
+
+export function getDriveEmbedUrl(value?: string | null): string | null {
+  const raw = value?.trim();
+  if (!raw) return null;
+
+  if (DRIVE_ID.test(raw)) {
+    return `https://drive.google.com/file/d/${raw}/preview`;
+  }
+
+  let url: URL;
+  try {
+    url = new URL(raw);
+  } catch {
+    return null;
+  }
+
+  if (url.protocol !== 'https:' || url.hostname !== 'drive.google.com') {
+    return null;
+  }
+
+  const id =
+    url.pathname.match(/\/d\/([A-Za-z0-9_-]+)/)?.[1] ||
+    url.searchParams.get('id') ||
+    '';
+
+  return DRIVE_ID.test(id)
+    ? `https://drive.google.com/file/d/${id}/preview`
+    : null;
+}

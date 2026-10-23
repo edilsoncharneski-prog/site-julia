@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
 import { ProductCard } from '@/components/ProductCard';
-import { categoryLabels, products } from '@/lib/products';
+import { categoryLabels } from '@/lib/products';
+import { getCatalog } from '@/lib/catalog';
 
 export const metadata: Metadata = {
   title: 'Catálogo de Veículos Elétricos',
@@ -27,7 +28,8 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const busca = (params.busca || '').trim();
   const categoria = params.categoria || '';
 
-  let filtered = products;
+  const allProducts = await getCatalog();
+  let filtered = allProducts;
 
   if (categoria && categoryLabels[categoria]) {
     filtered = filtered.filter((product) => product.categoria_slug === categoria);
@@ -50,76 +52,85 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         : 'Todos os veículos';
 
   return (
-    <div className="mx-auto w-full max-w-[1440px] px-4 py-10 sm:px-6 sm:py-14">
-      <div className="border-b border-gray-200 pb-6">
-        <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-amber-500">
-          Catálogo Eletrosom
-        </span>
-        <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <h1 className="text-2xl font-light tracking-tight text-gray-950 sm:text-3xl">
+    <div className="mx-auto w-full max-w-[1440px] px-4 py-8 sm:px-6 sm:py-12">
+      {/* Cabeçalho simples e elegante */}
+      <div className="mb-6 flex flex-col gap-4 border-b border-gray-200 pb-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-amber-500">
+            Catálogo Eletrosom
+          </span>
+          <h1 className="mt-1 text-2xl font-light tracking-tight text-gray-950 sm:text-3xl">
             {heading}
           </h1>
-          <span className="text-xs text-gray-400">
-            {filtered.length} {filtered.length === 1 ? 'modelo disponível' : 'modelos disponíveis'}
-          </span>
-        </div>
-        {busca && (
-          <p className="mt-2 flex items-center gap-1.5 text-xs text-gray-500">
-            <Search className="h-3.5 w-3.5" />
-            Resultados para <strong className="font-semibold text-gray-800">“{busca}”</strong>
+          <p className="mt-1 text-xs text-gray-500">
+            {filtered.length} {filtered.length === 1 ? 'modelo encontrado' : 'modelos encontrados'}
           </p>
-        )}
+        </div>
+
+        {/* Busca por texto */}
+        <form
+          action="/produtos"
+          method="GET"
+          className="relative flex w-full max-w-sm items-center"
+        >
+          {categoria && <input type="hidden" name="categoria" value={categoria} />}
+          <Search className="pointer-events-none absolute left-3.5 h-4 w-4 text-gray-400" />
+          <input
+            type="text"
+            name="busca"
+            defaultValue={busca}
+            placeholder="Buscar modelo ou cor..."
+            className="w-full rounded-none border border-gray-200 bg-white py-2 pl-9 pr-3 text-xs text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-gray-950"
+          />
+        </form>
       </div>
 
-      <div className="no-scrollbar mt-5 flex gap-2 overflow-x-auto pb-1">
+      {/* Abas de categoria discretas */}
+      <div className="mb-8 flex flex-wrap gap-2 border-b border-gray-100 pb-4">
         <Link
           href="/produtos"
-          className={`shrink-0 border px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] transition-colors ${
+          className={`px-3 py-1.5 text-xs font-medium transition-colors ${
             !categoria
-              ? 'border-gray-950 bg-gray-950 text-white'
-              : 'border-gray-200 text-gray-600 hover:border-gray-900 hover:text-gray-950'
+              ? 'bg-gray-950 text-white'
+              : 'border border-gray-200 text-gray-600 hover:border-gray-950 hover:text-gray-950'
           }`}
         >
           Todos
         </Link>
-        {Object.entries(categoryLabels).map(([slug, label]) => (
-          <Link
-            key={slug}
-            href={`/produtos?categoria=${slug}`}
-            className={`shrink-0 border px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] transition-colors ${
-              categoria === slug
-                ? 'border-gray-950 bg-gray-950 text-white'
-                : 'border-gray-200 text-gray-600 hover:border-gray-900 hover:text-gray-950'
-            }`}
-          >
-            {label}
-          </Link>
-        ))}
+        {Object.entries(categoryLabels).map(([slug, label]) => {
+          const isActive = categoria === slug;
+          return (
+            <Link
+              key={slug}
+              href={`/produtos?categoria=${slug}`}
+              className={`px-3 py-1.5 text-xs font-medium transition-colors ${
+                isActive
+                  ? 'bg-gray-950 text-white'
+                  : 'border border-gray-200 text-gray-600 hover:border-gray-950 hover:text-gray-950'
+              }`}
+            >
+              {label}
+            </Link>
+          );
+        })}
       </div>
 
+      {/* Grid de produtos */}
       {filtered.length > 0 ? (
-        <div className="mt-10 grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-8">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-8">
           {filtered.map((product, index) => (
             <ProductCard key={product.id} product={product} priority={index < 4} />
           ))}
         </div>
       ) : (
-        <div className="mt-12 border border-gray-200 bg-[#fafaf8] px-6 py-14 text-center">
-          <h2 className="text-lg font-semibold text-gray-950">
-            Nenhum modelo encontrado por aqui
-          </h2>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-gray-500">
-            Estamos sempre recebendo novos veículos. Fale com a nossa equipe no WhatsApp
-            para consultar opções de pronta entrega e encomenda.
-          </p>
-          <a
-            href="https://wa.me/5566984202988?text=Ol%C3%A1!+Gostaria+de+consultar+os+modelos+dispon%C3%ADveis+na+Eletrosom+Ebikes."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center justify-center bg-[#25D366] px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#20ba59]"
+        <div className="py-16 text-center">
+          <p className="text-sm text-gray-500">Nenhum veículo encontrado para esta consulta.</p>
+          <Link
+            href="/produtos"
+            className="mt-3 inline-block text-xs font-semibold text-gray-900 underline underline-offset-4"
           >
-            Consultar no WhatsApp
-          </a>
+            Limpar filtros e ver todos os modelos
+          </Link>
         </div>
       )}
     </div>

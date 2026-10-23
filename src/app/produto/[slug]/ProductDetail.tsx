@@ -24,6 +24,7 @@ import { buildAvailabilityWhatsAppLink, formatCurrency } from '@/lib/utils';
 import {
   disponibilidadeLabels,
   getProductColors,
+  getDriveEmbedUrl,
   type Product,
 } from '@/lib/products';
 
@@ -47,6 +48,7 @@ export function ProductDetail({
   const [activeColor, setActiveColor] = useState(initialColorIndex);
   const [copied, setCopied] = useState(false);
   const selectedColor = colors[activeColor] ?? colors[0];
+  const videoEmbedUrl = getDriveEmbedUrl(product.video_url);
 
   const productUrl =
     typeof window !== 'undefined'
@@ -289,6 +291,30 @@ export function ProductDetail({
           <h2 className="mb-3 text-lg font-semibold text-gray-950">Sobre o veículo</h2>
           <p className="text-sm leading-relaxed text-gray-600">{product.descricao}</p>
         </section>
+
+        {/* Vídeo de Apresentação (Google Drive) */}
+        {videoEmbedUrl && (
+          <section className="max-w-4xl border-b border-gray-100 py-10">
+            <div className="mb-4">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-amber-500">
+                Apresentação Oficial
+              </span>
+              <h2 className="mt-1 text-lg font-semibold text-gray-950 sm:text-xl">
+                Conheça em detalhes
+              </h2>
+            </div>
+
+            <div className="relative aspect-video w-full overflow-hidden border border-gray-200 bg-black shadow-sm">
+              <iframe
+                src={videoEmbedUrl}
+                title={`Apresentação do veículo ${product.titulo}`}
+                className="absolute inset-0 h-full w-full border-0"
+                allow="autoplay; encrypted-media; fullscreen"
+                allowFullScreen
+              />
+            </div>
+          </section>
+        )}
 
         {/* Ficha técnica completa */}
         <section className="border-b border-gray-100 py-10">

@@ -1,8 +1,10 @@
 import { ProductCard } from '@/components/ProductCard';
-import { products } from '@/lib/products';
+import { getCatalog } from '@/lib/catalog';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
-export default function Home() {
+export default async function Home() {
+  const products = await getCatalog();
+
   return (
     <div className="flex flex-col">
       {/* Vitrine principal, no estilo clean da Mova */}
@@ -48,46 +50,42 @@ export default function Home() {
                 Precisa de CNH para pilotar os veículos elétricos?
                 <ChevronDown className="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
-              <p className="mt-3 border-t border-gray-100 pt-3 text-xs leading-relaxed text-gray-600 sm:text-sm">
-                <strong>Não!</strong> Nossos modelos de autopropelidos se enquadram
-                rigorosamente na <strong>Resolução 996/23 do CONTRAN</strong>, dispensando
-                habilitação (CNH) e autorização prévia.
+              <p className="mt-2 text-xs leading-relaxed text-gray-600 sm:text-sm">
+                Não! Os modelos autopropelidos comercializados pela Eletrosom Ebikes cumprem a
+                Resolução CONTRAN 996/23, dispensando CNH, emplacamento e pagamento de IPVA.
               </p>
             </details>
 
             <details className="group border border-gray-200 bg-white p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-gray-900 sm:text-base">
-                Precisa de emplacamento, licenciamento ou pagar IPVA?
+                Como funciona a garantia e assistência técnica?
                 <ChevronDown className="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
-              <p className="mt-3 border-t border-gray-100 pt-3 text-xs leading-relaxed text-gray-600 sm:text-sm">
-                <strong>Não há cobrança de IPVA nem necessidade de placa.</strong> Por serem
-                veículos autopropelidos elétricos, não geram despesas com despachante,
-                vistoria anual ou taxas do Detran.
+              <p className="mt-2 text-xs leading-relaxed text-gray-600 sm:text-sm">
+                Oferecemos garantia de fábrica com suporte direto em nossa loja física em
+                Cotriguaçu/MT. Dispomos de peças de reposição e técnicos capacitados.
               </p>
             </details>
 
             <details className="group border border-gray-200 bg-white p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-gray-900 sm:text-base">
-                Quanto custa carregar a bateria na tomada de casa?
+                Quais as formas de pagamento disponíveis?
                 <ChevronDown className="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
-              <p className="mt-3 border-t border-gray-100 pt-3 text-xs leading-relaxed text-gray-600 sm:text-sm">
-                Uma carga 100% completa custa em média entre <strong>R$ 0,80 e R$ 1,50</strong>{' '}
-                na conta de luz, gerando uma autonomia de até 50 km. Isso representa uma
-                economia enorme comparado à gasolina.
+              <p className="mt-2 text-xs leading-relaxed text-gray-600 sm:text-sm">
+                Aceitamos parcelamento em até 21x no cartão de crédito, financiamento e desconto
+                especial para pagamento à vista no Pix.
               </p>
             </details>
 
             <details className="group border border-gray-200 bg-white p-4">
               <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-gray-900 sm:text-base">
-                Onde fica a loja física da Eletrosom Ebikes?
+                Como recarregar e qual o custo por carga?
                 <ChevronDown className="h-5 w-5 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
-              <p className="mt-3 border-t border-gray-100 pt-3 text-xs leading-relaxed text-gray-600 sm:text-sm">
-                Nossa loja fica localizada na{' '}
-                <strong>Avenida Tamburello, ao lado do Sicoob, em Cotriguaçu/MT</strong>.
-                Venha nos visitar para fazer um test-drive e conferir os veículos de perto!
+              <p className="mt-2 text-xs leading-relaxed text-gray-600 sm:text-sm">
+                Basta conectar o carregador bivolt incluso em qualquer tomada comum de 110V ou 220V.
+                O custo médio de uma recarga completa fica em torno de R$ 1,00 a R$ 2,00.
               </p>
             </details>
           </div>

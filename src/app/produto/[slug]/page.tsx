@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { findProductBySlug, getProductColors } from '@/lib/products';
+import { findProductBySlug } from '@/lib/catalog';
+import { getProductColors } from '@/lib/products';
 import { SITE_NAME } from '@/lib/site';
 import { ProductDetail } from './ProductDetail';
 
@@ -11,7 +12,7 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const found = findProductBySlug(slug);
+  const found = await findProductBySlug(slug);
 
   if (!found) {
     return { title: 'Produto não encontrado' };
@@ -35,8 +36,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `/produto/${product.slug}`,
       images: [
         {
-          url: colors[0].imagem,
-          alt: `${product.titulo} na cor ${colors[0].nome}`,
+          url: colors[0]?.imagem || product.imagem_capa || '/logo.png',
+          alt: `${product.titulo} na cor ${colors[0]?.nome || 'Padrão'}`,
         },
       ],
     },
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ProductPage({ params, searchParams }: PageProps) {
   const { slug } = await params;
   const { cor } = await searchParams;
-  const found = findProductBySlug(slug);
+  const found = await findProductBySlug(slug);
 
   if (!found) {
     notFound();
