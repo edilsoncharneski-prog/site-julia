@@ -15,7 +15,7 @@ export function formatCurrency(value?: number | null) {
 }
 
 export function buildWhatsAppLink(productTitle?: string, productUrl?: string) {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP || '5566984202988';
+  const number = process.env.NEXT_PUBLIC_WHATSAPP || '5566984022988';
   let message = 'Olá! Gostaria de mais informações sobre os veículos elétricos da Eletrosom Ebikes.';
   
   if (productTitle) {
@@ -33,7 +33,7 @@ export function buildAvailabilityWhatsAppLink(
   color: ProductColor,
   productUrl?: string
 ) {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP || '5566984202988';
+  const number = process.env.NEXT_PUBLIC_WHATSAPP || '5566984022988';
   const status =
     color.disponibilidade === 'pronta_entrega'
       ? 'Pronta Entrega'

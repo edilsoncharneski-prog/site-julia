@@ -39,7 +39,7 @@ export function WhatsAppButton() {
 
             <div className="flex flex-col gap-2">
               <a
-                href="https://wa.me/5566984202988?text=Ol%C3%A1!+Gostaria+de+saber+os+modelos+de+motos+e+scooters+dispon%C3%ADveis."
+                href="https://wa.me/5566984022988?text=Ol%C3%A1!+Gostaria+de+saber+os+modelos+de+motos+e+scooters+dispon%C3%ADveis."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-white border border-gray-200 hover:border-[#25D366] hover:bg-emerald-50/50 transition-all text-gray-800 font-medium group"
@@ -50,14 +50,14 @@ export function WhatsAppButton() {
                   </div>
                   <div>
                     <div className="font-semibold text-xs text-gray-900">Vendas & Cotação</div>
-                    <div className="text-[10px] text-gray-500">(66) 98420-2988</div>
+                    <div className="text-[10px] text-gray-500">(66) 98402-2988</div>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-emerald-600 transition-colors" />
               </a>
 
               <a
-                href="https://wa.me/5566984202988?text=Ol%C3%A1!+Gostaria+de+informa%C3%A7%C3%B5es+sobre+garantia+e+suporte."
+                href="https://wa.me/5566984022988?text=Ol%C3%A1!+Gostaria+de+informa%C3%A7%C3%B5es+sobre+garantia+e+suporte."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-white border border-gray-200 hover:border-[#25D366] hover:bg-emerald-50/50 transition-all text-gray-800 font-medium group"

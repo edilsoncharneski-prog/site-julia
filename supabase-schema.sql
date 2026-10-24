@@ -95,11 +95,36 @@ CREATE TABLE IF NOT EXISTS public.banners (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
+-- 5.1 Slides do Carrossel (carousel_slides)
+CREATE TABLE IF NOT EXISTS public.carousel_slides (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    title VARCHAR(255),
+    subtitle VARCHAR(255),
+    image_url TEXT NOT NULL,
+    link_url TEXT,
+    display_order INT DEFAULT 0,
+    is_active BOOLEAN DEFAULT true,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+ALTER TABLE public.carousel_slides ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Leitura pública de slides ativos" 
+ON public.carousel_slides FOR SELECT 
+USING (is_active = true);
+
+CREATE POLICY "Gestão total para administradores autenticados" 
+ON public.carousel_slides FOR ALL 
+TO authenticated 
+USING (true) 
+WITH CHECK (true);
+
 -- 6. Configurações Gerais da Loja
 CREATE TABLE IF NOT EXISTS public.configuracoes_loja (
     id INT PRIMARY KEY DEFAULT 1,
     nome_loja VARCHAR(100) DEFAULT 'Eletrosom Ebikes',
-    whatsapp_principal VARCHAR(25) DEFAULT '5566984202988',
+    whatsapp_principal VARCHAR(25) DEFAULT '5566984022988',
     mensagem_padrao_whatsapp TEXT DEFAULT 'Olá! Vim pelo site e gostaria de saber mais sobre as motos e veículos elétricos.',
     telefone_fixo VARCHAR(25),
     email_contato VARCHAR(120),
@@ -112,7 +137,7 @@ CREATE TABLE IF NOT EXISTS public.configuracoes_loja (
 
 -- Inserir registro inicial de configurações se não existir
 INSERT INTO public.configuracoes_loja (id, nome_loja, whatsapp_principal, endereco_completo)
-VALUES (1, 'Eletrosom Ebikes', '5566984202988', 'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT')
+VALUES (1, 'Eletrosom Ebikes', '5566984022988', 'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT')
 ON CONFLICT (id) DO NOTHING;
 
 -- Inserir Categorias Padrão

@@ -18,10 +18,15 @@ const env = Object.fromEntries(
     })
 );
 
-const sql = await readFile(
+const migrationFiles = [
   'supabase/migrations/20261022_produto_variacoes.sql',
-  'utf8'
+  'supabase/migrations/20261023_especificacoes_tecnicas.sql',
+  'supabase/migrations/20261024_carousel_slides.sql',
+];
+const sqlParts = await Promise.all(
+  migrationFiles.map((file) => readFile(file, 'utf8'))
 );
+const sql = sqlParts.join('\n\n');
 
 const connectionString = process.env.DATABASE_URL || env.DATABASE_URL;
 let client;

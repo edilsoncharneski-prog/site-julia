@@ -40,6 +40,7 @@ import {
   saveStoreConfigAction,
   logoutAdminAction,
 } from './actions';
+import { CarouselManager } from '@/components/admin/CarouselManager';
 
 function emptyColor(): ProductColor {
   return {
@@ -430,7 +431,7 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
             }`}
           >
             <ImageIcon className="w-4 h-4" />
-            Banners da Home
+            Carrossel da Home
           </button>
 
           <button
@@ -661,21 +662,9 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
         </div>
       )}
 
-      {/* ABA: BANNERS */}
+      {/* ABA: CARROSSEL DA HOME */}
       {activeTab === 'banners' && (
-        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-2xs">
-          <h3 className="font-bold text-base text-gray-900 mb-2">Banners da Tela Inicial</h3>
-          <p className="text-xs text-gray-500 mb-6">
-            Altere ou adicione novos avisos, promoções e comunicados exibidos no topo do site.
-          </p>
-          <div className="p-8 border-2 border-dashed border-gray-200 rounded-xl text-center text-gray-500 flex flex-col items-center justify-center">
-            <ImageIcon className="w-10 h-10 text-gray-300 mb-2" />
-            <p className="text-sm font-medium">Banners em exibição automática (Padrão)</p>
-            <p className="text-xs text-gray-400 mt-1">
-              Os avisos de &quot;Até 21x no Cartão&quot; e &quot;Sem CNH&quot; já estão ativos e responsivos.
-            </p>
-          </div>
-        </div>
+        <CarouselManager onNotify={showToast} />
       )}
 
       {/* ABA: CONFIGURAÇÕES */}
@@ -700,7 +689,7 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
               value={whatsapp}
               onChange={(e) => setWhatsapp(e.target.value)}
               className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 focus:outline-hidden focus:border-gray-500"
-              placeholder="Ex: 5566984202988"
+              placeholder="Ex: 5566984022988"
             />
           </div>
 

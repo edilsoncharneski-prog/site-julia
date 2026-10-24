@@ -452,15 +452,349 @@ export async function getStoreConfigAction(): Promise<{
       .single();
 
     return {
-      whatsapp: data?.whatsapp_principal || '5566984202988',
+      whatsapp: data?.whatsapp_principal || '5566984022988',
       endereco:
         data?.endereco_completo ||
         'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT',
     };
   } catch {
     return {
-      whatsapp: '5566984202988',
+      whatsapp: '5566984022988',
       endereco: 'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT',
     };
+  }
+}
+
+export interface CarouselSlide {
+  id: string;
+  title: string | null;
+  subtitle: string | null;
+  image_url: string;
+  link_url: string | null;
+  display_order: number;
+  is_active: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+
+interface LegacyBannerRow {
+  id: string;
+  titulo: string | null;
+  subtitulo: string | null;
+  imagem_desktop_url: string;
+  link_destino: string | null;
+  ordem: number | null;
+  ativo: boolean | null;
+  created_at?: string;
+}
+
+function mapBannerRowToSlide(row: LegacyBannerRow): CarouselSlide {
+  return {
+    id: row.id,
+    title: row.titulo || null,
+    subtitle: row.subtitulo || null,
+    image_url: row.imagem_desktop_url,
+    link_url: row.link_destino || null,
+    display_order: Number(row.ordem ?? 0),
+    is_active: row.ativo !== false,
+    created_at: row.created_at,
+  };
+}
+
+function extractCarouselStoragePath(imageUrl?: string | null): string | null {
+  if (!imageUrl) return null;
+  const marker = '/storage/v1/object/public/carousel-images/';
+  const index = imageUrl.indexOf(marker);
+  if (index === -1) return null;
+  return decodeURIComponent(imageUrl.slice(index + marker.length));
+}
+
+/**
+ * Lista todos os slides do carrossel para o painel administrativo.
+ */
+export async function listCarouselSlidesAdminAction(): Promise<{
+  success: boolean;
+  slides: CarouselSlide[];
+  error?: string;
+}> {
+  try {
+    if (!(await isAdminAuthenticated())) {
+      return { success: false, slides: [], error: 'Não autorizado.' };
+    }
+
+    const admin = getAdminSupabase();
+    const { data, error } = await admin
+      .from('carousel_slides')
+      .select('*')
+      .order('display_order', { ascending: true })
+      .order('created_at', { ascending: false });
+
+    if (!error && data) {
+      return {
+        success: true,
+        slides: (data as CarouselSlide[]).map((row) => ({
+          ...row,
+          display_order: Number(row.display_order ?? 0),
+          is_active: Boolean(row.is_active),
+        })),
+      };
+    }
+
+    // Fallback transparente caso a tabela carousel_slides ainda não tenha sido criada via SQL
+    const fallback = await admin
+      .from('banners')
+      .select('*')
+      .order('ordem', { ascending: true })
+      .order('created_at', { ascending: false });
+
+    if (fallback.error) {
+      return { success: false, slides: [], error: fallback.error.message };
+    }
+
+    return {
+      success: true,
+      slides: ((fallback.data || []) as LegacyBannerRow[]).map(mapBannerRowToSlide),
+    };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return { success: false, slides: [], error: msg };
+  }
+}
+
+/**
+ * Cria um novo slide no carrossel.
+ */
+export async function createCarouselSlideAction(input: {
+  title?: string | null;
+  subtitle?: string | null;
+  image_url: string;
+  link_url?: string | null;
+  display_order?: number;
+  is_active?: boolean;
+}): Promise<{
+  success: boolean;
+  slide?: CarouselSlide;
+  error?: string;
+}> {
+  try {
+    if (!(await isAdminAuthenticated())) {
+      return { success: false, error: 'Sessão expirada. Faça login novamente.' };
+    }
+
+    const cleanImageUrl = sanitizeUrl(input.image_url);
+    if (!cleanImageUrl) {
+      return { success: false, error: 'URL da imagem inválida.' };
+    }
+
+    const cleanTitle = sanitizeText(input.title, 255) || null;
+    const cleanSubtitle = sanitizeText(input.subtitle, 255) || null;
+    const cleanLinkUrl = sanitizeUrl(input.link_url) || null;
+    const cleanOrder = Number.isFinite(Number(input.display_order))
+      ? Math.trunc(Number(input.display_order))
+      : 0;
+    const cleanActive = input.is_active !== false;
+
+    const admin = getAdminSupabase();
+
+    const { data, error } = await admin
+      .from('carousel_slides')
+      .insert({
+        title: cleanTitle,
+        subtitle: cleanSubtitle,
+        image_url: cleanImageUrl,
+        link_url: cleanLinkUrl,
+        display_order: cleanOrder,
+        is_active: cleanActive,
+      })
+      .select('*')
+      .single();
+
+    if (!error && data) {
+      revalidateAllProductPaths();
+      return {
+        success: true,
+        slide: {
+          ...(data as CarouselSlide),
+          display_order: Number(data.display_order ?? 0),
+          is_active: Boolean(data.is_active),
+        },
+      };
+    }
+
+    // Fallback transparente na tabela banners
+    const fallback = await admin
+      .from('banners')
+      .insert({
+        titulo: cleanTitle,
+        subtitulo: cleanSubtitle,
+        imagem_desktop_url: cleanImageUrl,
+        link_destino: cleanLinkUrl,
+        ordem: cleanOrder,
+        ativo: cleanActive,
+        posicao: 'topo_home',
+      })
+      .select('*')
+      .single();
+
+    if (fallback.error || !fallback.data) {
+      return {
+        success: false,
+        error: fallback.error?.message || error?.message || 'Erro ao salvar slide.',
+      };
+    }
+
+    revalidateAllProductPaths();
+    return {
+      success: true,
+      slide: mapBannerRowToSlide(fallback.data as LegacyBannerRow),
+    };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return { success: false, error: msg };
+  }
+}
+
+/**
+ * Alterna o status ativo/inativo (is_active) de um slide do carrossel.
+ */
+export async function toggleCarouselSlideActiveAction(
+  slideId: string,
+  nextActive: boolean
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    if (!(await isAdminAuthenticated())) {
+      return { success: false, error: 'Sessão expirada. Faça login novamente.' };
+    }
+
+    if (!UUID_REGEX.test(slideId)) {
+      return { success: false, error: 'ID do slide inválido.' };
+    }
+
+    const admin = getAdminSupabase();
+    const { data, error } = await admin
+      .from('carousel_slides')
+      .update({
+        is_active: Boolean(nextActive),
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', slideId)
+      .select('id');
+
+    if (!error && data && data.length > 0) {
+      revalidateAllProductPaths();
+      return { success: true };
+    }
+
+    const fallback = await admin
+      .from('banners')
+      .update({ ativo: Boolean(nextActive) })
+      .eq('id', slideId)
+      .select('id');
+
+    if (fallback.error) {
+      return { success: false, error: fallback.error.message };
+    }
+
+    revalidateAllProductPaths();
+    return { success: true };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return { success: false, error: msg };
+  }
+}
+
+/**
+ * Atualiza a ordem de exibição (display_order) de um slide.
+ */
+export async function updateCarouselSlideOrderAction(
+  slideId: string,
+  displayOrder: number
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    if (!(await isAdminAuthenticated())) {
+      return { success: false, error: 'Sessão expirada. Faça login novamente.' };
+    }
+
+    if (!UUID_REGEX.test(slideId)) {
+      return { success: false, error: 'ID do slide inválido.' };
+    }
+
+    const cleanOrder = Number.isFinite(Number(displayOrder))
+      ? Math.trunc(Number(displayOrder))
+      : 0;
+
+    const admin = getAdminSupabase();
+    const { data, error } = await admin
+      .from('carousel_slides')
+      .update({
+        display_order: cleanOrder,
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', slideId)
+      .select('id');
+
+    if (!error && data && data.length > 0) {
+      revalidateAllProductPaths();
+      return { success: true };
+    }
+
+    const fallback = await admin
+      .from('banners')
+      .update({ ordem: cleanOrder })
+      .eq('id', slideId)
+      .select('id');
+
+    if (fallback.error) {
+      return { success: false, error: fallback.error.message };
+    }
+
+    revalidateAllProductPaths();
+    return { success: true };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return { success: false, error: msg };
+  }
+}
+
+/**
+ * Exclui um slide do carrossel e remove a imagem correspondente do bucket `carousel-images`.
+ */
+export async function deleteCarouselSlideAction(
+  slideId: string,
+  imageUrl?: string | null
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    if (!(await isAdminAuthenticated())) {
+      return { success: false, error: 'Sessão expirada. Faça login novamente.' };
+    }
+
+    if (!UUID_REGEX.test(slideId)) {
+      return { success: false, error: 'ID do slide inválido.' };
+    }
+
+    const admin = getAdminSupabase();
+
+    const { error } = await admin
+      .from('carousel_slides')
+      .delete()
+      .eq('id', slideId);
+
+    if (error) {
+      const fallback = await admin.from('banners').delete().eq('id', slideId);
+      if (fallback.error) {
+        return { success: false, error: fallback.error.message };
+      }
+    }
+
+    const storagePath = extractCarouselStoragePath(imageUrl);
+    if (storagePath) {
+      await admin.storage.from('carousel-images').remove([storagePath]).catch(() => {});
+    }
+
+    revalidateAllProductPaths();
+    return { success: true };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return { success: false, error: msg };
   }
 }

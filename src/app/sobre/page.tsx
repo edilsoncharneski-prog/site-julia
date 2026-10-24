@@ -85,7 +85,7 @@ export default function SobrePage() {
             Ver catálogo
           </Link>
           <a
-            href="https://wa.me/5566984202988?text=Ol%C3%A1!+Gostaria+de+conhecer+a+Eletrosom+Ebikes."
+            href="https://wa.me/5566984022988?text=Ol%C3%A1!+Gostaria+de+conhecer+a+Eletrosom+Ebikes."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#25D366] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[#20ba59]"

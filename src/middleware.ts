@@ -7,7 +7,7 @@ import {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (!pathname.startsWith('/admin')) {
+  if (!pathname.startsWith('/admin') && !pathname.startsWith('/api/admin')) {
     return NextResponse.next();
   }
 
@@ -22,6 +22,12 @@ export async function middleware(request: NextRequest) {
   }
 
   if (!isAuthenticated) {
+    if (pathname.startsWith('/api/admin')) {
+      return NextResponse.json(
+        { error: 'Não autorizado. Faça login no painel administrativo.' },
+        { status: 401 }
+      );
+    }
     const loginUrl = new URL('/admin/login', request.url);
     return NextResponse.redirect(loginUrl);
   }
@@ -30,5 +36,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin', '/admin/:path*'],
+  matcher: ['/admin', '/admin/:path*', '/api/admin/:path*'],
 };

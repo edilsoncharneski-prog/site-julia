@@ -36,7 +36,7 @@ export default function ContatoPage() {
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         <a
-          href="https://wa.me/5566984202988?text=Ol%C3%A1!+Vim+pelo+site+da+Eletrosom+Ebikes."
+          href="https://wa.me/5566984022988?text=Ol%C3%A1!+Vim+pelo+site+da+Eletrosom+Ebikes."
           target="_blank"
           rel="noopener noreferrer"
           className="group border border-gray-200 p-6 transition-colors hover:border-gray-900"
@@ -48,7 +48,7 @@ export default function ContatoPage() {
             </span>
           </div>
           <h2 className="mt-5 text-lg font-semibold text-gray-950">WhatsApp de vendas</h2>
-          <p className="mt-1 text-sm text-gray-600">(66) 98420-2988</p>
+          <p className="mt-1 text-sm text-gray-600">(66) 98402-2988</p>
           <p className="mt-3 text-xs leading-relaxed text-gray-500">
             Consulte disponibilidade, cores, encomendas e condições de parcelamento em
             até 21x no cartão.
@@ -76,7 +76,7 @@ export default function ContatoPage() {
         <div className="border border-gray-200 p-6">
           <Phone className="h-6 w-6 text-amber-500" />
           <h2 className="mt-5 text-lg font-semibold text-gray-950">Telefone</h2>
-          <p className="mt-1 text-sm text-gray-600">(66) 98420-2988</p>
+          <p className="mt-1 text-sm text-gray-600">(66) 98402-2988</p>
           <p className="mt-3 text-xs leading-relaxed text-gray-500">
             Prefere ligar? Atendemos também por chamada no horário comercial.
           </p>

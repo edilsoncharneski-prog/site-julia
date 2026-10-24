@@ -31,12 +31,12 @@ export function Header() {
             <span className="hidden sm:inline">Garantia de Fábrica</span>
           </div>
           <a
-            href="https://wa.me/5566984202988"
+            href="https://wa.me/5566984022988"
             target="_blank"
             rel="noopener noreferrer"
             className="absolute right-4 hidden text-[10px] font-semibold tracking-[0.12em] text-gray-600 transition-colors hover:text-gray-900 lg:block"
           >
-            (66) 98420-2988
+            (66) 98402-2988
           </a>
         </div>
       </div>
@@ -81,7 +81,7 @@ export function Header() {
 
           <div className="flex items-center justify-end">
             <a
-              href="https://wa.me/5566984202988?text=Ol%C3%A1!+Vim+pelo+site+e+gostaria+de+atendimento."
+              href="https://wa.me/5566984022988?text=Ol%C3%A1!+Vim+pelo+site+e+gostaria+de+atendimento."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-gray-950 px-3 py-2.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-gray-800 sm:px-5"

@@ -214,3 +214,77 @@ export async function getProductsByCategory(
   const catalog = await getCatalog();
   return catalog.filter((product) => product.categoria_slug === categoriaSlug);
 }
+
+export interface ActiveCarouselSlide {
+  id: string;
+  title: string | null;
+  subtitle: string | null;
+  image_url: string;
+  link_url: string | null;
+  display_order: number;
+}
+
+/**
+ * Busca os slides institucionais ativos cadastrados no banco (`carousel_slides` ou fallback `banners`),
+ * ordenados por `display_order ASC, created_at DESC`.
+ */
+export async function getActiveCarouselSlides(): Promise<ActiveCarouselSlide[]> {
+  try {
+    const queryPromise = supabase
+      .from('carousel_slides')
+      .select('id, title, subtitle, image_url, link_url, display_order, is_active, created_at')
+      .eq('is_active', true)
+      .order('display_order', { ascending: true })
+      .order('created_at', { ascending: false });
+
+    const timeoutPromise = new Promise<{ data: null; error: Error }>((resolve) =>
+      setTimeout(() => resolve({ data: null, error: new Error('Timeout') }), 3000)
+    );
+
+    const { data, error } = await Promise.race([queryPromise, timeoutPromise]);
+
+    if (!error && data && data.length > 0) {
+      return (data as unknown as ActiveCarouselSlide[]).map((row) => ({
+        id: row.id,
+        title: row.title || null,
+        subtitle: row.subtitle || null,
+        image_url: row.image_url,
+        link_url: row.link_url || null,
+        display_order: Number(row.display_order ?? 0),
+      }));
+    }
+
+    // Fallback transparente na tabela `banners`
+    const bannerQuery = supabase
+      .from('banners')
+      .select('id, titulo, subtitulo, imagem_desktop_url, link_destino, ordem, ativo, created_at')
+      .eq('ativo', true)
+      .order('ordem', { ascending: true })
+      .order('created_at', { ascending: false });
+
+    const bannerRes = await Promise.race([bannerQuery, timeoutPromise]);
+    if (!bannerRes.error && bannerRes.data && bannerRes.data.length > 0) {
+      return (
+        bannerRes.data as unknown as Array<{
+          id: string;
+          titulo: string | null;
+          subtitulo: string | null;
+          imagem_desktop_url: string;
+          link_destino: string | null;
+          ordem: number | null;
+        }>
+      ).map((row) => ({
+        id: row.id,
+        title: row.titulo || null,
+        subtitle: row.subtitulo || null,
+        image_url: row.imagem_desktop_url,
+        link_url: row.link_destino || null,
+        display_order: Number(row.ordem ?? 0),
+      }));
+    }
+
+    return [];
+  } catch {
+    return [];
+  }
+}

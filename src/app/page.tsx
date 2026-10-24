@@ -1,15 +1,22 @@
+import { HeroCarousel } from '@/components/HeroCarousel';
 import { ProductCard } from '@/components/ProductCard';
-import { getCatalog } from '@/lib/catalog';
+import { getActiveCarouselSlides, getCatalog } from '@/lib/catalog';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function Home() {
-  const products = await getCatalog();
+  const [products, carouselSlides] = await Promise.all([
+    getCatalog(),
+    getActiveCarouselSlides(),
+  ]);
 
   return (
     <div className="flex flex-col">
+      {/* Carrossel principal logo abaixo do cabeçalho Eletrosom Ebikes */}
+      <HeroCarousel slides={carouselSlides} products={products} />
+
       {/* Vitrine principal, no estilo clean da Mova */}
       <section id="produtos" className="mx-auto w-full max-w-[1440px] px-4 py-10 sm:px-6 sm:py-14">
         <div className="mb-8 flex flex-col gap-3 border-b border-gray-200 pb-5 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
