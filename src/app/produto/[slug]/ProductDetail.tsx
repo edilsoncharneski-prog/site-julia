@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -12,6 +12,7 @@ import {
   ExternalLink,
   Gauge,
   HelpCircle,
+  Maximize2,
   MessageCircle,
   Play,
   Share2,
@@ -30,7 +31,6 @@ import {
   getProductColors,
   getDriveEmbedUrl,
   getDriveStreamUrl,
-  getDriveViewUrl,
   type Product,
 } from '@/lib/products';
 
@@ -55,11 +55,38 @@ export function ProductDetail({
   const [copied, setCopied] = useState(false);
   const [videoActivated, setVideoActivated] = useState(false);
   const [useIframePlayer, setUseIframePlayer] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const selectedColor = colors[activeColor] ?? colors[0];
   const selectedColorParam = getColorSlug(selectedColor?.nome) || encodeURIComponent(selectedColor?.nome || '');
   const videoEmbedUrl = getDriveEmbedUrl(product.video_url);
-  const videoStreamUrl = getDriveStreamUrl(product.video_url);
-  const videoViewUrl = getDriveViewUrl(product.video_url);
+  const videoStreamUrl = getDriveStreamUrl(product.video_url, product.slug);
+
+  const triggerFullscreenVideo = () => {
+    const requestElFullscreen = (el: HTMLVideoElement | null) => {
+      if (!el) return;
+      el.play().catch(() => {});
+      const anyEl = el as HTMLVideoElement & {
+        webkitEnterFullscreen?: () => void;
+        webkitRequestFullscreen?: () => Promise<void>;
+      };
+      if (typeof anyEl.requestFullscreen === 'function') {
+        anyEl.requestFullscreen().catch(() => {
+          anyEl.webkitEnterFullscreen?.();
+        });
+      } else if (typeof anyEl.webkitEnterFullscreen === 'function') {
+        anyEl.webkitEnterFullscreen();
+      } else if (typeof anyEl.webkitRequestFullscreen === 'function') {
+        anyEl.webkitRequestFullscreen().catch(() => {});
+      }
+    };
+
+    if (!videoActivated) {
+      setVideoActivated(true);
+      setTimeout(() => requestElFullscreen(videoRef.current), 120);
+    } else {
+      requestElFullscreen(videoRef.current);
+    }
+  };
 
   const productUrl = `${SITE_URL.replace(/\/$/, '')}/produto/${product.slug}?cor=${selectedColorParam}`;
 
@@ -355,7 +382,7 @@ export function ProductDetail({
           <p className="text-sm leading-relaxed text-gray-600">{product.descricao}</p>
         </section>
 
-        {/* Vídeo de Apresentação com Facade Pattern (Lazy Loading 4G/5G) */}
+        {/* Vídeo de Apresentação com Facade Pattern + CDN Instant Play */}
         {videoEmbedUrl && (
           <section className="max-w-4xl border-b border-gray-100 py-10">
             <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
@@ -368,17 +395,15 @@ export function ProductDetail({
                 </h2>
               </div>
 
-              {videoViewUrl && (
-                <a
-                  href={videoViewUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:border-gray-900 hover:bg-gray-900 hover:text-white"
+              {videoStreamUrl && (
+                <button
+                  type="button"
+                  onClick={triggerFullscreenVideo}
+                  className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50 px-3.5 py-1.5 text-xs font-semibold text-gray-700 transition-all hover:border-gray-900 hover:bg-gray-900 hover:text-white active:scale-95"
                 >
-                  <Play className="h-3.5 w-3.5 fill-current" />
-                  <span>Abrir vídeo em tela cheia</span>
-                  <ExternalLink className="h-3 w-3 opacity-70" />
-                </a>
+                  <Maximize2 className="h-3.5 w-3.5" />
+                  <span>Assistir em tela cheia</span>
+                </button>
               )}
             </div>
 
@@ -392,7 +417,7 @@ export function ProductDetail({
                 >
                   <Image
                     src={selectedColor?.imagem || product.imagem_capa || '/logo-eletrosom.webp'}
-                    alt={` Capa do vídeo de ${product.titulo}`}
+                    alt={`Capa do vídeo de ${product.titulo}`}
                     fill
                     sizes="(max-width: 896px) 100vw, 896px"
                     loading="lazy"
@@ -410,13 +435,14 @@ export function ProductDetail({
                 </button>
               ) : videoStreamUrl && !useIframePlayer ? (
                 <video
+                  ref={videoRef}
                   key={videoStreamUrl}
                   src={videoStreamUrl}
                   poster={selectedColor?.imagem || product.imagem_capa || '/logo-eletrosom.webp'}
                   controls
                   autoPlay
                   playsInline
-                  preload="metadata"
+                  preload="auto"
                   onError={() => setUseIframePlayer(true)}
                   className="h-full w-full bg-black object-contain"
                 >

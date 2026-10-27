@@ -176,6 +176,32 @@ export const categoriaCurta: Record<string, string> = {
  */
 const DRIVE_ID = /^[A-Za-z0-9_-]{25,}$/;
 
+/**
+ * Mapa dos vídeos otimizados localmente (720p/480p H.264 +faststart)
+ * servidos direto pela CDN da Vercel em `/videos/[slug].mp4`, evitando
+ * lentidão e travamentos do Google Drive no mobile.
+ */
+const OPTIMIZED_LOCAL_VIDEOS: Record<string, string> = {
+  '1_cgTjV7lDGbxZZozYV6CvIvAvqBm9Ib3': '/videos/scooter-eletrica-cappuccino-1000w.mp4',
+  '1r_K6beWVq01shhq18Uqr5_PDhwa-ANe3': '/videos/scooter-eletrica-shark-1000w.mp4',
+  '1vCMhzhbWKME-HmG_qEFV9VpqKPPBRgDX': '/videos/scooter-eletrica-h9-1000w.mp4',
+  '1L1qUNOAU3ePLN2E3UqOrZujXyqL4lc6Z': '/videos/scooter-eletrica-b3-1000w.mp4',
+  '1auxm0uI0MlR9tekJ63DTMJIgmjUtZlb3': '/videos/scooter-eletrica-t1-1000w.mp4',
+  '1Ri86TGnCzsA7kRd2wJlKsS_zDcaXYzey': '/videos/bicicleta-eletrica-jsl-1000w.mp4',
+  '1rU_ChCrHi3AAdaFtvYJ-8faCBxPUYQJN': '/videos/scooter-eletrica-harley-1000w.mp4',
+  '1h3qm5R7Zl1E5kNcJAxzcS4uOH5hltuqs': '/videos/scooter-eletrica-artist-1000w.mp4',
+  '1uzfZfoQ-tDIHzy5vjqWh18LodR72TMV0': '/videos/scooter-eletrica-citycoco-1000w.mp4',
+  '1ipiX1gXQr9rYZe_bsNAGHOdQjaPmm_hI': '/videos/scooter-eletrica-g105-1000w.mp4',
+  '1bG7OELlIs2zidE3BNdxOQZs2jqrP1nEE': '/videos/scooter-eletrica-k007-1000w.mp4',
+  '1VChOCXeaXgdHz4xDYBpM2ibl75QbS7q1': '/videos/scooter-eletrica-mz-1000w.mp4',
+  '1I0uAkTWHCVVSeQtsj6vaLsY3ObDum4hI': '/videos/scooter-eletrica-tank-800w.mp4',
+  '1MJm1oni1jzK5Bmfy8HuIhxBTgaGTIQvy': '/videos/bicicleta-eletrica-jazz-e700-1000w.mp4',
+  '1fCCToC3K6ynpTxEcgX8FNOQUV5qgZBL6': '/videos/bicicleta-eletrica-qje-05-1000w.mp4',
+  '1Nb07bXUte9BxTkjPLxTuy35HQjKkiS03': '/videos/bicicleta-eletrica-ride-pro-750w.mp4',
+  '1EALX7VB7w8NgXhdtfQ66awSmkR_auOlc': '/videos/bicicleta-eletrica-rider-pro-1000w.mp4',
+  '15Ktp-yzqUBa0XABnThi3oKnbOmFTFVYw': '/videos/bicicleta-eletrica-tjsr-b-035-1000w.mp4',
+};
+
 export function getDriveFileId(value?: string | null): string | null {
   const raw = value?.trim();
   if (!raw) return null;
@@ -208,12 +234,34 @@ export function getDriveFileId(value?: string | null): string | null {
 }
 
 export function getDriveEmbedUrl(value?: string | null): string | null {
+  const raw = value?.trim();
+  if (raw?.startsWith('/videos/') && raw.endsWith('.mp4')) {
+    return raw;
+  }
   const id = getDriveFileId(value);
   return id ? `https://drive.google.com/file/d/${id}/preview` : null;
 }
 
-export function getDriveStreamUrl(value?: string | null): string | null {
-  const id = getDriveFileId(value);
+export function getDriveStreamUrl(
+  value?: string | null,
+  productSlug?: string
+): string | null {
+  const raw = value?.trim();
+  if (!raw) return null;
+
+  if (raw.startsWith('/videos/') && raw.endsWith('.mp4')) {
+    return raw;
+  }
+
+  const id = getDriveFileId(raw);
+  if (id && OPTIMIZED_LOCAL_VIDEOS[id]) {
+    return OPTIMIZED_LOCAL_VIDEOS[id];
+  }
+
+  if (productSlug && Object.values(OPTIMIZED_LOCAL_VIDEOS).includes(`/videos/${productSlug}.mp4`)) {
+    return `/videos/${productSlug}.mp4`;
+  }
+
   return id ? `/api/video/${id}` : null;
 }
 
