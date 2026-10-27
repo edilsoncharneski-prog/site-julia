@@ -19,3 +19,13 @@ export const WHATSAPP_DISPLAY =
 export const STORE_ADDRESS =
   process.env.NEXT_PUBLIC_ADDRESS ||
   'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT';
+
+export const STORE_CITIES = 'Cotriguaçu e Região - MT';
+
+export const STORE_PAYMENT_INFO = 'Até 21x no Cartão';
+
+export const STORE_AVAILABILITY_INFO = 'Pronta entrega + encomenda';
+
+export const STORE_SUPPORT_INFO = 'Peças de reposição e Garantia de Fábrica';
+
+export const STORE_LOGO_PATH = '/logo-eletrosom.webp';

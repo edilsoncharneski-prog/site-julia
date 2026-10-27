@@ -12,7 +12,7 @@ interface Category {
 
 const categories: Category[] = [
   { id: '1', name: 'Autopropelidos', slug: 'autopropelidos', icon: Zap },
-  { id: '2', name: 'Bikes Elétricas', slug: 'bikes-eletricas', icon: Bike },
+  { id: '2', name: 'Bikes', slug: 'bikes-eletricas', icon: Bike },
   { id: '3', name: 'Triciclos', slug: 'triciclos', icon: Navigation },
   { id: '4', name: 'Patinetes', slug: 'patinetes', icon: Sparkles },
   { id: '5', name: 'Acessórios', slug: 'acessorios', icon: Wrench },
@@ -21,8 +21,11 @@ const categories: Category[] = [
 export function CategoryNav({ activeSlug }: { activeSlug?: string }) {
   return (
     <section className="border-b border-gray-100 bg-white">
-      <div className="mx-auto max-w-[1440px] px-4 sm:px-6">
-        <nav className="no-scrollbar flex items-start justify-start gap-2 overflow-x-auto py-4 sm:justify-center sm:gap-10 sm:py-5">
+      <div className="mx-auto max-w-[1440px] px-3 sm:px-6">
+        <nav
+          aria-label="Categorias de veículos"
+          className="no-scrollbar flex items-start justify-between gap-2 overflow-x-auto scroll-smooth py-3 sm:justify-center sm:gap-9 sm:py-5"
+        >
           {categories.map((category) => {
             const Icon = category.icon;
             const isActive = activeSlug === category.slug;
@@ -31,20 +34,25 @@ export function CategoryNav({ activeSlug }: { activeSlug?: string }) {
               <Link
                 key={category.id}
                 href={`/produtos?categoria=${category.slug}`}
-                className="group flex w-16 shrink-0 flex-col items-center gap-2 text-center sm:w-[92px]"
+                className="group flex min-w-[64px] shrink-0 flex-col items-center gap-1.5 text-center sm:w-[92px] sm:gap-2"
               >
                 <span
-                  className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-200 group-hover:-translate-y-0.5 sm:h-14 sm:w-14 ${
+                  className={`flex h-12 w-12 items-center justify-center rounded-full shadow-xs transition-all duration-200 group-hover:-translate-y-0.5 sm:h-14 sm:w-14 ${
                     isActive
-                      ? 'border-gray-950 bg-gray-950 text-white'
-                      : 'border-gray-200 bg-[#f7f7f5] text-gray-600 group-hover:border-gray-900 group-hover:text-gray-950'
+                      ? 'bg-amber-400 text-gray-950 ring-2 ring-gray-950'
+                      : 'bg-gray-950 text-white group-hover:bg-gray-800'
                   }`}
                 >
-                  <Icon className="h-[18px] w-[18px] sm:h-[22px] sm:w-[22px]" strokeWidth={1.6} />
+                  <Icon
+                    className="h-5 w-5 sm:h-6 sm:w-6"
+                    strokeWidth={1.8}
+                  />
                 </span>
                 <span
-                  className={`text-[9px] font-medium leading-tight tracking-tight transition-colors sm:text-[11px] ${
-                    isActive ? 'text-gray-950' : 'text-gray-600 group-hover:text-gray-950'
+                  className={`text-[10px] font-medium leading-tight tracking-tight transition-colors sm:text-xs ${
+                    isActive
+                      ? 'font-bold text-gray-950'
+                      : 'text-gray-700 group-hover:text-gray-950'
                   }`}
                 >
                   {category.name}

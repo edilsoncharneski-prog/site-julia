@@ -13,8 +13,14 @@ export function Footer() {
           {/* Coluna 1: Sobre & Marca */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-400 text-gray-950">
-                <Zap className="h-6 w-6 fill-gray-950" />
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-gray-950">
+                <Image
+                  src="/logo-eletrosom.webp"
+                  alt="Logo Eletrosom Ebikes"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
               </span>
               <div>
                 <h3 className="text-lg font-black leading-tight tracking-tight text-white">

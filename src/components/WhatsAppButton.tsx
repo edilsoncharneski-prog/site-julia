@@ -1,7 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { MessageCircle, X, MapPin, Phone, ArrowUpRight, Zap } from 'lucide-react';
+import Image from 'next/image';
+import { MessageCircle, X, MapPin, Phone, ArrowUpRight } from 'lucide-react';
+import {
+  SITE_NAME,
+  STORE_LOGO_PATH,
+  WHATSAPP_DISPLAY,
+  WHATSAPP_NUMBER,
+} from '@/lib/site';
 
 export function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +21,17 @@ export function WhatsAppButton() {
           {/* Header Verde WhatsApp */}
           <div className="bg-[#25D366] text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
-                <Zap className="h-5 w-5 fill-gray-950 text-gray-950" />
+              <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/30 bg-gray-950">
+                <Image
+                  src={STORE_LOGO_PATH}
+                  alt={`Logo ${SITE_NAME}`}
+                  fill
+                  sizes="40px"
+                  className="object-cover"
+                />
               </div>
               <div>
-                <h4 className="text-sm font-bold leading-tight">Eletrosom Ebikes</h4>
+                <h4 className="text-sm font-bold leading-tight">{SITE_NAME}</h4>
                 <p className="text-[11px] text-white/90">Atendimento Oficial no WhatsApp</p>
               </div>
             </div>
@@ -39,7 +52,7 @@ export function WhatsAppButton() {
 
             <div className="flex flex-col gap-2">
               <a
-                href="https://wa.me/5566984022988?text=Ol%C3%A1!+Gostaria+de+saber+os+modelos+de+motos+e+scooters+dispon%C3%ADveis."
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!+Gostaria+de+saber+os+modelos+de+motos+e+scooters+dispon%C3%ADveis.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-white border border-gray-200 hover:border-[#25D366] hover:bg-emerald-50/50 transition-all text-gray-800 font-medium group"
@@ -50,14 +63,14 @@ export function WhatsAppButton() {
                   </div>
                   <div>
                     <div className="font-semibold text-xs text-gray-900">Vendas & Cotação</div>
-                    <div className="text-[10px] text-gray-500">(66) 98402-2988</div>
+                    <div className="text-[10px] text-gray-500">{WHATSAPP_DISPLAY}</div>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-emerald-600 transition-colors" />
               </a>
 
               <a
-                href="https://wa.me/5566984022988?text=Ol%C3%A1!+Gostaria+de+informa%C3%A7%C3%B5es+sobre+garantia+e+suporte."
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!+Gostaria+de+informa%C3%A7%C3%B5es+sobre+garantia+e+suporte.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-white border border-gray-200 hover:border-[#25D366] hover:bg-emerald-50/50 transition-all text-gray-800 font-medium group"
