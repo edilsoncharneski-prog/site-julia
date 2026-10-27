@@ -655,6 +655,45 @@ export function ProductDetail({
           </div>
         </section>
       </div>
+
+      {/* Barra Fixa Inferior (Sticky CTA Bar) Mobile para Conversão Rápida */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-zinc-800 bg-zinc-950/95 px-4 py-3 shadow-2xl backdrop-blur-md sm:hidden">
+        <div className="mx-auto flex max-w-md items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-zinc-800 bg-[#f7f7f5]">
+              <Image
+                src={selectedColor.imagem || product.imagem_capa || '/logo-eletrosom.webp'}
+                alt={`${product.nome} - ${selectedColor.nome}`}
+                fill
+                sizes="44px"
+                className="object-contain p-1"
+              />
+            </div>
+            <div className="min-w-0">
+              <div className="truncate text-xs font-bold text-white">
+                {product.nome}
+              </div>
+              <div className="truncate text-[11px] text-zinc-400">
+                Cor: <strong className="text-yellow-400">{selectedColor.nome}</strong>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.06em] text-white shadow-lg shadow-emerald-950/50 transition-all duration-150 hover:from-emerald-400 hover:to-green-500 active:scale-[0.97]"
+          >
+            <MessageCircle className="h-4 w-4 shrink-0 fill-white" />
+            <span>
+              {selectedColor.disponibilidade === 'esgotado'
+                ? 'Avisar'
+                : 'Pedir no WhatsApp'}
+            </span>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

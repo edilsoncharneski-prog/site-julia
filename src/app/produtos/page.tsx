@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, Search } from 'lucide-react';
+import { ArrowLeft, Search, Zap } from 'lucide-react';
 import { ProductCard } from '@/components/ProductCard';
-import { categoryLabels } from '@/lib/products';
+import { categoryLabels, getProductColors } from '@/lib/products';
 import { getCatalog } from '@/lib/catalog';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Catálogo de Veículos Elétricos',
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 type ProductsPageProps = {
-  searchParams: Promise<{ busca?: string; categoria?: string }>;
+  searchParams: Promise<{ busca?: string; categoria?: string; pronta_entrega?: string }>;
 };
 
 function normalize(value: string) {
@@ -30,12 +29,21 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const params = await searchParams;
   const busca = (params.busca || '').trim();
   const categoria = params.categoria || '';
+  const somenteProntaEntrega = params.pronta_entrega === '1';
 
   const allProducts = await getCatalog();
   let filtered = allProducts;
 
   if (categoria && categoryLabels[categoria]) {
     filtered = filtered.filter((product) => product.categoria_slug === categoria);
+  }
+
+  if (somenteProntaEntrega) {
+    filtered = filtered.filter((product) =>
+      getProductColors(product).some(
+        (color) => color.disponibilidade === 'pronta_entrega'
+      )
+    );
   }
 
   if (busca) {
@@ -46,6 +54,15 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       ).includes(term)
     );
   }
+
+  const buildFilterHref = (nextCategoria?: string, nextProntaEntrega?: boolean) => {
+    const query = new URLSearchParams();
+    if (nextCategoria) query.set('categoria', nextCategoria);
+    if (busca) query.set('busca', busca);
+    if (nextProntaEntrega) query.set('pronta_entrega', '1');
+    const qs = query.toString();
+    return qs ? `/produtos?${qs}` : '/produtos';
+  };
 
   const heading =
     categoria && categoryLabels[categoria]
@@ -97,34 +114,48 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         </form>
       </div>
 
-      {/* Abas de categoria discretas */}
-      <div className="mb-8 flex flex-wrap gap-2 border-b border-gray-100 pb-4">
+      {/* Abas de categoria discretas + Filtro rápido de Pronta Entrega */}
+      <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4">
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href={buildFilterHref(undefined, somenteProntaEntrega)}
+            className={`px-3 py-1.5 text-xs font-medium transition-colors ${
+              !categoria
+                ? 'bg-gray-950 text-white'
+                : 'border border-gray-200 text-gray-600 hover:border-gray-950 hover:text-gray-950'
+            }`}
+          >
+            Todos
+          </Link>
+          {Object.entries(categoryLabels).map(([slug, label]) => {
+            const isActive = categoria === slug;
+            return (
+              <Link
+                key={slug}
+                href={buildFilterHref(slug, somenteProntaEntrega)}
+                className={`px-3 py-1.5 text-xs font-medium transition-colors ${
+                  isActive
+                    ? 'bg-gray-950 text-white'
+                    : 'border border-gray-200 text-gray-600 hover:border-gray-950 hover:text-gray-950'
+                }`}
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </div>
+
         <Link
-          href="/produtos"
-          className={`px-3 py-1.5 text-xs font-medium transition-colors ${
-            !categoria
-              ? 'bg-gray-950 text-white'
-              : 'border border-gray-200 text-gray-600 hover:border-gray-950 hover:text-gray-950'
+          href={buildFilterHref(categoria || undefined, !somenteProntaEntrega)}
+          className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold transition-all active:scale-95 ${
+            somenteProntaEntrega
+              ? 'bg-emerald-600 text-white shadow-xs'
+              : 'border border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100'
           }`}
         >
-          Todos
+          <Zap className="h-3.5 w-3.5 fill-current" />
+          <span>Somente Pronta Entrega</span>
         </Link>
-        {Object.entries(categoryLabels).map(([slug, label]) => {
-          const isActive = categoria === slug;
-          return (
-            <Link
-              key={slug}
-              href={`/produtos?categoria=${slug}`}
-              className={`px-3 py-1.5 text-xs font-medium transition-colors ${
-                isActive
-                  ? 'bg-gray-950 text-white'
-                  : 'border border-gray-200 text-gray-600 hover:border-gray-950 hover:text-gray-950'
-              }`}
-            >
-              {label}
-            </Link>
-          );
-        })}
       </div>
 
       {/* Grid de produtos */}

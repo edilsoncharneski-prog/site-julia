@@ -1,4 +1,5 @@
 import { NextRequest } from 'next/server';
+import { getCatalog } from '@/lib/catalog';
 import { getDriveFileId } from '@/lib/products';
 
 export const runtime = 'nodejs';
@@ -27,6 +28,31 @@ export async function GET(
 
   if (!cleanId) {
     return new Response('ID de vídeo inválido', { status: 400 });
+  }
+
+  // Proteção anti-abuso / hotlink:
+  // 1) Se houver Referer de origem externa desconhecida, bloqueia.
+  const referer = request.headers.get('referer');
+  const host = request.headers.get('host');
+  if (referer && host) {
+    try {
+      const refererHost = new URL(referer).host;
+      if (refererHost !== host && !refererHost.endsWith('.vercel.app')) {
+        return new Response('Acesso externo não permitido', { status: 403 });
+      }
+    } catch {
+      // ignora URL de referer malformada
+    }
+  }
+
+  // 2) Valida se o ID de vídeo pertence a algum produto cadastrado no catálogo.
+  const catalog = await getCatalog();
+  const isAllowedVideo = catalog.some(
+    (product) => getDriveFileId(product.video_url) === cleanId
+  );
+
+  if (!isAllowedVideo) {
+    return new Response('Vídeo não autorizado no catálogo', { status: 403 });
   }
 
   const upstreamUrl = `https://drive.usercontent.google.com/download?id=${cleanId}&export=download&confirm=t`;

@@ -4,8 +4,7 @@ import { getActiveCarouselSlides, getCatalog } from '@/lib/catalog';
 import { CONTRAN_RESOLUTION_URL } from '@/lib/site';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 60;
 
 export default async function Home() {
   const [products, carouselSlides] = await Promise.all([

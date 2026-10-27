@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { MessageCircle, X, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 import {
   SITE_NAME,
@@ -13,9 +14,15 @@ import { buildWhatsAppApiUrl } from '@/lib/utils';
 
 export function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isProductPage = pathname?.startsWith('/produto/');
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end">
+    <div
+      className={`fixed right-5 z-50 flex flex-col items-end ${
+        isProductPage ? 'bottom-20 sm:bottom-5' : 'bottom-5'
+      }`}
+    >
       {/* Popover / Mini Janela de Conversa */}
       {isOpen && (
         <div className="mb-3 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200">
