@@ -205,7 +205,7 @@ export function ProductDetail({
                   priority={index === 0}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={85}
-                  className={`object-contain p-6 transition-opacity duration-300 sm:p-10 ${
+                  className={`object-contain p-6 transition-opacity duration-200 sm:p-10 ${
                     index === activeColor ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
@@ -216,20 +216,20 @@ export function ProductDetail({
               </div>
 
               {product.dispensa_cnh !== false && (
-                <div className="pointer-events-none absolute bottom-3 left-3 right-3 z-10 inline-flex items-center justify-center gap-1.5 rounded bg-white/90 px-2.5 py-1.5 text-[10px] font-semibold tracking-tight text-emerald-800 shadow-2xs backdrop-blur-xs sm:bottom-4 sm:left-auto sm:right-4 sm:text-xs">
+                <div className="pointer-events-none absolute bottom-3 left-3 right-3 z-10 inline-flex items-center justify-center gap-1.5 rounded-md bg-white/95 px-2.5 py-1.5 text-[10px] font-semibold tracking-tight text-emerald-800 shadow-2xs backdrop-blur-xs sm:bottom-4 sm:left-auto sm:right-4 sm:px-3 sm:text-xs">
                   <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-600" />
-                  <span>Não precisa de CNH, nem Emplacamento</span>
+                  <span>Não precisa de CNH nem Emplacamento</span>
                 </div>
               )}
             </div>
 
-            <div className="flex flex-col gap-3 border border-gray-200 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-3 rounded-xl border border-zinc-800 bg-zinc-900/95 p-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <span className="block text-[9px] font-semibold uppercase tracking-[0.22em] text-gray-400">
+                <span className="block text-[9px] font-semibold uppercase tracking-[0.22em] text-zinc-400">
                   Cor selecionada
                 </span>
                 <div className="mt-1 flex flex-wrap items-center gap-2">
-                  <span className="text-sm font-medium text-gray-900">
+                  <span className="text-sm font-semibold text-white">
                     {selectedColor.nome}
                   </span>
                   <StatusBadge status={selectedColor.disponibilidade} />
@@ -307,7 +307,7 @@ export function ProductDetail({
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 flex w-full items-center justify-center gap-2 bg-[#25D366] px-6 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-[#20ba59] hover:shadow-xl active:scale-95"
+                className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-950/40 transition-all duration-150 hover:from-emerald-400 hover:to-green-500 active:scale-[0.97]"
               >
                 <MessageCircle className="h-5 w-5 fill-white" />
                 {selectedColor.disponibilidade === 'esgotado'
@@ -453,52 +453,52 @@ export function ProductDetail({
             </span>
           </div>
 
-          {/* Grid de Destaques Rápidos (Autonomia, Velocidade Máxima, Capacidade de Carga e Bateria/Recarga) */}
+          {/* Grid de Destaques Rápidos (Autonomia, Velocidade Máxima, Capacidade de Carga e Bateria/Recarga) - Estilo Painel Digital HUD */}
           <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-            <div className="flex flex-col justify-between border border-gray-200 bg-[#fafaf8] p-4">
-              <div className="flex items-center justify-between text-amber-500">
-                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500">
+            <div className="flex flex-col justify-between rounded-xl border border-zinc-800 bg-zinc-900/90 p-3 shadow-sm">
+              <div className="flex items-center justify-between text-yellow-400">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-400">
                   Autonomia
                 </span>
                 <Gauge className="h-4 w-4 shrink-0" />
               </div>
-              <strong className="mt-2 text-base font-bold text-gray-950 sm:text-lg">
+              <strong className="mt-2 text-lg font-bold text-yellow-400">
                 {product.autonomia || 'Até 50 km'}
               </strong>
             </div>
 
-            <div className="flex flex-col justify-between border border-gray-200 bg-[#fafaf8] p-4">
-              <div className="flex items-center justify-between text-amber-500">
-                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500">
+            <div className="flex flex-col justify-between rounded-xl border border-zinc-800 bg-zinc-900/90 p-3 shadow-sm">
+              <div className="flex items-center justify-between text-yellow-400">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-400">
                   Velocidade Máxima
                 </span>
                 <Timer className="h-4 w-4 shrink-0" />
               </div>
-              <strong className="mt-2 text-base font-bold text-gray-950 sm:text-lg">
+              <strong className="mt-2 text-lg font-bold text-yellow-400">
                 {product.velocidade_maxima || '32 km/h'}
               </strong>
             </div>
 
-            <div className="flex flex-col justify-between border border-gray-200 bg-[#fafaf8] p-4">
-              <div className="flex items-center justify-between text-amber-500">
-                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500">
+            <div className="flex flex-col justify-between rounded-xl border border-zinc-800 bg-zinc-900/90 p-3 shadow-sm">
+              <div className="flex items-center justify-between text-yellow-400">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-400">
                   Capacidade de Carga
                 </span>
                 <Weight className="h-4 w-4 shrink-0" />
               </div>
-              <strong className="mt-2 text-base font-bold text-gray-950 sm:text-lg">
+              <strong className="mt-2 text-lg font-bold text-yellow-400">
                 {product.capacidade_carga || '150 kg'}
               </strong>
             </div>
 
-            <div className="flex flex-col justify-between border border-gray-200 bg-[#fafaf8] p-4">
-              <div className="flex items-center justify-between text-amber-500">
-                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500">
+            <div className="flex flex-col justify-between rounded-xl border border-zinc-800 bg-zinc-900/90 p-3 shadow-sm">
+              <div className="flex items-center justify-between text-yellow-400">
+                <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-400">
                   Bateria / Recarga
                 </span>
                 <BatteryCharging className="h-4 w-4 shrink-0" />
               </div>
-              <strong className="mt-2 truncate text-sm font-bold text-gray-950 sm:text-base">
+              <strong className="mt-2 truncate text-lg font-bold text-yellow-400">
                 {product.tipo_bateria || 'Lítio'} • {product.tempo_recarga || '6 a 8h'}
               </strong>
             </div>

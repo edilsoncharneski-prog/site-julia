@@ -53,8 +53,8 @@ export function ColorSwatches({
                 size === 'sm' ? 'h-6 w-6 sm:h-7 sm:w-7' : 'h-8 w-8 sm:h-9 sm:w-9'
               } ${
                 isActive
-                  ? 'border-gray-900 ring-2 ring-gray-900 ring-offset-2'
-                  : 'border-gray-300 group-hover:border-gray-500'
+                  ? 'border-yellow-400 ring-2 ring-yellow-400 ring-offset-2 ring-offset-zinc-900 scale-110 shadow-md'
+                  : 'border-zinc-500/60 group-hover:border-zinc-300'
               }`}
             />
             <span className="sr-only">{color.nome}</span>

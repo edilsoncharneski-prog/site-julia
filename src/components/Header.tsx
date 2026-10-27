@@ -131,7 +131,7 @@ export function Header() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3.5 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2 text-xs font-bold text-white shadow-sm transition-all hover:bg-[#20ba59] hover:shadow-md active:scale-95"
+            className="mt-3.5 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-emerald-950/40 transition-all duration-150 hover:from-emerald-400 hover:to-green-500 active:scale-[0.97]"
           >
             <MessageCircle className="h-4 w-4 fill-white" />
             <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
