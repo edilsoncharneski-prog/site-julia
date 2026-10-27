@@ -33,30 +33,45 @@ export function Header() {
     setSearchOpen(false);
   };
 
+  const handleResetNavigation = () => {
+    setSearchOpen(false);
+    setSearchTerm('');
+  };
+
   return (
     <header className="w-full bg-white">
       {/* Barra superior institucional e navegação rápida */}
       <div className="border-b border-gray-100 bg-[#fafaf8]">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-4 py-1.5 sm:py-2">
           <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-gray-600">
-            <Link href="/" className="transition-colors hover:text-gray-950">
+            <Link
+              href="/"
+              onClick={handleResetNavigation}
+              className="transition-all hover:text-gray-950 active:scale-95"
+            >
               Início
             </Link>
             <span className="text-gray-300">•</span>
-            <Link href="/produtos" className="transition-colors hover:text-gray-950">
+            <Link
+              href="/produtos"
+              onClick={handleResetNavigation}
+              className="transition-all hover:text-gray-950 active:scale-95"
+            >
               Catálogo
             </Link>
             <span className="hidden text-gray-300 sm:inline">•</span>
             <Link
               href="/sobre"
-              className="hidden transition-colors hover:text-gray-950 sm:inline"
+              onClick={handleResetNavigation}
+              className="hidden transition-all hover:text-gray-950 active:scale-95 sm:inline"
             >
               Sobre
             </Link>
             <span className="hidden text-gray-300 sm:inline">•</span>
             <Link
               href="/contato"
-              className="hidden transition-colors hover:text-gray-950 sm:inline"
+              onClick={handleResetNavigation}
+              className="hidden transition-all hover:text-gray-950 active:scale-95 sm:inline"
             >
               Contato
             </Link>
@@ -66,7 +81,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setSearchOpen((open) => !open)}
-              className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-gray-700 transition-colors hover:bg-gray-200/70"
+              className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-gray-700 transition-all hover:bg-gray-200/70 active:scale-95"
               aria-label={searchOpen ? 'Fechar busca' : 'Buscar produtos'}
               aria-expanded={searchOpen}
             >
@@ -80,25 +95,25 @@ export function Header() {
       {/* Bloco de Bio Institucional (Container max-w-md mx-auto estilo Concessionária / Mova) */}
       <div className="mx-auto w-full max-w-md px-4 pb-3 pt-5 text-center">
         <div className="flex flex-col items-center">
-          {/* 1. Logo Circular Centralizado */}
+          {/* 1 & 2. Logo Circular + Título envolvidos em um único <Link href="/"> */}
           <Link
             href="/"
+            onClick={handleResetNavigation}
             aria-label={`Ir para a página inicial da ${SITE_NAME}`}
-            className="group relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-2 border-zinc-900 bg-zinc-950 shadow-md transition-transform duration-200 hover:scale-[1.03] sm:h-28 sm:w-28"
+            className="group flex flex-col items-center focus:outline-none active:scale-95 transition-transform"
           >
-            <Image
-              src={STORE_LOGO_PATH}
-              alt={`Logo ${SITE_NAME}`}
-              fill
-              sizes="(max-width: 640px) 96px, 112px"
-              priority
-              className="object-cover"
-            />
-          </Link>
+            <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-2 border-zinc-900 bg-zinc-950 shadow-md transition-transform duration-200 group-hover:scale-[1.03] sm:h-28 sm:w-28">
+              <Image
+                src={STORE_LOGO_PATH}
+                alt={`Logo ${SITE_NAME}`}
+                fill
+                sizes="(max-width: 640px) 96px, 112px"
+                priority
+                className="object-cover"
+              />
+            </div>
 
-          {/* 2. Título com tipografia destacada e limpa */}
-          <Link href="/" className="mt-3 hover:opacity-90">
-            <span className="text-xl font-extrabold tracking-tight text-zinc-950 sm:text-2xl">
+            <span className="mt-3 text-xl font-extrabold tracking-tight text-zinc-950 transition-opacity group-hover:opacity-90 sm:text-2xl">
               {SITE_NAME}
             </span>
           </Link>
@@ -116,7 +131,7 @@ export function Header() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3.5 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2 text-xs font-bold text-white shadow-sm transition-all hover:bg-[#20ba59] hover:shadow-md active:scale-98"
+            className="mt-3.5 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2 text-xs font-bold text-white shadow-sm transition-all hover:bg-[#20ba59] hover:shadow-md active:scale-95"
           >
             <MessageCircle className="h-4 w-4 fill-white" />
             <span>WhatsApp: {WHATSAPP_DISPLAY}</span>

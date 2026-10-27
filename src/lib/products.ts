@@ -5,7 +5,7 @@ import fallbackProducts from '@/data/produtos-loja.json';
  * A leitura dinâmica dos dados fica em `lib/catalog.ts`.
  */
 
-export type Disponibilidade = 'pronta_entrega' | 'sob_pedido';
+export type Disponibilidade = 'pronta_entrega' | 'sob_pedido' | 'esgotado';
 
 export interface ProductColor {
   /** UUID da linha em `produto_variacoes` (ausente no catálogo de contingência). */
@@ -54,11 +54,13 @@ export const products: Product[] = fallbackProducts as Product[];
 export const disponibilidadeLabels: Record<Disponibilidade, string> = {
   pronta_entrega: 'Pronta Entrega',
   sob_pedido: 'Sob Pedido',
+  esgotado: 'Esgotado',
 };
 
 export const disponibilidadeDescricao: Record<Disponibilidade, string> = {
   pronta_entrega: 'Disponível para retirada imediata na loja',
   sob_pedido: 'Encomenda sob consulta com a fábrica',
+  esgotado: 'Sem estoque no momento — consulte previsão de reposição',
 };
 
 /**

@@ -94,10 +94,10 @@ export function ProductCard({
           />
         </div>
 
-        <div className="mt-auto flex w-full flex-col gap-2 pt-4">
+        <div className="mt-auto flex w-full flex-col gap-2 pt-3">
           <Link
             href={productHref}
-            className="flex w-full items-center justify-center border border-gray-300 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-gray-800 transition-colors duration-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white sm:py-2.5 sm:text-[11px]"
+            className="flex w-full items-center justify-center border border-gray-300 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-gray-800 transition-all duration-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white active:scale-95 sm:py-2.5 sm:text-[11px]"
           >
             VER DETALHES
           </Link>
@@ -107,10 +107,14 @@ export function ProductCard({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Consultar ${product.nome} na cor ${selectedColor.nome} pelo WhatsApp`}
-            className="flex w-full items-center justify-center gap-1.5 bg-[#25D366] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white transition-colors duration-200 hover:bg-[#20ba59] sm:py-2.5 sm:text-[11px]"
+            className="flex w-full items-center justify-center gap-1.5 bg-[#25D366] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-white transition-all duration-200 hover:bg-[#20ba59] active:scale-95 sm:py-2.5 sm:text-[11px]"
           >
             <MessageCircle className="h-3.5 w-3.5 shrink-0 fill-white" />
-            <span>Pedir no WhatsApp</span>
+            <span>
+              {selectedColor.disponibilidade === 'esgotado'
+                ? 'Avisar Reposição'
+                : 'Pedir no WhatsApp'}
+            </span>
           </a>
         </div>
       </div>

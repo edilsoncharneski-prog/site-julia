@@ -45,6 +45,16 @@ export function buildAvailabilityWhatsAppLink(
   color: ProductColor,
   productUrl?: string
 ) {
+  const isOutOfStock =
+    color.disponibilidade === 'esgotado' ||
+    (color as { esgotado?: boolean }).esgotado === true;
+
+  if (isOutOfStock) {
+    let outOfStockMessage = `Olá! Tenho interesse no modelo ${productName} na cor ${color.nome}, mas vi que está esgotado. Há previsão de reposição?`;
+    if (productUrl) outOfStockMessage += ` Link: ${productUrl}`;
+    return buildWhatsAppApiUrl(outOfStockMessage);
+  }
+
   const status =
     color.disponibilidade === 'pronta_entrega'
       ? 'Pronta Entrega'

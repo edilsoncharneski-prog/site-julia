@@ -45,7 +45,7 @@ function CategoryBarInner({ activeSlug }: { activeSlug?: string }) {
               <Link
                 key={id}
                 href={`/produtos?categoria=${slug}`}
-                className="group flex min-w-[64px] shrink-0 flex-col items-center gap-1.5 text-center"
+                className="group flex min-w-[64px] shrink-0 flex-col items-center gap-1.5 text-center transition-transform active:scale-95"
               >
                 <div
                   className={`flex h-14 w-14 items-center justify-center rounded-full transition-all duration-200 group-hover:-translate-y-0.5 ${

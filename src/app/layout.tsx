@@ -3,12 +3,12 @@ import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, STORE_LOGO_PATH } from '@/lib/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Motos, Scooters, Bikes e Triciclos Elétricos`,
+    default: `${SITE_NAME} | Mobilidade Elétrica em Cotriguaçu e Região`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -35,17 +35,22 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: `${SITE_NAME} | Mobilidade Elétrica em Cotriguaçu-MT`,
-    description:
-      'Scooters, motos, bikes e triciclos elétricos sem CNH. Até 21x no cartão, pronta entrega e garantia de fábrica.',
+    title: `${SITE_NAME} | Mobilidade Elétrica em Cotriguaçu e Região`,
+    description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
     images: [
       {
+        url: STORE_LOGO_PATH,
+        width: 400,
+        height: 400,
+        alt: `${SITE_NAME} | Mobilidade Elétrica em Cotriguaçu e Região`,
+      },
+      {
         url: '/og-eletrosom-ebikes.png',
         width: 1200,
         height: 630,
-        alt: 'Eletrosom Ebikes - Mobilidade Elétrica em Cotriguaçu-MT',
+        alt: `${SITE_NAME} - Mobilidade Elétrica em Cotriguaçu e Região`,
       },
     ],
     locale: 'pt_BR',
@@ -53,10 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} | Mobilidade Elétrica`,
-    description:
-      'Scooters, motos, bikes e triciclos elétricos sem CNH. Até 21x no cartão.',
-    images: ['/og-eletrosom-ebikes.png'],
+    title: `${SITE_NAME} | Mobilidade Elétrica em Cotriguaçu e Região`,
+    description: SITE_DESCRIPTION,
+    images: [STORE_LOGO_PATH, '/og-eletrosom-ebikes.png'],
   },
 };
 

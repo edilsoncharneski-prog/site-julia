@@ -1,4 +1,4 @@
-import { Package, Zap } from 'lucide-react';
+import { Ban, Package, Zap } from 'lucide-react';
 import {
   disponibilidadeDescricao,
   disponibilidadeLabels,
@@ -13,7 +13,8 @@ export function StatusBadge({
   size?: 'sm' | 'md';
 }) {
   const isProntaEntrega = status === 'pronta_entrega';
-  const Icon = isProntaEntrega ? Zap : Package;
+  const isEsgotado = status === 'esgotado';
+  const Icon = isProntaEntrega ? Zap : isEsgotado ? Ban : Package;
 
   return (
     <span
@@ -25,12 +26,18 @@ export function StatusBadge({
       } ${
         isProntaEntrega
           ? 'border-emerald-200 bg-emerald-50/95 text-emerald-700'
-          : 'border-slate-200 bg-white/95 text-slate-500'
+          : isEsgotado
+            ? 'border-red-200 bg-red-50/95 text-red-700'
+            : 'border-slate-200 bg-white/95 text-slate-500'
       }`}
     >
       <Icon
         className={`${size === 'sm' ? 'h-3 w-3' : 'h-3.5 w-3.5'} ${
-          isProntaEntrega ? 'fill-emerald-600 text-emerald-600' : ''
+          isProntaEntrega
+            ? 'fill-emerald-600 text-emerald-600'
+            : isEsgotado
+              ? 'text-red-600'
+              : ''
         }`}
         strokeWidth={2}
       />

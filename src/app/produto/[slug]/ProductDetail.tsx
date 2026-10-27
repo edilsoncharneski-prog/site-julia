@@ -176,7 +176,7 @@ export function ProductDetail({
           <button
             type="button"
             onClick={handleShare}
-            className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900"
+            className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-500 transition-all hover:bg-gray-100 hover:text-gray-900 active:scale-95"
           >
             {copied ? (
               <Check className="h-3.5 w-3.5 text-emerald-600" />
@@ -306,10 +306,12 @@ export function ProductDetail({
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 flex w-full items-center justify-center gap-2 bg-[#25D366] px-6 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-[#20ba59] hover:shadow-xl"
+                className="mt-5 flex w-full items-center justify-center gap-2 bg-[#25D366] px-6 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-[#20ba59] hover:shadow-xl active:scale-95"
               >
                 <MessageCircle className="h-5 w-5 fill-white" />
-                Pedir no WhatsApp agora
+                {selectedColor.disponibilidade === 'esgotado'
+                  ? 'Consultar previsão de reposição'
+                  : 'Pedir no WhatsApp agora'}
               </a>
             </div>
 
