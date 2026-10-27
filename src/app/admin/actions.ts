@@ -436,18 +436,83 @@ export async function saveStoreConfigAction(config: {
   }
 }
 
+export interface AdminVisitSummary {
+  total: number;
+  today: number;
+  last7Days: number;
+  updatedAt?: string;
+}
+
+function computeVisitSummary(raw?: string | null): AdminVisitSummary {
+  if (!raw) {
+    return { total: 0, today: 0, last7Days: 0 };
+  }
+
+  try {
+    const parsed = JSON.parse(raw) as {
+      total?: number;
+      daily?: Record<string, number>;
+      updatedAt?: string;
+    };
+
+    const daily =
+      parsed.daily && typeof parsed.daily === 'object' ? parsed.daily : {};
+
+    let todayKey: string;
+    try {
+      todayKey = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'America/Cuiaba',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }).format(new Date());
+    } catch {
+      todayKey = new Date().toISOString().slice(0, 10);
+    }
+
+    const now = new Date();
+    let last7Days = 0;
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
+      let key: string;
+      try {
+        key = new Intl.DateTimeFormat('en-CA', {
+          timeZone: 'America/Cuiaba',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        }).format(d);
+      } catch {
+        key = d.toISOString().slice(0, 10);
+      }
+      last7Days += Number(daily[key] || 0);
+    }
+
+    return {
+      total: Number(parsed.total) || 0,
+      today: Number(daily[todayKey] || 0),
+      last7Days,
+      updatedAt: parsed.updatedAt,
+    };
+  } catch {
+    const num = Number(raw) || 0;
+    return { total: num, today: 0, last7Days: 0 };
+  }
+}
+
 /**
- * Busca as configurações da loja.
+ * Busca as configurações da loja e estatísticas de acesso.
  */
 export async function getStoreConfigAction(): Promise<{
   whatsapp: string;
   endereco: string;
+  visits: AdminVisitSummary;
 }> {
   try {
     const admin = getAdminSupabase();
     const { data } = await admin
       .from('configuracoes_loja')
-      .select('whatsapp_principal, endereco_completo')
+      .select('whatsapp_principal, endereco_completo, telefone_fixo')
       .eq('id', 1)
       .single();
 
@@ -456,11 +521,13 @@ export async function getStoreConfigAction(): Promise<{
       endereco:
         data?.endereco_completo ||
         'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT',
+      visits: computeVisitSummary(data?.telefone_fixo),
     };
   } catch {
     return {
       whatsapp: '5566984022988',
       endereco: 'Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT',
+      visits: { total: 0, today: 0, last7Days: 0 },
     };
   }
 }

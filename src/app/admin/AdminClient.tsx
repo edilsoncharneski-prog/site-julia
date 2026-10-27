@@ -22,6 +22,9 @@ import {
   Loader2,
   LogOut,
   Home,
+  Eye,
+  TrendingUp,
+  Calendar,
 } from 'lucide-react';
 import Image from 'next/image';
 import { formatCurrency } from '@/lib/utils';
@@ -39,6 +42,7 @@ import {
   deleteProductFromSupabaseAction,
   saveStoreConfigAction,
   logoutAdminAction,
+  type AdminVisitSummary,
 } from './actions';
 import { CarouselManager } from '@/components/admin/CarouselManager';
 
@@ -56,6 +60,7 @@ interface AdminClientProps {
   initialConfig: {
     whatsapp: string;
     endereco: string;
+    visits?: AdminVisitSummary;
   };
 }
 
@@ -463,6 +468,60 @@ export function AdminClient({ initialProducts, initialConfig }: AdminClientProps
             <LogOut className="h-3.5 w-3.5" />
             Sair
           </button>
+        </div>
+      </div>
+
+      {/* Painel de Referência: Contador de Acessos ao Site */}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <div className="flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3.5 text-white shadow-xs">
+          <div>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-400">
+              Acessos hoje
+            </span>
+            <div className="mt-1 text-2xl font-extrabold text-yellow-400">
+              {(initialConfig.visits?.today ?? 0).toLocaleString('pt-BR')}
+            </div>
+            <span className="text-[10px] text-zinc-400">
+              Visitantes únicos por sessão hoje
+            </span>
+          </div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800 text-yellow-400">
+            <Calendar className="h-5 w-5" />
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3.5 text-white shadow-xs">
+          <div>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-400">
+              Últimos 7 dias
+            </span>
+            <div className="mt-1 text-2xl font-extrabold text-emerald-400">
+              {(initialConfig.visits?.last7Days ?? 0).toLocaleString('pt-BR')}
+            </div>
+            <span className="text-[10px] text-zinc-400">
+              Volume semanal de visitas
+            </span>
+          </div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800 text-emerald-400">
+            <TrendingUp className="h-5 w-5" />
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3.5 text-white shadow-xs">
+          <div>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-400">
+              Total acumulado
+            </span>
+            <div className="mt-1 text-2xl font-extrabold text-white">
+              {(initialConfig.visits?.total ?? 0).toLocaleString('pt-BR')}
+            </div>
+            <span className="text-[10px] text-zinc-400">
+              Acessos totais registrados no site
+            </span>
+          </div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800 text-zinc-200">
+            <Eye className="h-5 w-5" />
+          </div>
         </div>
       </div>
 

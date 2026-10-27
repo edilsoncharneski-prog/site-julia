@@ -3,6 +3,7 @@ import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { VisitTracker } from '@/components/VisitTracker';
 import {
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -128,6 +129,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <VisitTracker />
       </body>
     </html>
   );
