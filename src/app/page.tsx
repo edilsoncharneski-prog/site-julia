@@ -35,7 +35,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-3 lg:gap-x-8">
           {products.map((product, index) => (
             <ProductCard key={product.id} product={product} priority={index < 4} />
           ))}

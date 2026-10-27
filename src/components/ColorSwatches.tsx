@@ -28,7 +28,7 @@ export function ColorSwatches({
 }) {
   return (
     <div
-      className="flex flex-wrap items-center justify-center gap-0.5 sm:gap-1"
+      className="flex flex-wrap items-center justify-center gap-2"
       role="group"
       aria-label={`Cores disponíveis para ${productName}`}
     >
@@ -45,16 +45,16 @@ export function ColorSwatches({
             aria-label={`${productName} na cor ${color.nome}`}
             aria-pressed={isActive}
             title={color.nome}
-            className="group relative flex min-h-[44px] min-w-[44px] cursor-pointer items-center justify-center rounded-full p-2 transition-transform active:scale-95 focus:outline-none"
+            className="group relative flex cursor-pointer items-center justify-center rounded-full p-1 transition-transform active:scale-95 focus:outline-none"
           >
             <span
               style={colorStyle(color)}
-              className={`block rounded-full border transition-all duration-200 ${
-                size === 'sm' ? 'h-6 w-6 sm:h-7 sm:w-7' : 'h-8 w-8 sm:h-9 sm:w-9'
+              className={`block rounded-full border border-zinc-500/40 transition-all duration-200 ${
+                size === 'sm' ? 'h-6 w-6' : 'h-7 w-7 sm:h-8 sm:w-8'
               } ${
                 isActive
-                  ? 'border-yellow-400 ring-2 ring-yellow-400 ring-offset-2 ring-offset-zinc-900 scale-110 shadow-md'
-                  : 'border-zinc-500/60 group-hover:border-zinc-300'
+                  ? 'scale-105 ring-2 ring-yellow-400 ring-offset-2 ring-offset-zinc-900'
+                  : 'group-hover:border-zinc-300'
               }`}
             />
             <span className="sr-only">{color.nome}</span>
