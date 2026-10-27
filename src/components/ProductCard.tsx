@@ -64,7 +64,7 @@ export function ProductCard({
         {product.dispensa_cnh !== false && (
           <span className="pointer-events-none absolute bottom-2 left-2 right-2 z-10 inline-flex items-center justify-center gap-1 rounded bg-white/90 px-2 py-1 text-[9px] font-semibold tracking-tight text-emerald-800 shadow-2xs backdrop-blur-xs sm:bottom-2.5 sm:left-auto sm:right-2.5 sm:text-[10px]">
             <ShieldCheck className="h-3 w-3 shrink-0 text-emerald-600" />
-            <span>Sem CNH • Não emplaca (CONTRAN)</span>
+            <span>Não precisa de CNH, nem Emplacamento</span>
           </span>
         )}
       </Link>

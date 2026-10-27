@@ -216,8 +216,9 @@ export function ProductDetail({
               </div>
 
               {product.dispensa_cnh !== false && (
-                <div className="absolute right-4 top-4 bg-emerald-600 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em] text-white">
-                  Dispensado CNH
+                <div className="pointer-events-none absolute bottom-3 left-3 right-3 z-10 inline-flex items-center justify-center gap-1.5 rounded bg-white/90 px-2.5 py-1.5 text-[10px] font-semibold tracking-tight text-emerald-800 shadow-2xs backdrop-blur-xs sm:bottom-4 sm:left-auto sm:right-4 sm:text-xs">
+                  <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-600" />
+                  <span>Não precisa de CNH, nem Emplacamento</span>
                 </div>
               )}
             </div>

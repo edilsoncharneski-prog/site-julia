@@ -254,7 +254,7 @@ export function HeroCarousel({ slides = [], products = [] }: HeroCarouselProps) 
                 )}
                 <span className="inline-flex items-center gap-1 bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-800 border border-emerald-200">
                   <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-                  Sem CNH • CONTRAN 996/23
+                  Não precisa de CNH, nem Emplacamento
                 </span>
               </div>
 
