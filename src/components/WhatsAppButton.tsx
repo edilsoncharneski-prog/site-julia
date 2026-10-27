@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { MessageCircle, X, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 import {
   SITE_NAME,
+  STORE_ADDRESS,
   STORE_LOGO_PATH,
   WHATSAPP_DISPLAY,
 } from '@/lib/site';
@@ -93,7 +94,7 @@ export function WhatsAppButton() {
 
               <div className="mt-2 pt-2 border-t border-gray-200 flex items-center gap-1.5 text-[11px] text-gray-500">
                 <MapPin className="w-3.5 h-3.5 text-gray-400 shrink-0" />
-                <span>Av. Tamburello, ao lado do Sicoob - Cotriguaçu/MT</span>
+                <span>{STORE_ADDRESS}</span>
               </div>
             </div>
           </div>

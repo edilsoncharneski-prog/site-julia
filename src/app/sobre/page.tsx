@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, BatteryCharging, MapPin, ShieldCheck, Wrench, Zap } from 'lucide-react';
+import { STORE_ADDRESS } from '@/lib/site';
 import { buildWhatsAppApiUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -71,7 +72,7 @@ export default function SobrePage() {
         <div className="flex flex-col gap-2 text-sm text-gray-600">
           <span className="flex items-center gap-2">
             <MapPin className="h-4 w-4 text-amber-500" />
-            Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT
+            {STORE_ADDRESS}
           </span>
           <span className="flex items-center gap-2">
             <BatteryCharging className="h-4 w-4 text-amber-500" />

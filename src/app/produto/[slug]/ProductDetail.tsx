@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { ColorSwatches } from '@/components/ColorSwatches';
 import { StatusBadge } from '@/components/StatusBadge';
+import { SITE_URL } from '@/lib/site';
 import { buildAvailabilityWhatsAppLink, formatCurrency } from '@/lib/utils';
 import {
   disponibilidadeLabels,
@@ -52,6 +53,7 @@ export function ProductDetail({
   const colors = getProductColors(product);
   const [activeColor, setActiveColor] = useState(initialColorIndex);
   const [copied, setCopied] = useState(false);
+  const [videoActivated, setVideoActivated] = useState(false);
   const [useIframePlayer, setUseIframePlayer] = useState(false);
   const selectedColor = colors[activeColor] ?? colors[0];
   const selectedColorParam = getColorSlug(selectedColor?.nome) || encodeURIComponent(selectedColor?.nome || '');
@@ -59,10 +61,7 @@ export function ProductDetail({
   const videoStreamUrl = getDriveStreamUrl(product.video_url);
   const videoViewUrl = getDriveViewUrl(product.video_url);
 
-  const productUrl =
-    typeof window !== 'undefined'
-      ? `${window.location.origin}/produto/${product.slug}?cor=${selectedColorParam}`
-      : undefined;
+  const productUrl = `${SITE_URL.replace(/\/$/, '')}/produto/${product.slug}?cor=${selectedColorParam}`;
 
   const whatsappUrl = buildAvailabilityWhatsAppLink(
     product.nome,
@@ -343,7 +342,7 @@ export function ProductDetail({
           <p className="text-sm leading-relaxed text-gray-600">{product.descricao}</p>
         </section>
 
-        {/* Vídeo de Apresentação */}
+        {/* Vídeo de Apresentação com Facade Pattern (Lazy Loading 4G/5G) */}
         {videoEmbedUrl && (
           <section className="max-w-4xl border-b border-gray-100 py-10">
             <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
@@ -371,16 +370,42 @@ export function ProductDetail({
             </div>
 
             <div className="relative aspect-video w-full overflow-hidden border border-gray-200 bg-black shadow-sm">
-              {videoStreamUrl && !useIframePlayer ? (
+              {!videoActivated ? (
+                <button
+                  type="button"
+                  onClick={() => setVideoActivated(true)}
+                  aria-label={`Reproduzir vídeo de apresentação de ${product.titulo}`}
+                  className="group relative flex h-full w-full items-center justify-center overflow-hidden bg-zinc-950 text-left focus:outline-none"
+                >
+                  <Image
+                    src={selectedColor?.imagem || product.imagem_capa || '/logo-eletrosom.webp'}
+                    alt={` Capa do vídeo de ${product.titulo}`}
+                    fill
+                    sizes="(max-width: 896px) 100vw, 896px"
+                    loading="lazy"
+                    className="object-contain p-6 opacity-85 transition-transform duration-500 group-hover:scale-105 sm:p-10"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+                  <div className="relative z-10 flex flex-col items-center gap-3 text-center">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-400 text-zinc-950 shadow-xl transition-transform duration-200 group-hover:scale-110 sm:h-20 sm:w-20">
+                      <Play className="ml-1 h-7 w-7 fill-current sm:h-8 sm:w-8" />
+                    </span>
+                    <span className="rounded-full bg-black/70 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-xs border border-white/15">
+                      Assistir vídeo de apresentação
+                    </span>
+                  </div>
+                </button>
+              ) : videoStreamUrl && !useIframePlayer ? (
                 <video
                   key={videoStreamUrl}
                   src={videoStreamUrl}
-                  poster={selectedColor?.imagem || product.imagem_capa || '/logo.png'}
+                  poster={selectedColor?.imagem || product.imagem_capa || '/logo-eletrosom.webp'}
                   controls
+                  autoPlay
                   playsInline
                   preload="metadata"
                   onError={() => setUseIframePlayer(true)}
-                  className="h-full w-full object-contain bg-black"
+                  className="h-full w-full bg-black object-contain"
                 >
                   <source src={videoStreamUrl} type="video/mp4" />
                   Seu navegador não suporta a reprodução de vídeo.
@@ -389,6 +414,7 @@ export function ProductDetail({
                 <iframe
                   src={videoEmbedUrl}
                   title={`Apresentação do veículo ${product.titulo}`}
+                  loading="lazy"
                   className="absolute inset-0 h-full w-full border-0"
                   allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                   allowFullScreen
@@ -398,7 +424,7 @@ export function ProductDetail({
           </section>
         )}
 
-        {/* Ficha técnica completa */}
+        {/* Ficha técnica completa + Grid de Destaques Rápidos no topo */}
         <section className="border-b border-gray-100 py-10">
           <div className="mb-5 flex items-end justify-between gap-3">
             <div>
@@ -412,6 +438,57 @@ export function ProductDetail({
             <span className="hidden text-[11px] text-gray-400 sm:block">
               Consulte o vendedor para detalhes da versão
             </span>
+          </div>
+
+          {/* Grid de Destaques Rápidos (Autonomia, Velocidade Máxima, Capacidade de Carga e Bateria/Recarga) */}
+          <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <div className="flex flex-col justify-between border border-gray-200 bg-[#fafaf8] p-4">
+              <div className="flex items-center justify-between text-amber-500">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500">
+                  Autonomia
+                </span>
+                <Gauge className="h-4 w-4 shrink-0" />
+              </div>
+              <strong className="mt-2 text-base font-bold text-gray-950 sm:text-lg">
+                {product.autonomia || 'Até 50 km'}
+              </strong>
+            </div>
+
+            <div className="flex flex-col justify-between border border-gray-200 bg-[#fafaf8] p-4">
+              <div className="flex items-center justify-between text-amber-500">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500">
+                  Velocidade Máxima
+                </span>
+                <Timer className="h-4 w-4 shrink-0" />
+              </div>
+              <strong className="mt-2 text-base font-bold text-gray-950 sm:text-lg">
+                {product.velocidade_maxima || '32 km/h'}
+              </strong>
+            </div>
+
+            <div className="flex flex-col justify-between border border-gray-200 bg-[#fafaf8] p-4">
+              <div className="flex items-center justify-between text-amber-500">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500">
+                  Capacidade de Carga
+                </span>
+                <Weight className="h-4 w-4 shrink-0" />
+              </div>
+              <strong className="mt-2 text-base font-bold text-gray-950 sm:text-lg">
+                {product.capacidade_carga || '150 kg'}
+              </strong>
+            </div>
+
+            <div className="flex flex-col justify-between border border-gray-200 bg-[#fafaf8] p-4">
+              <div className="flex items-center justify-between text-amber-500">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500">
+                  Bateria / Recarga
+                </span>
+                <BatteryCharging className="h-4 w-4 shrink-0" />
+              </div>
+              <strong className="mt-2 truncate text-sm font-bold text-gray-950 sm:text-base">
+                {product.tipo_bateria || 'Lítio'} • {product.tempo_recarga || '6 a 8h'}
+              </strong>
+            </div>
           </div>
 
           <dl className="grid grid-cols-1 overflow-hidden border-l border-t border-gray-200 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Clock, MapPin, MessageCircle, Phone } from 'lucide-react';
-import { WHATSAPP_DISPLAY } from '@/lib/site';
+import { STORE_ADDRESS, WHATSAPP_DISPLAY } from '@/lib/site';
 import { buildWhatsAppApiUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -61,9 +61,7 @@ export default function ContatoPage() {
           <MapPin className="h-6 w-6 text-amber-500" />
           <h2 className="mt-5 text-lg font-semibold text-gray-950">Loja física</h2>
           <p className="mt-1 text-sm leading-relaxed text-gray-600">
-            Avenida Tamburello, ao lado do Sicoob
-            <br />
-            Cotriguaçu - MT
+            {STORE_ADDRESS}
           </p>
           <a
             href="https://www.google.com/maps/search/?api=1&query=Avenida+Tamburello+Cotrigua%C3%A7u+MT"
