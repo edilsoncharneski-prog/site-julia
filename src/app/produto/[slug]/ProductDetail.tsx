@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 import { ColorSwatches } from '@/components/ColorSwatches';
 import { StatusBadge } from '@/components/StatusBadge';
-import { SITE_URL } from '@/lib/site';
+import { CONTRAN_RESOLUTION_URL, SITE_URL } from '@/lib/site';
 import { buildAvailabilityWhatsAppLink, formatCurrency } from '@/lib/utils';
 import {
   disponibilidadeLabels,
@@ -263,7 +263,17 @@ export function ProductDetail({
               <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
               <div className="text-xs leading-relaxed text-emerald-900">
                 <strong>100% legalizado:</strong> não necessita de CNH, emplacamento nem
-                IPVA, conforme a Resolução CONTRAN 996/23.
+                IPVA, conforme a{' '}
+                <a
+                  href={CONTRAN_RESOLUTION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex cursor-pointer items-center gap-1 font-bold text-emerald-950 underline decoration-emerald-600/50 underline-offset-2 transition-colors hover:text-emerald-700 hover:underline"
+                >
+                  <span>Resolução CONTRAN 996/23</span>
+                  <ExternalLink className="h-3 w-3 shrink-0" />
+                </a>
+                .
               </div>
             </div>
 
@@ -526,13 +536,31 @@ export function ProductDetail({
                   <>
                     <strong>Não precisa de CNH nem emplacamento.</strong> Este modelo enquadra-se nos limites de
                     equipamento de mobilidade individual autopropelido da{" "}
-                    <strong>Resolução CONTRAN nº 996/2023</strong> (potência nominal até 1000W e velocidade
-                    limitada a 32 km/h), sendo isento de CNH, ACC, licenciamento e IPVA.
+                    <a
+                      href={CONTRAN_RESOLUTION_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex cursor-pointer items-center gap-1 font-semibold text-gray-900 underline decoration-gray-400 underline-offset-2 transition-colors hover:text-amber-600 hover:underline"
+                    >
+                      <span>Resolução CONTRAN nº 996/2023</span>
+                      <ExternalLink className="h-3 w-3 shrink-0" />
+                    </a>{" "}
+                    (potência nominal até 1000W e velocidade limitada a 32 km/h), sendo isento de CNH, ACC,
+                    licenciamento e IPVA.
                   </>
                 ) : (
                   <>
-                    Consulte a classificação exata conforme a <strong>Resolução CONTRAN nº 996/2023</strong>:
-                    autopropelidos até 1000W e 32 km/h dispensam CNH e emplacamento, enquanto ciclomotores
+                    Consulte a classificação exata conforme a{" "}
+                    <a
+                      href={CONTRAN_RESOLUTION_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex cursor-pointer items-center gap-1 font-semibold text-gray-900 underline decoration-gray-400 underline-offset-2 transition-colors hover:text-amber-600 hover:underline"
+                    >
+                      <span>Resolução CONTRAN nº 996/2023</span>
+                      <ExternalLink className="h-3 w-3 shrink-0" />
+                    </a>
+                    : autopropelidos até 1000W e 32 km/h dispensam CNH e emplacamento, enquanto ciclomotores
                     acima desses limites requerem registro e habilitação ACC ou Categoria A.
                   </>
                 )}

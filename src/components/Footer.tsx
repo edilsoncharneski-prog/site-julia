@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, MessageCircle, Phone, ShieldCheck, Zap } from 'lucide-react';
-import { STORE_ADDRESS, WHATSAPP_DISPLAY } from '@/lib/site';
+import { ExternalLink, MapPin, MessageCircle, Phone, ShieldCheck, Zap } from 'lucide-react';
+import { CONTRAN_RESOLUTION_URL, STORE_ADDRESS, WHATSAPP_DISPLAY } from '@/lib/site';
 import { buildWhatsAppApiUrl } from '@/lib/utils';
 
 const DEV_WHATSAPP_URL =
@@ -100,10 +100,16 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-2 text-xs text-gray-400">
               <li>
-                <span className="flex items-center gap-1 font-medium text-gray-300">
-                  <Zap className="h-3.5 w-3.5 text-amber-400" />
-                  Resolução CONTRAN 996/23
-                </span>
+                <a
+                  href={CONTRAN_RESOLUTION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex cursor-pointer items-center gap-1 font-medium text-white transition-colors hover:text-yellow-400 hover:underline"
+                >
+                  <Zap className="h-3.5 w-3.5 shrink-0 text-amber-400" />
+                  <span>Resolução CONTRAN 996/23</span>
+                  <ExternalLink className="h-3 w-3 shrink-0 opacity-75" />
+                </a>
                 <span className="mt-0.5 block text-[11px] text-gray-500">
                   Não exige CNH, IPVA ou emplacamento.
                 </span>
