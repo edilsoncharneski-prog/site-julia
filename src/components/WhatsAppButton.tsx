@@ -7,8 +7,8 @@ import {
   SITE_NAME,
   STORE_LOGO_PATH,
   WHATSAPP_DISPLAY,
-  WHATSAPP_NUMBER,
 } from '@/lib/site';
+import { buildWhatsAppApiUrl } from '@/lib/utils';
 
 export function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +52,9 @@ export function WhatsAppButton() {
 
             <div className="flex flex-col gap-2">
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!+Gostaria+de+saber+os+modelos+de+motos+e+scooters+dispon%C3%ADveis.`}
+                href={buildWhatsAppApiUrl(
+                  'Olá! Gostaria de saber os modelos de motos e scooters disponíveis.'
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-white border border-gray-200 hover:border-[#25D366] hover:bg-emerald-50/50 transition-all text-gray-800 font-medium group"
@@ -70,7 +72,9 @@ export function WhatsAppButton() {
               </a>
 
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!+Gostaria+de+informa%C3%A7%C3%B5es+sobre+garantia+e+suporte.`}
+                href={buildWhatsAppApiUrl(
+                  'Olá! Gostaria de informações sobre garantia e suporte.'
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-white border border-gray-200 hover:border-[#25D366] hover:bg-emerald-50/50 transition-all text-gray-800 font-medium group"

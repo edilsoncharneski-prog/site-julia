@@ -22,17 +22,17 @@ import {
   STORE_PAYMENT_INFO,
   STORE_SUPPORT_INFO,
   WHATSAPP_DISPLAY,
-  WHATSAPP_NUMBER,
 } from '@/lib/site';
+import { buildWhatsAppApiUrl } from '@/lib/utils';
 
 export function Header() {
   const router = useRouter();
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  const whatsappUrl = buildWhatsAppApiUrl(
     'Olá! Vim pelo site da Eletrosom Ebikes e gostaria de atendimento.'
-  )}`;
+  );
 
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();

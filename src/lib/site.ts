@@ -10,11 +10,19 @@ export const SITE_URL =
 export const SITE_DESCRIPTION =
   'Sua loja de motos elétricas, scooters, bikes e triciclos em Cotriguaçu-MT. Sem necessidade de CNH nem emplacamento. Parcelamento em até 21x no cartão, pronta entrega e garantia de fábrica.';
 
-export const WHATSAPP_NUMBER =
-  process.env.NEXT_PUBLIC_WHATSAPP || '5566984022988';
+/**
+ * Normaliza qualquer número de WhatsApp vindo de variáveis de ambiente
+ * (ex: caso na Vercel ainda esteja 8420), garantindo sempre o número oficial 5566984022988.
+ */
+const rawWhatsappEnv = (process.env.NEXT_PUBLIC_WHATSAPP || '5566984022988')
+  .replace(/\D/g, '')
+  .replace('84202988', '84022988');
 
-export const WHATSAPP_DISPLAY =
-  process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY || '(66) 98402-2988';
+export const WHATSAPP_NUMBER = rawWhatsappEnv || '5566984022988';
+
+export const WHATSAPP_DISPLAY = (
+  process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY || '(66) 98402-2988'
+).replace('8420-2988', '8402-2988');
 
 export const STORE_ADDRESS =
   process.env.NEXT_PUBLIC_ADDRESS ||

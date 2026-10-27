@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, MessageCircle, Phone, ShieldCheck, Zap } from 'lucide-react';
+import { STORE_ADDRESS, WHATSAPP_DISPLAY } from '@/lib/site';
+import { buildWhatsAppApiUrl } from '@/lib/utils';
 
 const DEV_WHATSAPP_URL =
   'https://api.whatsapp.com/send/?phone=5566984255108&text=Ol%C3%A1%2C+vi+o+site+que+voc%C3%AA+montou+para+a+Eletrosom+Ebikes%2C+gostaria+de+conversar+sobre+a+montagem+de+um+site+para+mim.&type=phone_number&app_absent=0';
@@ -127,15 +129,17 @@ export function Footer() {
             <div className="flex flex-col gap-3 text-xs text-gray-400">
               <div className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
-                <span>Avenida Tamburello, ao lado do Sicoob - Cotriguaçu/MT</span>
+                <span>{STORE_ADDRESS}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-emerald-400" />
-                <span>(66) 98402-2988</span>
+                <span>{WHATSAPP_DISPLAY}</span>
               </div>
               <div className="mt-2">
                 <a
-                  href="https://wa.me/5566984022988"
+                  href={buildWhatsAppApiUrl(
+                    'Olá! Vim pelo site da Eletrosom Ebikes e gostaria de atendimento.'
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#20ba59]"

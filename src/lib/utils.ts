@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import type { ProductColor } from '@/lib/products';
+import { WHATSAPP_NUMBER } from '@/lib/site';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -14,8 +15,19 @@ export function formatCurrency(value?: number | null) {
   }).format(value);
 }
 
+export function buildWhatsAppApiUrl(text?: string, customPhone?: string) {
+  const phone = (customPhone || WHATSAPP_NUMBER)
+    .replace(/\D/g, '')
+    .replace('84202988', '84022988');
+  if (!text) {
+    return `https://api.whatsapp.com/send/?phone=${phone}&type=phone_number&app_absent=0`;
+  }
+  return `https://api.whatsapp.com/send/?phone=${phone}&text=${encodeURIComponent(
+    text
+  )}&type=phone_number&app_absent=0`;
+}
+
 export function buildWhatsAppLink(productTitle?: string, productUrl?: string) {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP || '5566984022988';
   let message = 'Olá! Gostaria de mais informações sobre os veículos elétricos da Eletrosom Ebikes.';
   
   if (productTitle) {
@@ -25,7 +37,7 @@ export function buildWhatsAppLink(productTitle?: string, productUrl?: string) {
     }
   }
 
-  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+  return buildWhatsAppApiUrl(message);
 }
 
 export function buildAvailabilityWhatsAppLink(
@@ -33,7 +45,6 @@ export function buildAvailabilityWhatsAppLink(
   color: ProductColor,
   productUrl?: string
 ) {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP || '5566984022988';
   const status =
     color.disponibilidade === 'pronta_entrega'
       ? 'Pronta Entrega'
@@ -43,5 +54,5 @@ export function buildAvailabilityWhatsAppLink(
   let message = `Olá, tenho interesse ${article} ${productName} na cor ${color.nome} (${status}) vista no site.`;
   if (productUrl) message += ` Link: ${productUrl}`;
 
-  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+  return buildWhatsAppApiUrl(message);
 }
