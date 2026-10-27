@@ -39,4 +39,4 @@ export const STORE_SUPPORT_INFO = 'Peças de reposição e Garantia de Fábrica'
 export const STORE_LOGO_PATH = '/logo-eletrosom.webp';
 
 export const CONTRAN_RESOLUTION_URL =
-  'https://www.in.gov.br/en/web/dou/-/resolucao-contran-n-996-de-15-de-junho-de-2023-491418149';
+  'https://www.in.gov.br/en/web/dou/-/resolucao-contran-n-996-de-15-de-junho-de-2023-491553860';

@@ -1,6 +1,7 @@
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { ProductCard } from '@/components/ProductCard';
 import { getActiveCarouselSlides, getCatalog } from '@/lib/catalog';
+import { CONTRAN_RESOLUTION_URL } from '@/lib/site';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -62,10 +63,18 @@ export default async function Home() {
               </summary>
               <p className="mt-2 text-xs leading-relaxed text-gray-600 sm:text-sm">
                 Os modelos <strong>autopropelidos</strong> comercializados pela Eletrosom Ebikes (com
-                potência de até 1000W e velocidade máxima limitada a 32 km/h, conforme a Resolução
-                CONTRAN nº 996/2023) são <strong>dispensados de CNH, emplacamento e IPVA</strong>. Já
-                veículos classificados como ciclomotores (potência acima de 1000W até 4000W) passam a
-                exigir habilitação na categoria A ou ACC e registro no DETRAN.
+                potência de até 1000W e velocidade máxima limitada a 32 km/h, conforme a{' '}
+                <a
+                  href={CONTRAN_RESOLUTION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer font-semibold text-gray-900 underline decoration-gray-400 underline-offset-2 transition-colors hover:text-yellow-500 hover:underline"
+                >
+                  Resolução CONTRAN nº 996/2023
+                </a>
+                ) são <strong>dispensados de CNH, emplacamento e IPVA</strong>. Já veículos
+                classificados como ciclomotores (potência acima de 1000W até 4000W) passam a exigir
+                habilitação na categoria A ou ACC e registro no DETRAN.
               </p>
             </details>
 

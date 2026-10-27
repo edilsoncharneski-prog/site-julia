@@ -510,7 +510,24 @@ export function ProductDetail({
                 <dt className="text-[10px] font-semibold uppercase tracking-[0.12em] text-gray-400">
                   {label}
                 </dt>
-                <dd className="mt-1 text-sm text-gray-900">{value}</dd>
+                <dd className="mt-1 text-sm text-gray-900">
+                  {label === 'Regulamentação CONTRAN' && product.dispensa_cnh !== false ? (
+                    <>
+                      Dispensado de CNH e emplacamento —{' '}
+                      <a
+                        href={CONTRAN_RESOLUTION_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex cursor-pointer items-center gap-1 font-semibold text-gray-900 transition-colors hover:text-yellow-500 hover:underline"
+                      >
+                        <Zap className="h-3.5 w-3.5 shrink-0 text-amber-400" />
+                        <span>Resolução CONTRAN 996/23</span>
+                      </a>
+                    </>
+                  ) : (
+                    value
+                  )}
+                </dd>
               </div>
             ))}
           </dl>
