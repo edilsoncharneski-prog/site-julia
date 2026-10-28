@@ -30,7 +30,7 @@ export const STORE_ADDRESS =
 
 export const STORE_CITIES = 'Cotriguaçu e Região - MT';
 
-export const STORE_PAYMENT_INFO = 'Até 21x no Cartão';
+export const STORE_PAYMENT_INFO = 'Até 12x no Cartão';
 
 export const STORE_AVAILABILITY_INFO = 'Pronta entrega + encomenda';
 

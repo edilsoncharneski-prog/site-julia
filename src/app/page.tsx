@@ -177,7 +177,7 @@ export default async function Home() {
                 <ChevronDown className="h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-180" />
               </summary>
               <p className="mt-2 text-xs leading-relaxed text-gray-600 sm:text-sm">
-                Facilitamos sua compra com parcelamento em <strong>até 21x no cartão de crédito</strong>,
+                Facilitamos sua compra com parcelamento em <strong>até 12x no cartão de crédito</strong>,
                 opções de financiamento e condições especiais à vista no Pix. Todos os veículos contam
                 com <strong>garantia oficial de fábrica</strong> e suporte direto em nossa loja em
                 Cotriguaçu/MT para encomenda de peças de reposição.

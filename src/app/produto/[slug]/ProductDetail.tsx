@@ -313,7 +313,7 @@ export function ProductDetail({
                     {formatCurrency(product.preco_promocional || product.preco)}
                   </div>
                   <p className="mt-1 text-xs font-semibold text-emerald-700">
-                    Ou em até 21x no cartão de crédito
+                    Ou em até 12x no cartão de crédito
                   </p>
                 </div>
               ) : (
@@ -322,7 +322,7 @@ export function ProductDetail({
                     Condição especial de compra
                   </span>
                   <div className="mt-1 text-xl font-semibold text-gray-950 sm:text-2xl">
-                    Consulte cores e parcelamento em até 21x
+                    Consulte cores e parcelamento em até 12x
                   </div>
                   <p className="mt-1 text-xs text-gray-500">
                     Atendimento imediato com nossa equipe em Cotriguaçu/MT.

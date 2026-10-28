@@ -10,7 +10,7 @@
 
 1. **Remoção Completa de "Oficina":**
    - Nenhuma menção a oficina própria ou assistência local em todo o site.
-   - Diferenciais oficiais ativos: *"Até 21x no Cartão | Pronta Entrega + Encomenda | Garantia de Fábrica"*.
+   - Diferenciais oficiais ativos: *"Até 12x no Cartão | Pronta Entrega + Encomenda | Garantia de Fábrica"*.
 
 2. **Catálogo Completo (~70 itens / 29 modelos / 94 variações de cores):**
    - Todas as variações agrupadas por modelo com seletor de cores (color swatches) estilo concessionária Mova.

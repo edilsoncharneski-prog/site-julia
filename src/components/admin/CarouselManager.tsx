@@ -367,7 +367,7 @@ export function CarouselManager({
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder="Ex: Scooters Elétricas em até 21x no Cartão"
+                placeholder="Ex: Scooters Elétricas em até 12x no Cartão"
                 className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-gray-600 focus:outline-hidden"
               />
             </div>

@@ -10,7 +10,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: 'Catálogo de Veículos Elétricos',
   description:
-    'Conheça scooters, motos, bikes e triciclos elétricos da Eletrosom Ebikes. Filtre por categoria, compare cores e consulte condições em até 21x.',
+    'Conheça scooters, motos, bikes e triciclos elétricos da Eletrosom Ebikes. Filtre por categoria, compare cores e consulte condições em até 12x.',
 };
 
 type ProductsPageProps = {

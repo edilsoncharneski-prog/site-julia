@@ -53,7 +53,7 @@ export default function ContatoPage() {
           <p className="mt-1 text-sm text-gray-600">{WHATSAPP_DISPLAY}</p>
           <p className="mt-3 text-xs leading-relaxed text-gray-500">
             Consulte disponibilidade, cores, encomendas e condições de parcelamento em
-            até 21x no cartão.
+            até 12x no cartão.
           </p>
         </a>
 

@@ -46,7 +46,7 @@ export async function generateMetadata({
 
   const description =
     product.descricao ||
-    `${product.titulo} na cor ${selectedColor?.nome || 'Padrão'} disponível na ${SITE_NAME}. Sem necessidade de CNH nem emplacamento. Parcelamento em até 21x.`;
+    `${product.titulo} na cor ${selectedColor?.nome || 'Padrão'} disponível na ${SITE_NAME}. Sem necessidade de CNH nem emplacamento. Parcelamento em até 12x.`;
 
   return {
     title: titleWithColor,

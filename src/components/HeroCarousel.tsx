@@ -74,7 +74,7 @@ export function HeroCarousel({ slides = [], products = [] }: HeroCarouselProps) 
           title: product.titulo || product.nome,
           subtitle:
             product.tagline ||
-            'Sem necessidade de CNH nem emplacamento • Parcelamento em até 21x no cartão',
+            'Sem necessidade de CNH nem emplacamento • Parcelamento em até 12x no cartão',
           linkUrl,
           colorName: color.nome,
           colorHex: color.hex,
@@ -302,7 +302,7 @@ export function HeroCarousel({ slides = [], products = [] }: HeroCarouselProps) 
                 )}
                 <span className="text-gray-300">•</span>
                 <span>
-                  Até <strong className="text-gray-900">21x no cartão</strong>
+                  Até <strong className="text-gray-900">12x no cartão</strong>
                 </span>
               </div>
 
