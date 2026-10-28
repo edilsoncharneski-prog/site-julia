@@ -28,9 +28,11 @@ export default async function Home() {
               Motos, scooters e bikes elétricas
             </h1>
           </div>
-          <p className="max-w-sm text-xs leading-relaxed text-gray-500 sm:text-right">
-            Escolha o modelo, confira as cores disponíveis e fale com a gente para
-            garantir o seu.
+          <p className="max-w-md rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3 text-sm font-medium leading-relaxed text-zinc-100 shadow-sm sm:text-right sm:text-base">
+            Escolha o seu modelo, veja as cores e{' '}
+            <span className="font-bold text-emerald-400">
+              chame no WhatsApp para garantir o seu a pronta entrega.
+            </span>
           </p>
         </div>
 
